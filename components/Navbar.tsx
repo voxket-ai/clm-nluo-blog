@@ -1,0 +1,182 @@
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+import { ChevronDown, Menu, X } from 'lucide-react'
+import { cn } from '@/lib/utils'
+
+const navigationItems = [
+  {
+    name: 'CLM Blog',
+    href: '/blog',
+    submenu: [
+      { name: 'Blogs', href: '/blog' },
+      { name: 'Editorial Blog', href: '/editorial-blog' }
+    ]
+  },
+  {
+    name: 'Submissions',
+    href: '/submissions'
+  },
+  {
+    name: 'Newsletter',
+    href: '/newsletters'
+  },
+  {
+    name: 'Events',
+    href: '/events'
+  },
+  {
+    name: 'About Us',
+    href: '/about-the-blog',
+    submenu: [
+      { name: 'Faculty Advisors', href: '/faculty-advisors' },
+      { name: 'Advisory Board', href: '/advisory-board-ccl' },
+      { name: 'Message from the Vice Chancellor', href: '/message-from-the-vice-chancellor' }
+    ]
+  }
+]
+
+export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+
+  const toggleDropdown = (itemName: string) => {
+    setActiveDropdown(activeDropdown === itemName ? null : itemName)
+  }
+
+  return (
+    <nav className="bg-white shadow-md relative z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center">
+              <div className="text-2xl font-bold text-blue-600">
+                CLM Blog
+              </div>
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              {navigationItems.map((item) => (
+                <div key={item.name} className="relative group">
+                  {item.submenu ? (
+                    <div>
+                      <button
+                        onClick={() => toggleDropdown(item.name)}
+                        className={cn(
+                          "flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200",
+                          "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                        )}
+                      >
+                        {item.name}
+                        <ChevronDown className={cn(
+                          "ml-1 h-4 w-4 transition-transform duration-200",
+                          activeDropdown === item.name && "rotate-180"
+                        )} />
+                      </button>
+                      
+                      {/* Dropdown Menu */}
+                      {activeDropdown === item.name && (
+                        <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                          <div className="py-1">
+                            {item.submenu.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                                onClick={() => setActiveDropdown(null)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+            >
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Navigation Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+            {navigationItems.map((item) => (
+              <div key={item.name}>
+                {item.submenu ? (
+                  <div>
+                    <button
+                      onClick={() => toggleDropdown(item.name)}
+                      className="flex items-center justify-between w-full px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                    >
+                      {item.name}
+                      <ChevronDown className={cn(
+                        "h-4 w-4 transition-transform duration-200",
+                        activeDropdown === item.name && "rotate-180"
+                      )} />
+                    </button>
+                    
+                    {activeDropdown === item.name && (
+                      <div className="pl-4 space-y-1">
+                        {item.submenu.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                            onClick={() => {
+                              setMobileMenuOpen(false)
+                              setActiveDropdown(null)
+                            }}
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
+  )
+}

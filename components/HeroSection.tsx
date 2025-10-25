@@ -23,11 +23,11 @@ export default function HeroSection() {
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Welcome to{' '}
-                <span className="text-blue-600">CLM Blog</span>
+                <span className="text-blue-600">NLUO Mediation Chronicle</span>
               </h1>
               <p className="mt-6 text-xl text-gray-600 leading-relaxed">
-                Your premier destination for corporate law insights, analysis, and commentary. 
-                Stay updated with the latest developments in corporate legal matters.
+                A platform dedicated to advancing discourse, ideas, and reflections in the field of mediation and negotiation. 
+                Promoting accessible and practice-oriented discussions in Alternative Dispute Resolution.
               </p>
             </div>
 
@@ -59,16 +59,16 @@ export default function HeroSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-blue-600">500+</div>
+                <div className="text-2xl md:text-3xl font-bold text-blue-600">200+</div>
                 <div className="text-sm text-gray-600 mt-1">Articles Published</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-blue-600">10K+</div>
-                <div className="text-sm text-gray-600 mt-1">Regular Readers</div>
+                <div className="text-2xl md:text-3xl font-bold text-blue-600">5K+</div>
+                <div className="text-sm text-gray-600 mt-1">ADR Practitioners</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-blue-600">50+</div>
-                <div className="text-sm text-gray-600 mt-1">Expert Contributors</div>
+                <div className="text-2xl md:text-3xl font-bold text-blue-600">25+</div>
+                <div className="text-sm text-gray-600 mt-1">Expert Mediators</div>
               </div>
             </div>
           </div>
@@ -84,10 +84,10 @@ export default function HeroSection() {
                   <span>5 min read</span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Latest Developments in Corporate Governance
+                  The Mediation Act 2023: Transforming Dispute Resolution
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Explore the recent changes in corporate governance regulations and their impact on modern businesses.
+                  Explore how India's new Mediation Act is revolutionizing alternative dispute resolution mechanisms.
                 </p>
                 <button className="text-blue-600 hover:text-blue-700 font-medium flex items-center">
                   Read More
@@ -99,12 +99,12 @@ export default function HeroSection() {
             {/* Quick Links */}
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-200">
-                <h4 className="font-semibold text-gray-900 mb-2">Recent Events</h4>
-                <p className="text-sm text-gray-600">Stay updated with our latest webinars and conferences</p>
+                <h4 className="font-semibold text-gray-900 mb-2">CMN Events</h4>
+                <p className="text-sm text-gray-600">Join our mediation workshops and training programs</p>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-200">
                 <h4 className="font-semibold text-gray-900 mb-2">Expert Insights</h4>
-                <p className="text-sm text-gray-600">Read analysis from leading corporate law experts</p>
+                <p className="text-sm text-gray-600">Read analysis from leading mediation practitioners</p>
               </div>
             </div>
           </div>

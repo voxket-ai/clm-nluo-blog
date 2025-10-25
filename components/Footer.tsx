@@ -38,11 +38,11 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/clm-nluo', color: 'hover:text-blue-600' },
-  { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/clm_nluo', color: 'hover:text-blue-400' },
-  { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/clm-nluo', color: 'hover:text-blue-700' },
-  { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/clm_nluo', color: 'hover:text-pink-600' },
-  { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@clm-nluo', color: 'hover:text-red-600' }
+  { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/nluo-cmn', color: 'hover:text-blue-600' },
+  { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/nluo_cmn', color: 'hover:text-blue-400' },
+  { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/nluo-cmn', color: 'hover:text-blue-700' },
+  { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/nluo_cmn', color: 'hover:text-pink-600' },
+  { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@nluo-cmn', color: 'hover:text-red-600' }
 ]
 
 export default function Footer() {
@@ -63,10 +63,10 @@ export default function Footer() {
           {/* Brand & Description */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold text-blue-400 mb-4">CLM Blog</h3>
+              <h3 className="text-2xl font-bold text-blue-400 mb-4">NLUO Mediation Chronicle</h3>
               <p className="text-gray-300 leading-relaxed">
-                Your premier destination for corporate law insights, analysis, and commentary. 
-                Connecting legal professionals with the latest developments in corporate legal matters.
+                A platform dedicated to advancing discourse, ideas, and reflections in the field of mediation and negotiation. 
+                An initiative of the Centre for Mediation and Negotiation at NLUO.
               </p>
             </div>
             
@@ -74,17 +74,17 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
                 <Mail className="h-4 w-4 mr-3 text-blue-400" />
-                <a href="mailto:clm@nluo.ac.in" className="hover:text-blue-400 transition-colors">
-                  clm@nluo.ac.in
+                <a href="mailto:cmn@nluo.ac.in" className="hover:text-blue-400 transition-colors">
+                  cmn@nluo.ac.in
                 </a>
               </div>
               <div className="flex items-center text-gray-300">
                 <Phone className="h-4 w-4 mr-3 text-blue-400" />
-                <span>+91 (123) 456-7890</span>
+                <span>+91 (674) 714-3391</span>
               </div>
               <div className="flex items-start text-gray-300">
                 <MapPin className="h-4 w-4 mr-3 text-blue-400 mt-1 shrink-0" />
-                <span>National Law University Odisha, Cuttack, Odisha, India</span>
+                <span>National Law University Odisha, Sector-13, CDA, Cuttack, Odisha - 753014</span>
               </div>
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
-              © 2025 by Centre for Corporate Law - National Law University Odisha. All rights reserved.
+              © 2025 by NLUO Centre for Mediation and Negotiation - National Law University Odisha. All rights reserved.
             </div>
             
             <div className="flex space-x-6">

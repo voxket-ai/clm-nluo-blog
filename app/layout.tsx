@@ -8,12 +8,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "CLM Blog - Corporate Law Insights & Analysis",
-  description: "Your premier destination for corporate law insights, analysis, and commentary. Stay updated with the latest developments in corporate legal matters.",
-  keywords: "corporate law, legal analysis, legal insights, law blog, corporate governance, securities law, merger acquisition",
-  authors: [{ name: "Centre for Corporate Law - National Law University Odisha" }],
-  creator: "CLM NLUO",
-  publisher: "CLM NLUO"
+  title: "NLUO Mediation Chronicle - Mediation & Negotiation Insights",
+  description: "The NLUO Mediation Chronicle is a platform dedicated to advancing discourse, ideas, and reflections in the field of mediation and negotiation, promoting accessible and practice-oriented discussions.",
+  keywords: "mediation, negotiation, ADR, alternative dispute resolution, NLUO, mediation chronicle, dispute resolution, mediation act 2023",
+  authors: [{ name: "NLUO Centre for Mediation and Negotiation" }],
+  creator: "NLUO CMN",
+  publisher: "NLUO CMN"
 };
 
 export default function RootLayout({

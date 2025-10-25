@@ -11,48 +11,42 @@ export default function AboutTheBlogPage() {
       <main className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-16">
+                    <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About <span className="text-blue-600">CLM Blog</span>
+              About <span className="text-blue-600">NLUO Mediation Chronicle</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Discover the story behind CLM Blog, our mission to advance corporate law scholarship, 
-              and our commitment to providing comprehensive legal insights to the professional community.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A platform dedicated to advancing discourse, ideas, and reflections in the field of mediation and negotiation, 
+              promoting accessible and practice-oriented discussions in Alternative Dispute Resolution.
             </p>
           </div>
 
           {/* Mission Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Our <span className="text-blue-600">Mission</span>
-              </h2>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                The Centre for Corporate Law (CLM) at National Law University Odisha is dedicated to fostering 
-                excellence in corporate law education, research, and practice. Our blog serves as a premier 
-                platform for legal scholarship and commentary on contemporary corporate law issues.
-              </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                We strive to bridge the gap between academic research and practical application, providing 
-                valuable insights to legal professionals, students, and stakeholders in the corporate ecosystem.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center text-blue-600">
-                  <Target className="h-5 w-5 mr-2" />
-                  <span className="font-medium">Excellence in Legal Scholarship</span>
-                </div>
-                <div className="flex items-center text-blue-600">
-                  <BookOpen className="h-5 w-5 mr-2" />
-                  <span className="font-medium">Practical Legal Insights</span>
-                </div>
+                    <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  About the <span className="text-blue-600">Chronicle</span>
+                </h2>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  The NLUO Mediation Chronicle, an initiative of the Centre for Mediation and Negotiation (CMN) at the 
+                  National Law University Odisha, is a platform dedicated to advancing discourse, ideas, and reflections 
+                  in the field of mediation and negotiation.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  It aims to promote accessible and practice-oriented discussions that contribute to the growth of 
+                  mediation culture in India and beyond. The blog seeks to encourage contributions that explore 
+                  contemporary developments in mediation and negotiation, evolving ADR mechanisms, and innovative 
+                  dispute resolution practices.
+                </p>
               </div>
-            </div>
-            
-            <div className="h-96 bg-linear-to-br from-blue-50 to-indigo-100 rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <BookOpen className="h-24 w-24 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900">CLM Blog</h3>
-                <p className="text-gray-600">Corporate Law Excellence</p>
+              
+              <div className="h-64 bg-linear-to-r from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center">
+                <div className="text-center text-white">
+                  <Users className="h-16 w-16 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold">ADR Community</h3>
+                  <p className="text-blue-100">Mediators & Practitioners</p>
+                </div>
               </div>
             </div>
           </div>
@@ -68,9 +62,9 @@ export default function AboutTheBlogPage() {
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">Legal Analysis</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">ADR Analysis</h3>
                 <p className="text-gray-600 text-sm">
-                  In-depth analysis of corporate law developments, regulatory changes, and landmark judgments.
+                  In-depth analysis of mediation developments, Mediation Act 2023, and emerging ADR practices.
                 </p>
               </div>
               
@@ -80,7 +74,7 @@ export default function AboutTheBlogPage() {
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">Expert Commentary</h3>
                 <p className="text-gray-600 text-sm">
-                  Insights from leading practitioners, academics, and industry experts on emerging trends.
+                  Insights from leading mediators, academics, and ADR practitioners on contemporary issues.
                 </p>
               </div>
               
@@ -90,7 +84,7 @@ export default function AboutTheBlogPage() {
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">Research Focus</h3>
                 <p className="text-gray-600 text-sm">
-                  Cutting-edge research on corporate governance, securities regulation, and business law.
+                  Cutting-edge research on ODR, cross-border mediation, and technology in dispute resolution.
                 </p>
               </div>
               
@@ -100,7 +94,7 @@ export default function AboutTheBlogPage() {
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">Quality Content</h3>
                 <p className="text-gray-600 text-sm">
-                  Peer-reviewed articles and commentary maintaining the highest standards of legal scholarship.
+                  Peer-reviewed articles following structured two-tier review system for academic integrity.
                 </p>
               </div>
             </div>

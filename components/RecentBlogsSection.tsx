@@ -8,67 +8,67 @@ import { cn } from '@/lib/utils'
 const blogPosts = [
   {
     id: 1,
-    title: "Corporate Governance Reforms: A Comprehensive Analysis",
-    excerpt: "Exploring the latest changes in corporate governance regulations and their implications for modern businesses in the evolving legal landscape.",
-    author: "CLM NLUO",
+    title: "Recognition and Enforcement of Mediated Settlement Agreements in India",
+    excerpt: "Exploring the legal framework for enforcing mediated settlements under the new Mediation Act 2023 and its implications for dispute resolution practice.",
+    author: "NLUO CMN",
     date: "Oct 25, 2025",
     readTime: "6 min read",
-    category: "Corporate Law",
+    category: "Mediation Law",
     imageUrl: "/api/placeholder/400/250",
     featured: true
   },
   {
     id: 2,
-    title: "Securities Law Updates: Market Regulations and Compliance",
-    excerpt: "Recent developments in securities law and their impact on market operations, investor protection, and regulatory compliance.",
-    author: "CLM NLUO",
+    title: "Emerging Trends in Online Dispute Resolution (ODR)",
+    excerpt: "How digital platforms are transforming mediation and negotiation processes, making dispute resolution more accessible and efficient.",
+    author: "NLUO CMN",
     date: "Oct 22, 2025",
     readTime: "4 min read",
-    category: "Securities Law",
+    category: "ODR",
     imageUrl: "/api/placeholder/400/250",
     featured: false
   },
   {
     id: 3,
-    title: "Merger & Acquisition Trends in 2025",
-    excerpt: "An in-depth look at the current M&A landscape, emerging trends, and regulatory considerations for corporate transactions.",
-    author: "CLM NLUO",
+    title: "Mediation in Family and Matrimonial Disputes",
+    excerpt: "An analysis of how mediation is being successfully implemented in family courts across India for resolving matrimonial and custody disputes.",
+    author: "NLUO CMN",
     date: "Oct 20, 2025",
     readTime: "5 min read",
-    category: "M&A",
+    category: "Family Mediation",
     imageUrl: "/api/placeholder/400/250",
     featured: false
   },
   {
     id: 4,
-    title: "Insolvency Law: Recent Judicial Pronouncements",
-    excerpt: "Analysis of recent court decisions in insolvency matters and their implications for corporate restructuring processes.",
-    author: "CLM NLUO",
+    title: "Cross-Border Commercial Mediation: International Best Practices",
+    excerpt: "Comparative analysis of mediation practices across jurisdictions and their application in international commercial dispute resolution.",
+    author: "NLUO CMN",
     date: "Oct 18, 2025",
     readTime: "7 min read",
-    category: "Insolvency Law",
+    category: "Commercial Mediation",
     imageUrl: "/api/placeholder/400/250",
     featured: false
   },
   {
     id: 5,
-    title: "Banking Regulations: Digital Transformation Impact",
-    excerpt: "How digital transformation is reshaping banking regulations and compliance requirements in the modern financial sector.",
-    author: "CLM NLUO",
+    title: "Technology-Driven Negotiation and AI in Mediation",
+    excerpt: "Exploring how artificial intelligence and technology are reshaping negotiation strategies and mediation processes in the digital age.",
+    author: "NLUO CMN",
     date: "Oct 15, 2025",
     readTime: "5 min read",
-    category: "Banking Law",
+    category: "Tech & Mediation",
     imageUrl: "/api/placeholder/400/250",
     featured: false
   },
   {
     id: 6,
-    title: "Environmental Law and Corporate Responsibility",
-    excerpt: "The growing intersection of environmental regulations and corporate governance, including ESG compliance requirements.",
-    author: "CLM NLUO",
+    title: "Community-Based Mediation for Rural and Tribal Populations",
+    excerpt: "How traditional mediation practices can be integrated with modern ADR mechanisms to serve rural and tribal communities effectively.",
+    author: "NLUO CMN",
     date: "Oct 12, 2025",
     readTime: "6 min read",
-    category: "Environmental Law",
+    category: "Community Mediation",
     imageUrl: "/api/placeholder/400/250",
     featured: false
   }
@@ -152,10 +152,10 @@ export default function RecentBlogsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Recent <span className="text-blue-600">Blogs</span>
+            Recent <span className="text-blue-600">Articles</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay informed with our latest insights on corporate law, regulatory updates, and industry analysis from leading legal experts.
+            Explore the latest insights on mediation, negotiation, and alternative dispute resolution from experts, practitioners, and scholars.
           </p>
         </div>
 

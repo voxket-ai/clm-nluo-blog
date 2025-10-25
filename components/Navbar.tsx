@@ -2,16 +2,17 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const navigationItems = [
   {
-    name: 'CLM Blog',
+    name: 'Mediation Chronicle',
     href: '/blog',
     submenu: [
-      { name: 'Blogs', href: '/blog' },
-      { name: 'Editorial Blog', href: '/editorial-blog' }
+      { name: 'Articles', href: '/blog' },
+      { name: 'Editorial Board', href: '/editorial-blog' }
     ]
   },
   {
@@ -19,20 +20,17 @@ const navigationItems = [
     href: '/submissions'
   },
   {
-    name: 'Newsletter',
-    href: '/newsletters'
-  },
-  {
     name: 'Events',
     href: '/events'
   },
   {
-    name: 'About Us',
+    name: 'About',
     href: '/about-the-blog',
     submenu: [
-      { name: 'Faculty Advisors', href: '/faculty-advisors' },
-      { name: 'Advisory Board', href: '/advisory-board-ccl' },
-      { name: 'Message from the Vice Chancellor', href: '/message-from-the-vice-chancellor' }
+      { name: 'About the Chronicle', href: '/about-the-blog' },
+      { name: 'About CMN Centre', href: '/faculty-advisors' },
+      { name: 'Editorial Board', href: '/advisory-board-ccl' },
+      { name: 'Message from VC', href: '/message-from-the-vice-chancellor' }
     ]
   }
 ]
@@ -50,10 +48,22 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
-              <div className="text-2xl font-bold text-blue-600">
-                CLM Blog
+          <div className="shrink-0">
+            <Link href="/" className="flex items-center space-x-3">
+              <Image
+                src="/logo.jpeg"
+                alt="NLUO CMN Logo"
+                width={50}
+                height={50}
+                className="rounded-full"
+              />
+              <div className="flex flex-col">
+                <div className="text-lg md:text-xl font-bold text-blue-600">
+                  NLUO Mediation
+                </div>
+                <div className="text-sm md:text-base font-semibold text-gray-600">
+                  Chronicle
+                </div>
               </div>
             </Link>
           </div>

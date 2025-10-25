@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { Mail, Phone, Linkedin, Award, BookOpen, GraduationCap } from 'lucide-react'
+import { Mail, Phone, Linkedin, Award, BookOpen, GraduationCap, Users } from 'lucide-react'
 
 // Sample faculty advisors data
 const facultyAdvisors = [
@@ -149,14 +149,13 @@ export default function FacultyAdvisorsPage() {
       <main className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-16">
+                    <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Faculty <span className="text-blue-600">Advisors</span>
+              About the <span className="text-blue-600">CMN Centre</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Meet our distinguished faculty advisors who guide the Centre for Corporate Law. 
-              Their expertise, research contributions, and commitment to excellence shape our academic 
-              and research initiatives in corporate law.
+              The NLUO Centre for Mediation and Negotiation (NLUO CMN) was established in March 2014 and reconstituted in 2022 
+              under the leadership of Vice-Chancellor Prof. Ved Kumari. Learn about our mission, initiatives, and leadership.
             </p>
           </div>
 
@@ -177,11 +176,66 @@ export default function FacultyAdvisorsPage() {
           </div>
 
           {/* Faculty Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {facultyAdvisors.map((faculty, index) => (
-              <FacultyCard key={index} faculty={faculty} />
-            ))}
+                    {/* About CMN Centre */}
+          <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  About the <span className="text-blue-600">Centre</span>
+                </h2>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  The NLUO Centre for Mediation and Negotiation (NLUO CMN) was established in March 2014 by Hon'ble Justices 
+                  Ananga Kumar Patnaik, V. Gopala Gowda, and Adarsh Kumar Goel. It is dedicated to promoting academic research 
+                  and practical training in Alternative Dispute Resolution (ADR).
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  As India's first mediation cell operated by a higher-education institution, CMN aspires to be a Centre of 
+                  Excellence in ADR, fostering peaceful dispute resolution, mutual understanding, and effective communication.
+                </p>
+              </div>
+              
+              <div className="h-64 bg-linear-to-r from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center">
+                <div className="text-center text-white">
+                  <Users className="h-16 w-16 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold">CMN Centre</h3>
+                  <p className="text-blue-100">Excellence in ADR</p>
+                </div>
+              </div>
+            </div>
           </div>
+
+          {/* Current Leadership */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+              Current <span className="text-blue-600">Leadership</span>
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                  <span className="text-white text-lg font-bold">AK</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Mr. Abhay Kumar</h3>
+                <p className="text-blue-600 font-medium text-sm">Centre Head</p>
+              </div>
+              
+              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-linear-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                  <span className="text-white text-lg font-bold">AV</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Dr. Akshay Verma</h3>
+                <p className="text-blue-600 font-medium text-sm">Centre Head</p>
+              </div>
+              
+              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-linear-to-r from-purple-400 to-pink-500 flex items-center justify-center">
+                  <span className="text-white text-lg font-bold">SP</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Ms. Suryasmita Parida</h3>
+                <p className="text-blue-600 font-medium text-sm">Centre Head</p>
+              </div>
+            </div>
+          </section>
 
           {/* Advisory Role */}
           <section className="mb-16">

@@ -15,8 +15,8 @@ export default function SubmissionsPage() {
               Article <span className="text-blue-600">Submissions</span>
             </h1>
             <p className="text-xl text-gray-600">
-              Submit your legal research, analysis, and commentary for publication on CLM Blog. 
-              We welcome contributions from legal professionals, scholars, and students.
+              The NLUO Mediation Chronicle accepts submissions from experts, working professionals, academicians and students. 
+              We welcome articles, case comments, legislative comments and book reviews in the field of mediation and ADR.
             </p>
           </div>
 
@@ -26,53 +26,53 @@ export default function SubmissionsPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
-                <h3 className="text-lg font-semibold text-blue-600 mb-4">Content Requirements</h3>
+                <h3 className="text-lg font-semibold text-blue-600 mb-4">Formatting Guidelines</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" />
-                    Original, unpublished content only
+                    Word limit: 1200 – 1500 words (excluding footnotes)
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" />
-                    Word count: 1,500 - 5,000 words
+                    Times New Roman, size 12, 1.5 line spacing
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" />
-                    Proper legal citations required
+                    OSCOLA (4th Edition) citations required
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" />
-                    Author bio and credentials
+                    Co-authorship: Maximum 2 authors
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 shrink-0" />
-                    High-resolution author photo
+                    Plagiarism limit: 10% (UGC guidelines)
                   </li>
                 </ul>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-blue-600 mb-4">Preferred Topics</h3>
+                <h3 className="text-lg font-semibold text-blue-600 mb-4">Submission Themes</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-start">
                     <FileText className="h-5 w-5 text-blue-500 mr-2 mt-0.5 shrink-0" />
-                    Corporate Governance
+                    Mediation Act, 2023 Analysis
                   </li>
                   <li className="flex items-start">
                     <FileText className="h-5 w-5 text-blue-500 mr-2 mt-0.5 shrink-0" />
-                    Securities Law & Regulations
+                    Online Dispute Resolution (ODR)
                   </li>
                   <li className="flex items-start">
                     <FileText className="h-5 w-5 text-blue-500 mr-2 mt-0.5 shrink-0" />
-                    Mergers & Acquisitions
+                    Cross-Border Commercial Mediation
                   </li>
                   <li className="flex items-start">
                     <FileText className="h-5 w-5 text-blue-500 mr-2 mt-0.5 shrink-0" />
-                    Insolvency & Bankruptcy Law
+                    Family & Matrimonial Mediation
                   </li>
                   <li className="flex items-start">
                     <FileText className="h-5 w-5 text-blue-500 mr-2 mt-0.5 shrink-0" />
-                    Banking & Financial Regulations
+                    Technology & AI in Mediation
                   </li>
                 </ul>
               </div>
@@ -129,10 +129,10 @@ export default function SubmissionsPage() {
                 <div>
                   <p className="font-medium text-gray-900">Email your submission to:</p>
                   <a 
-                    href="mailto:submissions@clm-nluo.ac.in"
+                    href="mailto:cmn@nluo.ac.in"
                     className="text-blue-600 hover:text-blue-700 font-medium text-lg"
                   >
-                    submissions@clm-nluo.ac.in
+                    cmn@nluo.ac.in
                   </a>
                 </div>
                 <div className="text-sm text-gray-600">
@@ -148,18 +148,18 @@ export default function SubmissionsPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               <div className="bg-white rounded-lg shadow p-6">
-                <h3 className="font-semibold text-gray-900 mb-2">How long does the review process take?</h3>
-                <p className="text-gray-600">The editorial review process typically takes 2-3 weeks. Complex articles may require additional time for thorough evaluation.</p>
+                <h3 className="font-semibold text-gray-900 mb-2">What is the review process?</h3>
+                <p className="text-gray-600">The Chronicle follows a structured two-tier blind peer-review system. Tier-1 review by Student Editors (4 working days), followed by Tier-2 review by Board of Editors. Total process: within 30 days.</p>
               </div>
               
               <div className="bg-white rounded-lg shadow p-6">
-                <h3 className="font-semibold text-gray-900 mb-2">Do you accept articles from students?</h3>
-                <p className="text-gray-600">Yes, we welcome high-quality submissions from law students, particularly those pursuing advanced degrees or with significant research experience.</p>
+                <h3 className="font-semibold text-gray-900 mb-2">What types of submissions are accepted?</h3>
+                <p className="text-gray-600">We accept Articles, Case Comments, Legislative Comments, and Book Reviews falling within the scope of Mediation and Alternative Dispute Resolution.</p>
               </div>
               
               <div className="bg-white rounded-lg shadow p-6">
-                <h3 className="font-semibold text-gray-900 mb-2">Is there a publication fee?</h3>
-                <p className="text-gray-600">No, there are no charges for submitting or publishing articles on CLM Blog. We are committed to open access legal scholarship.</p>
+                <h3 className="font-semibold text-gray-900 mb-2">What is the plagiarism policy?</h3>
+                <p className="text-gray-600">We maintain strict adherence to UGC guidelines with a 10% similarity limit. All submissions undergo pre-screening using industry-standard plagiarism detection software.</p>
               </div>
             </div>
           </div>

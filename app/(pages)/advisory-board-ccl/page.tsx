@@ -174,7 +174,7 @@ export default function AdvisoryBoardPage() {
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   Our Advisory Board brings together leading practitioners from top law firms, 
                   distinguished academics, and industry experts from around the world. This diverse 
-                  composition ensures that CLM Blog maintains global perspectives while addressing 
+                  composition ensures that NLUO Mediation Chronicle maintains global perspectives while addressing 
                   local corporate law challenges.
                 </p>
                 <p className="text-gray-600 leading-relaxed">
@@ -267,7 +267,7 @@ export default function AdvisoryBoardPage() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:advisory@clm-nluo.ac.in"
+                href="mailto:cmn@nluo.ac.in"
                 className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
               >
                 Contact Advisory Board

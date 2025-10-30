@@ -52,7 +52,7 @@ export default function SubmissionsPage() {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-blue-600 mb-4">Submission Themes</h3>
+                <h3 className="text-lg font-semibold text-blue-600 mb-4">Submission Themes{"(Non-Exhaustive)"}</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-start">
                     <FileText className="h-5 w-5 text-blue-500 mr-2 mt-0.5 shrink-0" />
@@ -111,7 +111,7 @@ export default function SubmissionsPage() {
                     <CheckCircle className="h-8 w-8 text-green-600" />
                   </div>
                   <h4 className="font-semibold text-gray-900 mb-2">4. Publish</h4>
-                  <p className="text-sm text-gray-600">Article goes live on CLM Blog with author attribution</p>
+                  <p className="text-sm text-gray-600">Article goes live on NLUO Mediation Chronicle with author attribution</p>
                 </div>
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function SubmissionsPage() {
             <div className="space-y-6">
               <div className="bg-white rounded-lg shadow p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">What is the review process?</h3>
-                <p className="text-gray-600">The Chronicle follows a structured two-tier blind peer-review system. Tier-1 review by Student Editors (4 working days), followed by Tier-2 review by Board of Editors. Total process: within 30 days.</p>
+                <p className="text-gray-600">The Chronicle follows a structured two-tier blind peer-review system. Tier-1 review by Student Editors (4 working days), followed by Tier-2 review by Board of Editors. Total process: Approximately within 30 days.</p>
               </div>
               
               <div className="bg-white rounded-lg shadow p-6">

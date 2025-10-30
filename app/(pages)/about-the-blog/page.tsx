@@ -100,27 +100,6 @@ export default function AboutTheBlogPage() {
             </div>
           </section>
 
-          {/* Statistics */}
-          <div className="bg-blue-50 rounded-lg p-8 mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-                <div className="text-gray-600">Articles Published</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-                <div className="text-gray-600">Expert Contributors</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-blue-600 mb-2">10K+</div>
-                <div className="text-gray-600">Monthly Readers</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-blue-600 mb-2">25+</div>
-                <div className="text-gray-600">Events Organized</div>
-              </div>
-            </div>
-          </div>
 
           {/* Our Commitment */}
           <section className="mb-16">
@@ -160,32 +139,6 @@ export default function AboutTheBlogPage() {
             </div>
           </section>
 
-          {/* Call to Action */}
-          <div className="text-center bg-gray-50 rounded-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Join Our Community</h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Become part of our growing community of legal professionals, academics, and students. 
-              Subscribe to our newsletter, contribute your insights, or participate in our events.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/submissions"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-              >
-                Submit an Article
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              
-              <Link
-                href="/newsletters"
-                className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium"
-              >
-                Subscribe to Newsletter
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </div>
-          </div>
         </div>
       </main>
       

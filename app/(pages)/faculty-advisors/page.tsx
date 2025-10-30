@@ -167,7 +167,7 @@ export default function FacultyAdvisorsPage() {
               </h2>
               <p className="text-gray-600 leading-relaxed">
                 Our faculty advisors bring decades of combined experience in legal education, research, 
-                and practice. They provide strategic guidance to CLM Blog, ensuring that our content 
+                and practice. They provide strategic guidance to NLUO Mediation Chronicle, ensuring that our content 
                 maintains the highest standards of academic rigor while remaining relevant to contemporary 
                 legal practice. Each advisor contributes their unique expertise in specialized areas of 
                 corporate law, creating a comprehensive knowledge base for our publications and research initiatives.
@@ -276,32 +276,7 @@ export default function FacultyAdvisorsPage() {
             </div>
           </section>
 
-          {/* Contact Information */}
-          <div className="bg-gray-50 rounded-lg p-8 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Connect with Our Faculty</h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Interested in collaborating on research or have questions about our academic programs? 
-              Our faculty advisors are always open to meaningful academic and professional exchanges.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:ccl@nluo.ac.in"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-              >
-                <Mail className="mr-2 h-5 w-5" />
-                Contact Centre for Corporate Law
-              </a>
-              
-              <a
-                href="tel:+91-671-2866850"
-                className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                Call Main Office
-              </a>
-            </div>
-          </div>
+          
         </div>
       </main>
       

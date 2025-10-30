@@ -17,10 +17,8 @@ import {
 const footerLinks = {
   quickLinks: [
     { name: 'Home', href: '/' },
-    { name: 'CLM Blog', href: '/blog' },
-    { name: 'Editorial Blog', href: '/editorial-blog' },
+    { name: 'NLUO Mediation Chronicle', href: '/blog' },
     { name: 'Submissions', href: '/submissions' },
-    { name: 'Newsletter', href: '/newsletters' },
     { name: 'Events', href: '/events' }
   ],
   aboutUs: [

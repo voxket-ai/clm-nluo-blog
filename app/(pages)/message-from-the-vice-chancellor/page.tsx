@@ -85,7 +85,7 @@ export default function MessageFromVCPage() {
               </p>
               
               <p>
-                The establishment of CLM Blog represents more than just an academic initiative; it embodies our commitment 
+                The establishment of NLUO Mediation Chronicle represents more than just an academic initiative; it embodies our commitment 
                 to bridging the gap between theoretical knowledge and practical application. In today's rapidly evolving 
                 corporate landscape, where legal frameworks must adapt to technological innovations, global market dynamics, 
                 and changing societal expectations, the need for rigorous, accessible, and timely legal scholarship has never been greater.
@@ -99,7 +99,7 @@ export default function MessageFromVCPage() {
               </p>
               
               <p>
-                Through CLM Blog, we aim to create a vibrant intellectual community where practitioners, academics, students, 
+                Through NLUO Mediation Chronicle, we aim to create a vibrant intellectual community where practitioners, academics, students, 
                 and policymakers can engage in meaningful dialogue about the most pressing issues in corporate law. Our 
                 distinguished advisory board, comprising leading experts from India and abroad, ensures that our content 
                 maintains the highest standards of academic rigor while remaining relevant to contemporary legal practice.
@@ -121,7 +121,7 @@ export default function MessageFromVCPage() {
               
               <p>
                 The challenges facing corporate law today – from governance reforms and regulatory compliance to ESG 
-                considerations and technological disruption – require collaborative solutions. Through CLM Blog, we hope 
+                considerations and technological disruption – require collaborative solutions. Through NLUO Mediation Chronicle, we hope 
                 to foster the kind of interdisciplinary dialogue and innovative thinking that will drive meaningful progress 
                 in our field.
               </p>
@@ -152,7 +152,7 @@ export default function MessageFromVCPage() {
                 <h3 className="text-xl font-bold text-gray-900">Our Vision</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                To establish CLM as a leading center for corporate law scholarship that influences policy, 
+                To establish CMN as a leading center for mediation and negotiation scholarship that influences policy, 
                 shapes practice, and educates the next generation of legal professionals with the knowledge 
                 and skills needed to navigate an increasingly complex corporate environment.
               </p>

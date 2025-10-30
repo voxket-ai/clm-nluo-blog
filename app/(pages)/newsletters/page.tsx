@@ -77,7 +77,7 @@ export default function NewslettersPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              CLM <span className="text-blue-600">#Insights</span>
+              NLUO Mediation Chronicle <span className="text-blue-600">#Insights</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
               Our monthly newsletter provides comprehensive insights into the latest developments in corporate law, 
@@ -112,7 +112,7 @@ export default function NewslettersPage() {
                   About <span className="text-blue-600">#Insights</span>
                 </h2>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  CLM has endeavoured to release a monthly newsletter on corporate law titled '#Insights', 
+                  NLUO Mediation Chronicle has endeavoured to release a monthly newsletter on mediation and negotiation titled '#Insights', 
                   to create an effective platform to foster discussion and discourse on the latest updates 
                   in the corporate world.
                 </p>

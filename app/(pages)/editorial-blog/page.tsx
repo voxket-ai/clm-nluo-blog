@@ -2,69 +2,81 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Linkedin } from 'lucide-react'
 
-// Sample editorial board data
+// Advisory Editorial Board members
 const boardMembers = [
   {
-    name: "Dr. Vinod Kothari",
-    position: "Managing Partner",
-    organization: "Vinod Kothari and Company",
+    name: "Prof. (Dr.) V. K Ahuja",
+    position: "Director",
+    organization: "Indian Law Institute",
     image: "/api/placeholder/200/200",
-    linkedin: "https://in.linkedin.com/in/vinodkothari"
+    linkedin: "#"
   },
   {
-    name: "Ketan D. Parikh",
-    position: "Senior Counsel (Arbitration)",
-    organization: "High Court of Bombay",
+    name: "Pauline McKay",
+    position: "Co-ordinator",
+    organization: "University of Strathclyde Mediation Clinic",
     image: "/api/placeholder/200/200",
-    linkedin: "https://www.linkedin.com/in/ketan-parikh-a002539/"
+    linkedin: "#"
   },
   {
-    name: "Steve Levitsky",
-    position: "Merger Clearance and Antitrust Counseling",
-    organization: "Manhattan, New York, United States",
+    name: "Daniel Brantes Ferreira",
+    position: "CEO",
+    organization: "Brazilian Centre for Mediation and Arbitration",
     image: "/api/placeholder/200/200",
-    linkedin: "https://www.linkedin.com/in/steve-levitsky-69143a51/"
+    linkedin: "#"
   },
   {
-    name: "Adhiraj Gupta",
-    position: "Senior Associate",
-    organization: "Walker Morris LLP",
+    name: "Prof. (Dr.) Sunanda Bharti",
+    position: "Professor of Law",
+    organization: "Law Centre - I, University of Delhi",
     image: "/api/placeholder/200/200",
-    linkedin: "https://www.linkedin.com/in/adhiraj-gupta-24204750"
+    linkedin: "#"
   },
   {
-    name: "Anshuman Sakle",
-    position: "Partner (Competition/Antitrust Law)",
-    organization: "Khaitan & Co.",
+    name: "Prof. Ved Kumari",
+    position: "Vice-Chancellor",
+    organization: "National Law University Odisha",
     image: "/api/placeholder/200/200",
-    linkedin: "https://www.linkedin.com/in/anshumansakle/"
+    linkedin: "#"
   },
   {
-    name: "Anjana Potti",
-    position: "Partner (Banking & Finance)",
-    organization: "Shardul Amarchand Mangaldas & Co",
+    name: "Akshay Verma",
+    position: "Co-Director",
+    organization: "NLUO CMN",
     image: "/api/placeholder/200/200",
-    linkedin: "https://www.linkedin.com/in/anjana-potti-37670413/"
+    linkedin: "#"
   }
 ]
 
+// Guest Editor
+const guestEditor = {
+  name: "Aniruddha Mahadevan Sethi",
+  position: "Guest Editor",
+  organization: "Mediation & Negotiation Expert",
+  image: "/api/placeholder/200/200"
+}
+
+// Student Editors
 const studentEditors = [
   {
-    name: "Shubham Singh",
-    position: "Editor in Chief",
+    name: "Yashaswi Agrima",
+    position: "Student Editor",
     image: "/api/placeholder/200/200"
   },
   {
-    name: "Paavanta Arya",
-    position: "Senior Editor",
-    image: "/api/placeholder/200/200"
-  },
-  {
-    name: "Aditya Danturty",
-    position: "Senior Editor",
+    name: "Manvi",
+    position: "Student Editor",
     image: "/api/placeholder/200/200"
   }
 ]
+
+// Blog Administrator
+const blogAdministrator = {
+  name: "Nimisha Sarma",
+  position: "Blog Administrator",
+  organization: "NLUO CMN",
+  image: "/api/placeholder/200/200"
+}
 
 export default function EditorialBlogPage() {
   return (
@@ -76,17 +88,17 @@ export default function EditorialBlogPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Editorial <span className="text-blue-600">Board</span>
+              Editorial <span className="text-blue-600">Structure</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet our distinguished editorial board comprising leading legal professionals, scholars, and experts who guide our content and maintain the highest standards of legal commentary.
+              Meet our editorial team organized in four distinct tiers, each playing a crucial role in maintaining the quality and standards of NLUO Mediation Chronicle.
             </p>
           </div>
 
-          {/* Board of Editors */}
+          {/* 1. Advisory Editorial Board */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Board of <span className="text-blue-600">Editors</span>
+              1. Advisory Editorial <span className="text-blue-600">Board</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {boardMembers.map((member, index) => (
@@ -111,15 +123,32 @@ export default function EditorialBlogPage() {
             </div>
           </section>
 
-          {/* Student Editors */}
+          {/* 2. Guest Editor(s) */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Student <span className="text-blue-600">Editors</span>
+              2. Guest <span className="text-blue-600">Editor(s)</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="max-w-md mx-auto">
+              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-linear-to-r from-green-400 to-teal-500 flex items-center justify-center">
+                  <span className="text-white text-xl font-bold">{guestEditor.name.split(' ').map(n => n[0]).join('')}</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{guestEditor.name}</h3>
+                <p className="text-blue-600 font-medium mb-1">{guestEditor.position}</p>
+                <p className="text-gray-600 text-sm">{guestEditor.organization}</p>
+              </div>
+            </div>
+          </section>
+
+          {/* 3. Student Editors */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              3. Student <span className="text-blue-600">Editors</span>
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
               {studentEditors.map((editor, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-linear-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                  <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-linear-to-r from-indigo-400 to-purple-500 flex items-center justify-center">
                     <span className="text-white text-xl font-bold">{editor.name.split(' ').map(n => n[0]).join('')}</span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{editor.name}</h3>
@@ -129,18 +158,19 @@ export default function EditorialBlogPage() {
             </div>
           </section>
 
-          {/* Blog Administrator */}
+          {/* 4. Blog Administrator */}
           <section>
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Blog <span className="text-blue-600">Administrator</span>
+              4. Blog <span className="text-blue-600">Administrator</span>
             </h2>
             <div className="max-w-md mx-auto">
               <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
                 <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-linear-to-r from-purple-400 to-pink-500 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">SG</span>
+                  <span className="text-white text-xl font-bold">{blogAdministrator.name.split(' ').map(n => n[0]).join('')}</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Surbhi Goyal</h3>
-                <p className="text-blue-600 font-medium">Blog Administrator</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{blogAdministrator.name}</h3>
+                <p className="text-blue-600 font-medium mb-1">{blogAdministrator.position}</p>
+                <p className="text-gray-600 text-sm">{blogAdministrator.organization}</p>
               </div>
             </div>
           </section>

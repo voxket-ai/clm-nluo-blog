@@ -192,7 +192,7 @@ export default function EventsPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              CLM <span className="text-blue-600">Events</span>
+              CMN <span className="text-blue-600">Events</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Join us for insightful discussions, workshops, and conferences featuring leading experts in corporate law. 

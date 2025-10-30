@@ -9,7 +9,7 @@ const blogPosts = [
     id: 1,
     title: "Corporate Governance Reforms: A Comprehensive Analysis",
     excerpt: "Exploring the latest changes in corporate governance regulations and their implications for modern businesses in the evolving legal landscape.",
-    author: "CLM NLUO",
+    author: "CMN NLUO",
     date: "Oct 25, 2025",
     readTime: "6 min read",
     category: "Corporate Law"
@@ -18,7 +18,7 @@ const blogPosts = [
     id: 2,
     title: "Securities Law Updates: Market Regulations and Compliance",
     excerpt: "Recent developments in securities law and their impact on market operations, investor protection, and regulatory compliance.",
-    author: "CLM NLUO",
+    author: "CMN NLUO",
     date: "Oct 22, 2025",
     readTime: "4 min read",
     category: "Securities Law"
@@ -27,7 +27,7 @@ const blogPosts = [
     id: 3,
     title: "Merger & Acquisition Trends in 2025",
     excerpt: "An in-depth look at the current M&A landscape, emerging trends, and regulatory considerations for corporate transactions.",
-    author: "CLM NLUO",
+    author: "CMN NLUO",
     date: "Oct 20, 2025",
     readTime: "5 min read",
     category: "M&A"
@@ -36,7 +36,7 @@ const blogPosts = [
     id: 4,
     title: "Insolvency Law: Recent Judicial Pronouncements",
     excerpt: "Analysis of recent court decisions in insolvency matters and their implications for corporate restructuring processes.",
-    author: "CLM NLUO",
+    author: "CMN NLUO",
     date: "Oct 18, 2025",
     readTime: "7 min read",
     category: "Insolvency Law"
@@ -45,7 +45,7 @@ const blogPosts = [
     id: 5,
     title: "Banking Regulations: Digital Transformation Impact",
     excerpt: "How digital transformation is reshaping banking regulations and compliance requirements in the modern financial sector.",
-    author: "CLM NLUO",
+    author: "CMN NLUO",
     date: "Oct 15, 2025",
     readTime: "5 min read",
     category: "Banking Law"
@@ -54,7 +54,7 @@ const blogPosts = [
     id: 6,
     title: "Environmental Law and Corporate Responsibility",
     excerpt: "The growing intersection of environmental regulations and corporate governance, including ESG compliance requirements.",
-    author: "CLM NLUO",
+    author: "CMN NLUO",
     date: "Oct 12, 2025",
     readTime: "6 min read",
     category: "Environmental Law"
@@ -71,7 +71,7 @@ export default function BlogPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              CLM <span className="text-blue-600">Blog</span>
+              NLUO Mediation <span className="text-blue-600">Chronicle</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover in-depth analysis, expert commentary, and the latest developments in corporate law from leading legal professionals and scholars.

@@ -28,7 +28,7 @@ const navigationItems = [
     href: '/about-the-blog',
     submenu: [
       { name: 'About the Chronicle', href: '/about-the-blog' },
-      { name: 'About CMN Centre', href: '/faculty-advisors' },
+      { name: 'About the Centre', href: '/faculty-advisors' },
       { name: 'Editorial Board', href: '/advisory-board-ccl' },
       { name: 'Message from VC', href: '/message-from-the-vice-chancellor' }
     ]
@@ -51,8 +51,8 @@ export default function Navbar() {
           <div className="shrink-0">
             <Link href="/" className="flex items-center space-x-3">
               <Image
-                src="/logo.jpeg"
-                alt="NLUO CMN Logo"
+                src="/logo.png"
+                alt="NLUO Logo"
                 width={50}
                 height={50}
                 className="rounded-full"

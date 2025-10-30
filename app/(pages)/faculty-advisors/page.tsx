@@ -151,7 +151,7 @@ export default function FacultyAdvisorsPage() {
           {/* Header */}
                     <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About the <span className="text-blue-600">CMN Centre</span>
+              About the <span className="text-blue-600">Centre</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               The NLUO Centre for Mediation and Negotiation (NLUO CMN) was established in March 2014 and reconstituted in 2022 
@@ -189,7 +189,7 @@ export default function FacultyAdvisorsPage() {
                   and practical training in Alternative Dispute Resolution (ADR).
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  As India's first mediation cell operated by a higher-education institution, CMN aspires to be a Centre of 
+                  As India's first mediation cell operated by a higher-education institution, the Centre aspires to be a Centre of 
                   Excellence in ADR, fostering peaceful dispute resolution, mutual understanding, and effective communication.
                 </p>
               </div>
@@ -197,7 +197,7 @@ export default function FacultyAdvisorsPage() {
               <div className="h-64 bg-linear-to-r from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center">
                 <div className="text-center text-white">
                   <Users className="h-16 w-16 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold">CMN Centre</h3>
+                  <h3 className="text-xl font-bold">Centre for Mediation and Negotiation</h3>
                   <p className="text-blue-100">Excellence in ADR</p>
                 </div>
               </div>

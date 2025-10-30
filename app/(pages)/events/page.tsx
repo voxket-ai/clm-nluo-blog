@@ -3,78 +3,136 @@ import Footer from '@/components/Footer'
 import { Calendar, Clock, MapPin, Users, ExternalLink, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
-// Sample events data
+// Upcoming events data
 const upcomingEvents = [
   {
     id: 1,
-    title: "Corporate Governance in the Digital Age",
-    subtitle: "Webinar Series",
-    date: "November 15, 2025",
-    time: "2:00 PM - 4:00 PM IST",
-    location: "Virtual Event",
-    description: "Explore how digital transformation is reshaping corporate governance practices and regulatory compliance in modern businesses.",
-    speakers: ["Dr. Rajesh Kumar", "Ms. Priya Sharma", "Prof. Anil Mehta"],
+    title: "3rd GAJE-NLUO Mediation and Negotiation Conclave",
+    subtitle: "International Conclave",
+    date: "TBA 2026",
+    time: "5 Days Program",
+    location: "NLUO Campus & Virtual",
+    description: "The third edition of our flagship event in collaboration with Global Alliance for Justice Education (GAJE), featuring workshops, conferences, and negotiation competitions.",
+    speakers: ["International ADR Experts", "Leading Mediators", "Academic Scholars"],
     registrationLink: "#",
-    category: "Webinar",
-    status: "Registration Open"
-  },
-  {
-    id: 2,
-    title: "Annual Corporate Law Conference 2025",
-    subtitle: "Two-Day Conference",
-    date: "December 5-6, 2025",
-    time: "9:00 AM - 6:00 PM IST",
-    location: "NLUO Campus, Cuttack",
-    description: "Join leading corporate law experts, practitioners, and academics for discussions on emerging trends and challenges in corporate law.",
-    speakers: ["Justice A.K. Sikri", "Mr. Cyril Shroff", "Ms. Menaka Guruswamy"],
-    registrationLink: "#",
-    category: "Conference",
-    status: "Early Bird Registration"
-  },
-  {
-    id: 3,
-    title: "ESG Compliance Workshop",
-    subtitle: "Interactive Workshop",
-    date: "November 28, 2025",
-    time: "10:00 AM - 5:00 PM IST",
-    location: "Hybrid (NLUO + Virtual)",
-    description: "Hands-on workshop covering Environmental, Social, and Governance compliance requirements for Indian corporations.",
-    speakers: ["CA Vikram Singh", "Ms. Anjali Nair"],
-    registrationLink: "#",
-    category: "Workshop",
-    status: "Registration Open"
+    category: "Conclave",
+    status: "Coming Soon"
   }
 ]
 
 const pastEvents = [
   {
+    id: 2,
+    title: "2nd GAJE-NLUO Mediation and Negotiation Conclave",
+    subtitle: "International Conclave",
+    date: "29th January – 2nd February, 2025",
+    time: "5 Days Program",
+    location: "NLUO Campus & Virtual",
+    description: "The second GAJE-NLUO Mediation and Negotiation Conclave featured expert-led workshops on mediation and negotiation, an International Conference on Dispute Resolution Mechanisms, and the 2nd NLUO National Negotiation Competition.",
+    speakers: ["International ADR Experts", "Leading Mediators"],
+    category: "Conclave",
+    attendees: "250+ participants"
+  },
+  {
+    id: 3,
+    title: "NLUO CMN Stall at 3rd NLUO Flower Show",
+    subtitle: "Outreach Program",
+    date: "25th January - 26th January, 2025",
+    time: "Full Day",
+    location: "NLUO Campus",
+    description: "The Centre participated in the third annual Flower Fest at NLUO by setting up an awareness stall showcasing mediation services and introducing skilled mediators to the community.",
+    category: "Outreach",
+    attendees: "Community engagement"
+  },
+  {
     id: 4,
-    title: "Securities Law Reforms 2025",
-    subtitle: "Panel Discussion",
-    date: "October 10, 2025",
-    location: "Virtual Event",
-    description: "Comprehensive analysis of recent SEBI reforms and their impact on capital markets.",
-    attendees: "250+ participants",
-    recording: "#"
+    title: "Single Credit Course: Mediation and Negotiation",
+    subtitle: "Educational Program",
+    date: "7th December – 29th December, 2024",
+    time: "16 hours across 8 sessions",
+    location: "Online Mode",
+    description: "Successfully conducted course blending theoretical insights with experiential learning through simulations, case studies, and role-plays on ADR mechanisms, communication techniques, and the Mediation Act 2023.",
+    category: "Course",
+    attendees: "43 students"
   },
   {
     id: 5,
-    title: "Insolvency & Bankruptcy Code: 5 Years Later",
-    subtitle: "Academic Conference",
-    date: "September 20, 2025",
-    location: "NLUO Campus",
-    description: "Retrospective analysis of IBC implementation and its effectiveness in corporate restructuring.",
-    attendees: "180+ participants",
-    recording: "#"
+    title: "4th Annual Mediation Clinic Conference",
+    subtitle: "International Conference",
+    date: "21st March 2024",
+    time: "Full Day",
+    location: "University of Strathclyde, Glasgow",
+    description: "NLUO CMN co-director represented the centre in the conference on 'Learning Through Practice: Mediation Clinics and Mediator Education', highlighting national and international achievements.",
+    category: "Conference",
+    attendees: "Global participants"
   },
   {
     id: 6,
-    title: "Contract Drafting Masterclass",
-    subtitle: "Professional Development",
-    date: "August 15, 2025",
-    location: "Virtual Event",
-    description: "Advanced techniques and best practices for drafting commercial contracts and agreements.",
-    attendees: "320+ participants",
+    title: "Single Credit Course: Negotiation and Mediation Training",
+    subtitle: "Joint Educational Program",
+    date: "24th February – 25th February 2024",
+    time: "16 hours over 2 days",
+    location: "NLUO Campus",
+    description: "Joint course by CPPLGG and NLUO CMN in response to the Mediation Act 2023, providing practical skills in negotiation and mediation through theoretical discussions and role-play exercises.",
+    category: "Course",
+    attendees: "Multiple participants"
+  },
+  {
+    id: 7,
+    title: "NLUO CMN Stall at 2nd NLUO Flower Show",
+    subtitle: "Outreach Program",
+    date: "26th January - 27th January 2024",
+    time: "Full Day",
+    location: "NLUO Campus",
+    description: "Second annual flower festival awareness stall promoting alternative dispute resolution programs and highlighting benefits of mediation over litigation.",
+    category: "Outreach",
+    attendees: "Community engagement"
+  },
+  {
+    id: 8,
+    title: "1st GAJE-NLUO Mediation and Negotiation Conclave",
+    subtitle: "Inaugural Conclave",
+    date: "9th August – 13th August 2023",
+    time: "5 Days in 2 Phases",
+    location: "Hybrid (NLUO Campus + Virtual)",
+    description: "First conclave in collaboration with Global Alliance for Justice Education featuring workshops, scholarly discussions, and the inaugural NLUO National Negotiation Competition with 28 law schools participating.",
+    category: "Conclave",
+    attendees: "250+ participants"
+  },
+  {
+    id: 9,
+    title: "2nd Outreach Drive under Project KUTMB",
+    subtitle: "Community Outreach",
+    date: "16th July 2023",
+    time: "Full Day",
+    location: "Baba Tilakanagar Village",
+    description: "CMN conducted outreach drive to educate villagers about mediation process, emphasizing hassle-free approach and speedy justice through door-to-door interactions and demonstrations.",
+    category: "Outreach",
+    attendees: "Village community",
+    recording: "#"
+  },
+  {
+    id: 10,
+    title: "1st Outreach Drive under Project KUTMB",
+    subtitle: "Community Outreach",
+    date: "8th July 2023",
+    time: "Full Day",
+    location: "Brajebeharipur Tala Sahi Village",
+    description: "First outreach drive making villagers aware of mediation process through skits, demonstrations, and door-to-door interactions. Identified land and construction disputes for future resolution.",
+    category: "Outreach",
+    attendees: "45-50 villagers",
+    recording: "#"
+  },
+  {
+    id: 11,
+    title: "NLUO Mediation Cell Inauguration",
+    subtitle: "Historic Launch",
+    date: "15th August 2022",
+    time: "Full Day",
+    location: "NLUO Campus",
+    description: "Inaugurated by Hon'ble Dr Justice S. Muralidhar, Chancellor NLUO & Chief Justice, High Court of Orissa. Launch of India's first institutionally run Alternative Dispute Resolution forum.",
+    category: "Inauguration",
+    attendees: "NLUO community and local residents",
     recording: "#"
   }
 ]
@@ -157,7 +215,7 @@ function EventCard({ event, isPast = false }: { event: any, isPast?: boolean }) 
         <div className="flex gap-3">
           {!isPast ? (
             <Link
-              href={event.registrationLink}
+              href={event.registrationLink || "#"}
               className="flex items-center justify-center flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-medium"
             >
               Register Now
@@ -165,10 +223,10 @@ function EventCard({ event, isPast = false }: { event: any, isPast?: boolean }) 
             </Link>
           ) : (
             <Link
-              href={event.recording}
+              href={event.recording || "#"}
               className="flex items-center justify-center flex-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors font-medium"
             >
-              View Recording
+              View Details
               <ExternalLink className="ml-2 h-4 w-4" />
             </Link>
           )}
@@ -192,7 +250,7 @@ export default function EventsPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              CMN <span className="text-blue-600">Events</span>
+              Mediation & Negotiation <span className="text-blue-600">Events</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Join us for insightful discussions, workshops, and conferences featuring leading experts in corporate law. 

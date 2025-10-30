@@ -152,7 +152,7 @@ export default function MessageFromVCPage() {
                 <h3 className="text-xl font-bold text-gray-900">Our Vision</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                To establish CMN as a leading center for mediation and negotiation scholarship that influences policy, 
+                To establish the Centre as a leading center for mediation and negotiation scholarship that influences policy, 
                 shapes practice, and educates the next generation of legal professionals with the knowledge 
                 and skills needed to navigate an increasingly complex corporate environment.
               </p>

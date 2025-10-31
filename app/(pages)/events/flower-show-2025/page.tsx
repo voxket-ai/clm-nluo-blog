@@ -151,7 +151,7 @@ export default function FlowerShow2025Page() {
                     <span className="text-green-600 font-bold text-lg">AK</span>
                   </div>
                   <h3 className="font-semibold text-gray-900">Mr. Abhay Kumar</h3>
-                  <p className="text-gray-600 text-sm">Centre Head</p>
+                  <p className="text-gray-600 text-sm">Director</p>
                 </div>
                 
                 <div className="text-center">
@@ -159,7 +159,7 @@ export default function FlowerShow2025Page() {
                     <span className="text-purple-600 font-bold text-lg">SP</span>
                   </div>
                   <h3 className="font-semibold text-gray-900">Ms. Suryasmita Parida</h3>
-                  <p className="text-gray-600 text-sm">Centre Head</p>
+                  <p className="text-gray-600 text-sm">Co-Director</p>
                 </div>
               </div>
             </div>

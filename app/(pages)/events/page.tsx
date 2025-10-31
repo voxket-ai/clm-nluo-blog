@@ -285,7 +285,7 @@ export default function EventsPage() {
           <div className="mb-16">
             <div className="relative h-80 rounded-lg overflow-hidden shadow-xl">
               <img
-                src="/images/photo4.jpeg"
+                src="/images/photo3.jpeg"
                 alt="NLUO Mediation Events"
                 className="w-full h-full object-cover"
               />

@@ -27,20 +27,12 @@ const footerLinks = {
     { name: 'Advisory Board', href: '/advisory-board-ccl' },
     { name: 'Message from VC', href: '/message-from-the-vice-chancellor' }
   ],
-  legal: [
-    { name: 'Privacy Policy', href: '/privacy-policy' },
-    { name: 'Terms of Service', href: '/terms-of-service' },
-    { name: 'Cookie Policy', href: '/cookie-policy' },
-    { name: 'Disclaimer', href: '/disclaimer' }
-  ]
 }
 
 const socialLinks = [
-  { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/nluo-cmn', color: 'hover:text-blue-600' },
-  { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/nluo_cmn', color: 'hover:text-blue-400' },
-  { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/nluo-cmn', color: 'hover:text-blue-700' },
+
+  { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/nluo-cmn-57911a248/', color: 'hover:text-blue-700' },
   { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/nluo_cmn', color: 'hover:text-pink-600' },
-  { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@nluo-cmn', color: 'hover:text-red-600' }
 ]
 
 export default function Footer() {
@@ -76,10 +68,7 @@ export default function Footer() {
                   cmn@nluo.ac.in
                 </a>
               </div>
-              <div className="flex items-center text-gray-300">
-                <Phone className="h-4 w-4 mr-3 text-blue-400" />
-                <span>+91 (674) 714-3391</span>
-              </div>
+             
               <div className="flex items-start text-gray-300">
                 <MapPin className="h-4 w-4 mr-3 text-blue-400 mt-1 shrink-0" />
                 <span>National Law University Odisha, Sector-13, CDA, Cuttack, Odisha - 753014</span>
@@ -179,17 +168,6 @@ export default function Footer() {
               © 2025 by NLUO Centre for Mediation and Negotiation - National Law University Odisha. All rights reserved.
             </div>
             
-            <div className="flex space-x-6">
-              {footerLinks.legal.map((link) => (
-                <Link 
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-400 hover:text-blue-400 text-sm transition-colors duration-200"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
           </div>
         </div>
       </div>

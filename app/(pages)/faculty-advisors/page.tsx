@@ -237,7 +237,7 @@ export default function FacultyAdvisorsPage() {
                   />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Mr. Abhay Kumar</h3>
-                <p className="text-blue-600 font-medium text-sm">Centre Head</p>
+                <p className="text-blue-600 font-medium text-sm">Director, NLUO CMN</p>
               </div>
               
               <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
@@ -249,7 +249,7 @@ export default function FacultyAdvisorsPage() {
                   />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Dr. Akshay Verma</h3>
-                <p className="text-blue-600 font-medium text-sm">Centre Head</p>
+                <p className="text-blue-600 font-medium text-sm">Co-Director, NLUO CMN</p>
               </div>
               
               <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
@@ -261,7 +261,7 @@ export default function FacultyAdvisorsPage() {
                   />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Ms. Suryasmita Parida</h3>
-                <p className="text-blue-600 font-medium text-sm">Centre Head</p>
+                <p className="text-blue-600 font-medium text-sm">Co-Director, NLUO CMN</p>
               </div>
             </div>
           </section>

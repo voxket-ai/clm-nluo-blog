@@ -164,57 +164,66 @@ export default function AdvisoryBoardPage() {
             </p>
           </div>
 
-          {/* Introduction */}
-          <div className="bg-blue-50 rounded-lg p-8 mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Global <span className="text-blue-600">Expertise</span>
-                </h2>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  Our Advisory Board brings together leading practitioners from top law firms, 
-                  distinguished academics, and industry experts from around the world. This diverse 
-                  composition ensures that NLUO Mediation Chronicle maintains global perspectives while addressing 
-                  local corporate law challenges.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  Board members contribute their expertise through content review, strategic guidance, 
-                  guest lectures, and participation in our research initiatives, ensuring that our 
-                  work remains at the forefront of corporate law developments.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-4 text-center">
-                <div className="bg-white p-4 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">{advisoryBoard.length}</div>
-                  <div className="text-sm text-gray-600">Board Members</div>
-                </div>
-                <div className="bg-white p-4 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">5</div>
-                  <div className="text-sm text-gray-600">Countries</div>
-                </div>
-                <div className="bg-white p-4 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">200+</div>
-                  <div className="text-sm text-gray-600">Years Combined Experience</div>
-                </div>
-                <div className="bg-white p-4 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">15+</div>
-                  <div className="text-sm text-gray-600">Practice Areas</div>
-                </div>
-              </div>
-            </div>
-          </div>
+     
 
           {/* Advisory Board Members */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
               Board <span className="text-blue-600">Members</span>
             </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {advisoryBoard.map((member, index) => (
-                <BoardMemberCard key={index} member={member} />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+              {/* Pauline McKay */}
+              <BoardMemberCard
+                member={{
+                  name: "Pauline McKay",
+                  position: "Co-Ordinator",
+                  organization: "University of Strathclyde Mediation Clinic",
+                  location: "Scotland, United Kingdom",
+                  expertise: ["Mediation", "Negotiation", "Dispute Resolution"],
+                  linkedin: "https://uk.linkedin.com/in/pauline-mckay-430a07195?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile",
+                  image: "",
+                  bio: "Pauline McKay is the Co-Ordinator at the University of Strathclyde Mediation Clinic, bringing extensive experience in mediation and negotiation."
+                }}
+              />
+              {/* Daniel Brantes Ferreira */}
+              <BoardMemberCard
+                member={{
+                  name: "Daniel Brantes Ferreira",
+                  position: "CEO",
+                  organization: "Brazilian Centre for Mediation and Arbitration",
+                  location: "Brazil",
+                  expertise: ["Mediation", "Arbitration", "Conflict Resolution"],
+                  linkedin: "https://br.linkedin.com/in/danielbrantes?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile",
+                  image: "",
+                  bio: "Daniel Brantes Ferreira is the CEO of the Brazilian Centre for Mediation and Arbitration, recognized for his leadership in mediation and arbitration."
+                }}
+              />
+              {/* Prof. Ved Kumar */}
+              <BoardMemberCard
+                member={{
+                  name: "Prof. Ved Kumar",
+                  position: "Vice Chancellor",
+                  organization: "National Law University Odisha",
+                  location: "Odisha, India",
+                  expertise: ["Law", "Legal Education", "University Administration"],
+                  linkedin: "",
+                  image: "",
+                  bio: "Prof. Ved Kumar is the Vice Chancellor of National Law University Odisha, with a distinguished career in legal education and administration."
+                }}
+              />
+              {/* Prof. (Dr.) Sunanda Bharti */}
+              <BoardMemberCard
+                member={{
+                  name: "Prof. (Dr.) Sunanda Bharti",
+                  position: "Professor of Law",
+                  organization: "Law Centre-I, University of Delhi",
+                  location: "Delhi, India",
+                  expertise: ["Law", "Legal Research", "Teaching"],
+                  linkedin: "",
+                  image: "",
+                  bio: "Prof. (Dr.) Sunanda Bharti is a Professor of Law at Law Centre-I, University of Delhi, known for her contributions to legal research and teaching."
+                }}
+              />
             </div>
           </section>
 
@@ -257,30 +266,7 @@ export default function AdvisoryBoardPage() {
             </div>
           </section>
 
-          {/* Call to Action */}
-          <div className="bg-gray-50 rounded-lg p-8 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Collaborate with Our Board</h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Interested in contributing to our research initiatives or collaborating with our Advisory Board members? 
-              We welcome partnerships that advance corporate law scholarship and practice.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:cmn@nluo.ac.in"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-              >
-                Contact Advisory Board
-              </a>
-              
-              <a
-                href="/submissions"
-                className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium"
-              >
-                Submit Research Proposal
-              </a>
-            </div>
-          </div>
+     
         </div>
       </main>
       

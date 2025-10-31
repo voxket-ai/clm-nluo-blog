@@ -137,9 +137,23 @@ const pastEvents = [
   }
 ]
 
+// Function to get the detail page URL for each event
+function getEventDetailUrl(eventId: number, eventTitle: string): string {
+  const eventRoutes: { [key: number]: string } = {
+    2: '/events/gaje-conclave-2025',
+    3: '/events/flower-show-2025', 
+    4: '/events/single-credit-course-2024'
+  }
+  
+  return eventRoutes[eventId] || '#'
+}
+
 function EventCard({ event, isPast = false }: { event: any, isPast?: boolean }) {
+  const detailUrl = getEventDetailUrl(event.id, event.title)
+  const hasDetailPage = detailUrl !== '#'
+  
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+    <div className="bg-linear-to-br from-slate-100/95 to-indigo-50/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-slate-200/40">
       <div className="h-2 bg-linear-to-r from-blue-500 to-indigo-600"></div>
       
       <div className="p-6">
@@ -223,7 +237,7 @@ function EventCard({ event, isPast = false }: { event: any, isPast?: boolean }) 
             </Link>
           ) : (
             <Link
-              href={event.recording || "#"}
+              href={hasDetailPage ? detailUrl : (event.recording || "#")}
               className="flex items-center justify-center flex-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors font-medium"
             >
               View Details
@@ -231,9 +245,18 @@ function EventCard({ event, isPast = false }: { event: any, isPast?: boolean }) 
             </Link>
           )}
           
-          <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition-colors font-medium">
-            Learn More
-          </button>
+          {hasDetailPage ? (
+            <Link
+              href={detailUrl}
+              className="px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition-colors font-medium"
+            >
+              Learn More
+            </Link>
+          ) : (
+            <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition-colors font-medium">
+              Learn More
+            </button>
+          )}
         </div>
       </div>
     </div>
@@ -242,7 +265,7 @@ function EventCard({ event, isPast = false }: { event: any, isPast?: boolean }) 
 
 export default function EventsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-slate-50">
       <Navbar />
       
       <main className="py-16">
@@ -253,9 +276,26 @@ export default function EventsPage() {
               Mediation & Negotiation <span className="text-blue-600">Events</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Join us for insightful discussions, workshops, and conferences featuring leading experts in corporate law. 
+              Join us for insightful discussions, workshops, and conferences featuring leading experts in mediation and negotiation. 
               Stay updated with the latest developments and network with professionals in the field.
             </p>
+          </div>
+
+          {/* Featured Event Images */}
+          <div className="mb-16">
+            <div className="relative h-80 rounded-lg overflow-hidden shadow-xl">
+              <img
+                src="/images/photo4.jpeg"
+                alt="NLUO Mediation Events"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-linear-to-r from-blue-900/70 via-transparent to-indigo-900/70">
+                <div className="absolute bottom-8 left-8 text-white">
+                  <h3 className="text-2xl font-bold mb-2">GAJE-NLUO Mediation Conclave</h3>
+                  <p className="text-blue-100">Our flagship international event bringing together global ADR experts</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Upcoming Events */}
@@ -277,7 +317,7 @@ export default function EventsPage() {
           </section>
 
           {/* Newsletter Signup for Events */}
-          <div className="bg-blue-50 rounded-lg p-8 mb-16">
+          <div className="bg-linear-to-r from-blue-50/90 to-indigo-50/80 backdrop-blur-sm rounded-lg p-8 mb-16 border border-blue-100/40">
             <div className="max-w-2xl mx-auto text-center">
               <Calendar className="h-12 w-12 text-blue-600 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Never Miss an Event</h3>

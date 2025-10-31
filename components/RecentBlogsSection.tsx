@@ -14,7 +14,7 @@ const blogPosts = [
     date: "Oct 25, 2025",
     readTime: "6 min read",
     category: "Mediation Law",
-    imageUrl: "/api/placeholder/400/250",
+    imageUrl: "/images/photo6.jpeg",
     featured: true
   },
   {
@@ -25,7 +25,7 @@ const blogPosts = [
     date: "Oct 22, 2025",
     readTime: "4 min read",
     category: "ODR",
-    imageUrl: "/api/placeholder/400/250",
+    imageUrl: "/images/photo7.jpeg",
     featured: false
   },
   {
@@ -36,7 +36,7 @@ const blogPosts = [
     date: "Oct 20, 2025",
     readTime: "5 min read",
     category: "Family Mediation",
-    imageUrl: "/api/placeholder/400/250",
+    imageUrl: "/images/photo8.jpeg",
     featured: false
   },
   {
@@ -47,7 +47,7 @@ const blogPosts = [
     date: "Oct 18, 2025",
     readTime: "7 min read",
     category: "Commercial Mediation",
-    imageUrl: "/api/placeholder/400/250",
+    imageUrl: "/images/photo2.jpeg",
     featured: false
   },
   {
@@ -58,7 +58,7 @@ const blogPosts = [
     date: "Oct 15, 2025",
     readTime: "5 min read",
     category: "Tech & Mediation",
-    imageUrl: "/api/placeholder/400/250",
+    imageUrl: "/images/photo3.jpeg",
     featured: false
   },
   {
@@ -69,7 +69,7 @@ const blogPosts = [
     date: "Oct 12, 2025",
     readTime: "6 min read",
     category: "Community Mediation",
-    imageUrl: "/api/placeholder/400/250",
+    imageUrl: "/images/photo4.jpeg",
     featured: false
   }
 ]
@@ -82,7 +82,7 @@ interface BlogCardProps {
 function BlogCard({ post, featured = false }: BlogCardProps) {
   return (
     <article className={cn(
-      "bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group",
+      "bg-linear-to-br from-slate-100/90 to-blue-50/80 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group border border-slate-200/40",
       featured && "md:col-span-2 lg:col-span-2"
     )}>
       <div className={cn(
@@ -131,13 +131,7 @@ function BlogCard({ post, featured = false }: BlogCardProps) {
           {post.excerpt}
         </p>
         
-        <Link 
-          href={`/blog/${post.id}`}
-          className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
-        >
-          Read More
-          <ArrowRight className="ml-1 h-4 w-4" />
-        </Link>
+     
       </div>
     </article>
   )
@@ -148,7 +142,7 @@ export default function RecentBlogsSection() {
   const regularPosts = blogPosts.filter(post => !post.featured)
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-100/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

@@ -5,56 +5,56 @@ import { Mail, Phone, Linkedin, Award, BookOpen, GraduationCap, Users } from 'lu
 // Sample faculty advisors data
 const facultyAdvisors = [
   {
-    name: "Prof. Dr. Srikrishna Deva Rao",
+    name: "Prof. (Dr.) Ved Kumari",
     position: "Vice-Chancellor",
     organization: "National Law University Odisha",
-    specialization: ["Constitutional Law", "Administrative Law", "Public Policy"],
-    qualifications: ["Ph.D. (Law)", "LL.M.", "B.A. LL.B. (Hons.)"],
-    experience: "25+ years in legal academia and practice",
+    specialization: ["Juvenile Justice", "Criminal Law", "Gender Discrimination", "Clinical Education"],
+    qualifications: ["Ph.D. (Juvenile Justice System)", "LL.M.", "Teaching since 1983"],
+    experience: "40+ years in legal academia and judicial training",
     email: "vc@nluo.ac.in",
     phone: "+91-671-2866850",
     linkedin: "#",
-    image: "/api/placeholder/300/300",
-    bio: "Prof. Dr. Srikrishna Deva Rao is a distinguished legal academic with extensive experience in constitutional and administrative law. He has authored numerous publications and has been instrumental in shaping legal education policy in India."
+    image: "/persons/Prof. (Dr.) Ved Kumari.jpg",
+    bio: "Prof. Ved Kumari is former Dean and Head, Faculty of Law, University of Delhi. She is a pioneer in juvenile justice research and has been instrumental in judicial training reforms, including heading the Delhi Judicial Academy as its first woman Chairperson."
   },
   {
-    name: "Prof. Dr. Manjula Bai",
-    position: "Dean, School of Law",
-    organization: "National Law University Odisha",
-    specialization: ["Corporate Law", "Securities Regulation", "Commercial Law"],
-    qualifications: ["Ph.D. (Law)", "LL.M. (Corporate Law)", "B.A. LL.B."],
-    experience: "20+ years in corporate law research and teaching",
-    email: "dean@nluo.ac.in",
-    phone: "+91-671-2866851",
-    linkedin: "#",
-    image: "/api/placeholder/300/300",
-    bio: "Prof. Dr. Manjula Bai is a renowned expert in corporate law with extensive research contributions in securities regulation and corporate governance. She has advised various government committees on corporate law reforms."
-  },
-  {
-    name: "Prof. Dr. Ravi Kumar Singh",
-    position: "Director, Centre for Corporate Law",
-    organization: "National Law University Odisha",
-    specialization: ["Merger & Acquisitions", "Corporate Governance", "Banking Law"],
-    qualifications: ["Ph.D. (Corporate Law)", "LL.M. (Business Law)", "B.Com. LL.B."],
-    experience: "18+ years in corporate law practice and academia",
-    email: "director.ccl@nluo.ac.in",
-    phone: "+91-671-2866852",
-    linkedin: "#",
-    image: "/api/placeholder/300/300",
-    bio: "Prof. Dr. Ravi Kumar Singh leads the Centre for Corporate Law and specializes in complex corporate transactions and governance issues. He has extensive experience in both practice and academia."
-  },
-  {
-    name: "Prof. Dr. Anita Sharma",
+    name: "Prof. (Dr.) Sunanda Bharti",
     position: "Professor of Law",
-    organization: "National Law University Odisha",
-    specialization: ["Insolvency & Bankruptcy", "Competition Law", "Financial Regulation"],
-    qualifications: ["Ph.D. (Law)", "LL.M. (Commercial Law)", "B.A. LL.B. (Hons.)"],
-    experience: "15+ years in commercial law research",
-    email: "anita.sharma@nluo.ac.in",
-    phone: "+91-671-2866853",
+    organization: "Law Centre - I, University of Delhi",
+    specialization: ["Constitutional Law", "Administrative Law", "Human Rights"],
+    qualifications: ["Ph.D. (Law)", "LL.M.", "B.A. LL.B."],
+    experience: "25+ years in legal academia and research",
+    email: "sunanda.bharti@du.ac.in",
+    phone: "+91-11-27666156",
     linkedin: "#",
-    image: "/api/placeholder/300/300",
-    bio: "Prof. Dr. Anita Sharma is a specialist in insolvency law and competition regulation. She has been actively involved in policy discussions on the Insolvency and Bankruptcy Code and has published extensively on financial regulation."
+    image: "/persons/Prof. (Dr.) Sunanda Bharti.jpg",
+    bio: "Prof. Dr. Sunanda Bharti is a distinguished legal academic with extensive experience in constitutional and human rights law. She has contributed significantly to legal education and policy research."
+  },
+  {
+    name: "Dr. Akshay Verma",
+    position: "Co-Director",
+    organization: "NLUO Centre for Mediation and Negotiation",
+    specialization: ["Alternative Dispute Resolution", "Mediation", "Negotiation"],
+    qualifications: ["Ph.D. (ADR)", "LL.M.", "B.A. LL.B."],
+    experience: "15+ years in ADR practice and teaching",
+    email: "akshay.verma@nluo.ac.in",
+    phone: "+91-671-2866854",
+    linkedin: "#",
+    image: "/persons/Dr. Akshay Verma.jpg",
+    bio: "Dr. Akshay Verma is a specialist in alternative dispute resolution and leads the NLUO Centre for Mediation and Negotiation's academic and practical initiatives."
+  },
+  {
+    name: "Mr. Abhay Kumar",
+    position: "Centre Head",
+    organization: "NLUO Centre for Mediation and Negotiation",
+    specialization: ["Mediation Practice", "ADR Administration", "Community Mediation"],
+    qualifications: ["LL.M.", "B.A. LL.B.", "Certified Mediator"],
+    experience: "12+ years in mediation practice",
+    email: "abhay.kumar@nluo.ac.in",
+    phone: "+91-671-2866855",
+    linkedin: "#",
+    image: "/persons/Abhay-Kumar.png",
+    bio: "Mr. Abhay Kumar heads the operational aspects of the NLUO Mediation Centre and brings extensive practical experience in mediation services and community outreach."
   }
 ]
 
@@ -63,10 +63,20 @@ function FacultyCard({ faculty }: { faculty: typeof facultyAdvisors[0] }) {
     <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
       <div className="p-8">
         <div className="flex flex-col items-center text-center mb-6">
-          <div className="w-32 h-32 rounded-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center mb-4">
-            <span className="text-white text-2xl font-bold">
-              {faculty.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
-            </span>
+          <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-blue-200 mb-4">
+            {faculty.image.includes('placeholder') ? (
+              <div className="w-full h-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                <span className="text-white text-2xl font-bold">
+                  {faculty.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                </span>
+              </div>
+            ) : (
+              <img
+                src={faculty.image}
+                alt={faculty.name}
+                className="w-full h-full object-cover"
+              />
+            )}
           </div>
           <h3 className="text-xl font-bold text-gray-900 mb-2">{faculty.name}</h3>
           <p className="text-blue-600 font-medium mb-1">{faculty.position}</p>
@@ -149,7 +159,7 @@ export default function FacultyAdvisorsPage() {
       <main className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-                    <div className="text-center mb-16">
+          <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               About the <span className="text-blue-600">Centre</span>
             </h1>
@@ -194,11 +204,18 @@ export default function FacultyAdvisorsPage() {
                 </p>
               </div>
               
-              <div className="h-64 bg-linear-to-r from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center">
-                <div className="text-center text-white">
-                  <Users className="h-16 w-16 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold">Centre for Mediation and Negotiation</h3>
-                  <p className="text-blue-100">Excellence in ADR</p>
+              <div className="h-64 relative overflow-hidden rounded-lg">
+                <img
+                  src="/images/photo6.jpeg"
+                  alt="NLUO Centre for Mediation and Negotiation"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-linear-to-r from-blue-600/70 to-indigo-600/70 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <Users className="h-16 w-16 mx-auto mb-4" />
+                    <h3 className="text-xl font-bold">Centre for Mediation and Negotiation</h3>
+                    <p className="text-blue-100">Excellence in ADR</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -212,27 +229,223 @@ export default function FacultyAdvisorsPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
-                  <span className="text-white text-lg font-bold">AK</span>
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-blue-200">
+                  <img
+                    src="/persons/Abhay-Kumar.png"
+                    alt="Mr. Abhay Kumar"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Mr. Abhay Kumar</h3>
                 <p className="text-blue-600 font-medium text-sm">Centre Head</p>
               </div>
               
               <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-linear-to-r from-green-400 to-blue-500 flex items-center justify-center">
-                  <span className="text-white text-lg font-bold">AV</span>
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-blue-200">
+                  <img
+                    src="/persons/Dr. Akshay Verma.jpg"
+                    alt="Dr. Akshay Verma"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Dr. Akshay Verma</h3>
                 <p className="text-blue-600 font-medium text-sm">Centre Head</p>
               </div>
               
               <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-linear-to-r from-purple-400 to-pink-500 flex items-center justify-center">
-                  <span className="text-white text-lg font-bold">SP</span>
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-blue-200">
+                  <img
+                    src="/persons/Suryasmita-Parida.png"
+                    alt="Ms. Suryasmita Parida"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Ms. Suryasmita Parida</h3>
                 <p className="text-blue-600 font-medium text-sm">Centre Head</p>
+              </div>
+            </div>
+          </section>
+
+          {/* NLUO Mediation Cell */}
+          <section className="mb-16">
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+                NLUO <span className="text-blue-600">Mediation Cell</span>
+              </h2>
+              
+              <div className="prose max-w-none text-gray-600 leading-relaxed">
+                <p className="text-lg mb-6">
+                  The NLUO Mediation Cell is the first higher institution run mediation cell in India to provide live mediation services (both private and court-referred mediation) as a part of its social activism. The Cell aims to handle multifarious legal disputes including family, matrimonial, property, land and consumer disputes through mediation with the help of faculties-cum-trained mediators.
+                </p>
+                <p className="mb-6">
+                  In the beginning, the Cell is said to extend the focus on people from nearby places and will gradually extend to the whole state and provide free mediation services both physically and virtually through Online Dispute Resolution (ODR). With this initiative, NLUO is striving hard to achieve the constitutional goal of access to justice and free legal aid.
+                </p>
+                <p className="mb-8">
+                  NLUO, with the establishment of the NLUO Mediation Cell, is also not far from achieving SDG 16 under the UN Sustainable Development Goals 2030, i.e., Peace, Justice and, Strong Institutions.
+                </p>
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Facilities Offered</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div className="bg-blue-50 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Free Mediation Services</h4>
+                  <p className="text-gray-600 text-sm">Free mediation services and legal assistance for all</p>
+                </div>
+                <div className="bg-green-50 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Online Dispute Resolution</h4>
+                  <p className="text-gray-600 text-sm">ODR services for convenient remote mediation</p>
+                </div>
+                <div className="bg-purple-50 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Multi-lingual Sessions</h4>
+                  <p className="text-gray-600 text-sm">Available in Odia, Hindi, and English</p>
+                </div>
+                <div className="bg-orange-50 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Certified Mediators</h4>
+                  <p className="text-gray-600 text-sm">Trained and certified mediation professionals</p>
+                </div>
+                <div className="bg-red-50 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Variety of Disputes</h4>
+                  <p className="text-gray-600 text-sm">Consumer, Land, Property, Family, Matrimonial</p>
+                </div>
+                <div className="bg-indigo-50 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Private Facilities</h4>
+                  <p className="text-gray-600 text-sm">Private rooms and flexible schedules</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Centre Team */}
+          <section className="mb-16">
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+                Centre <span className="text-blue-600">Team</span>
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="w-32 h-32 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Users className="h-16 w-16 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Prof. (Dr.) V.K. Ahuja</h3>
+                  <p className="text-blue-600 font-medium mb-2">Chief Advisor & Chairperson</p>
+                  <p className="text-gray-600 text-sm">Leading our mediation initiatives with extensive expertise in dispute resolution and legal education.</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-32 h-32 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                    <Award className="h-16 w-16 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Faculty Team</h3>
+                  <p className="text-green-600 font-medium mb-2">Expert Mediators</p>
+                  <p className="text-gray-600 text-sm">Our qualified faculty members bring diverse expertise in mediation and conflict resolution.</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-32 h-32 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
+                    <GraduationCap className="h-16 w-16 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Student Volunteers</h3>
+                  <p className="text-purple-600 font-medium mb-2">Future Mediators</p>
+                  <p className="text-gray-600 text-sm">Dedicated students committed to learning and supporting mediation services.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Centre Gallery */}
+          <section className="mb-16">
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+                Centre <span className="text-blue-600">Gallery</span>
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group">
+                  <img
+                    src="/images/photo7.jpeg"
+                    alt="NLUO Campus View"
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <p className="font-semibold">NLUO Campus</p>
+                      <p className="text-sm text-gray-200">Modern Infrastructure</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group">
+                  <img
+                    src="/images/photo8.jpeg"
+                    alt="Mediation Facilities"
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <p className="font-semibold">Mediation Facilities</p>
+                      <p className="text-sm text-gray-200">State-of-the-art Rooms</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group">
+                  <img
+                    src="/images/photo2.jpeg"
+                    alt="Academic Events"
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <p className="font-semibold">Academic Events</p>
+                      <p className="text-sm text-gray-200">Conferences & Workshops</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Contact Information */}
+          <section className="mb-16">
+            <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-lg p-8">
+              <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+                Contact <span className="text-blue-600">Information</span>
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center bg-white rounded-lg p-4 shadow-md">
+                  <Phone className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                  <h3 className="font-bold text-gray-900 mb-1">Chandra Mauli Mishra</h3>
+                  <p className="text-gray-600 text-sm">+91-7379132929</p>
+                </div>
+                
+                <div className="text-center bg-white rounded-lg p-4 shadow-md">
+                  <Phone className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                  <h3 className="font-bold text-gray-900 mb-1">Nimisha Sarma</h3>
+                  <p className="text-gray-600 text-sm">+91-9864858821</p>
+                </div>
+                
+                <div className="text-center bg-white rounded-lg p-4 shadow-md">
+                  <Mail className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                  <h3 className="font-bold text-gray-900 mb-1">Email</h3>
+                  <p className="text-gray-600 text-sm">cmn@nluo.ac.in</p>
+                </div>
+                
+                <div className="text-center bg-white rounded-lg p-4 shadow-md">
+                  <Users className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                  <h3 className="font-bold text-gray-900 mb-1">Social Media</h3>
+                  <p className="text-gray-600 text-sm">Instagram & LinkedIn</p>
+                </div>
+              </div>
+              
+              <div className="mt-8 text-center bg-white rounded-lg p-6 shadow-md">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Visit Us</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  <strong>National Law University Odisha (NLUO)</strong><br />
+                  Sector-13, CDA, Cuttack - 753014<br />
+                  Odisha, India
+                </p>
               </div>
             </div>
           </section>

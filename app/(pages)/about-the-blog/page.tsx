@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function AboutTheBlogPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-slate-50">
       <Navbar />
       
       <main className="py-16">
@@ -13,181 +13,178 @@ export default function AboutTheBlogPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              NLUO Centre for <span className="text-blue-600">Mediation and Negotiation</span>
+              About <span className="text-blue-600">NLUO Mediation Chronicle</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              The Centre for Mediation and Negotiation is an initiative of National Law University Odisha to promote academic research on themes pertaining to Alternative Dispute Resolution (ADR).
+              A platform dedicated to advancing discourse, ideas, and reflections in the field of mediation and negotiation, 
+              promoting accessible and practice-oriented discussions in Alternative Dispute Resolution.
             </p>
           </div>
 
-          {/* Overview Section */}
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+          {/* About the Blog */}
+          <div className="bg-linear-to-br from-blue-50/90 to-slate-100/80 rounded-lg shadow-lg p-8 mb-12 border border-blue-100/40">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-              <span className="text-blue-600">Overview</span>
+              About the <span className="text-blue-600">Chronicle</span>
             </h2>
             <div className="prose max-w-none text-gray-600 leading-relaxed text-lg">
               <p className="mb-6">
-                The Centre aims to bridge the gap between theoretical understanding and real-world application, with a focus on the study of mediation and negotiation. In addition to conducting research, the centre seeks to organise events such as Faculty Development Programmes (FDPs), seminars, training workshops, and diploma and certificate programmes on ADR to encourage hands-on learning.
+                The NLUO Mediation Chronicle is a scholarly blog platform initiated by the Centre for Mediation and Negotiation (CMN) at the National Law University Odisha. It serves as a dynamic forum for advancing discourse, ideas, and reflections in the field of mediation and negotiation.
               </p>
               <p className="mb-6">
-                It also aims to familiarise students with the inner workings of various processes. The centre's long-term goal is to improve students' communication abilities and instil in them the faculty of mediation and negotiation.
+                Our blog aims to promote accessible and practice-oriented discussions that contribute to the growth of mediation culture in India and beyond. We encourage contributions that explore contemporary developments in mediation and negotiation, evolving ADR mechanisms, and innovative dispute resolution practices.
               </p>
             </div>
           </div>
 
-          {/* Vision and Mission */}
+          {/* Purpose and Objectives */}
           <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-lg p-8 mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Vision & <span className="text-blue-600">Mission</span>
+              Purpose & <span className="text-blue-600">Objectives</span>
             </h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="text-xl font-bold text-blue-600 mb-4">Vision</h3>
+                <h3 className="text-xl font-bold text-blue-600 mb-4">Our Purpose</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Our vision is to become a centre of excellence that leads ground breaking research, education, and practical involvement in the areas of Mediation and Negotiation. As India's first higher institution run Mediation Cell, we aim to foster peaceful conflict resolution through research, education, and practical involvement, promoting justice, understanding, and effective communication.
+                  To create a vibrant intellectual platform that bridges the gap between academic research and practical application in mediation and negotiation. We strive to make cutting-edge ADR knowledge accessible to practitioners, scholars, students, and policymakers.
                 </p>
               </div>
               
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="text-xl font-bold text-blue-600 mb-4">Mission</h3>
-                <p className="text-gray-600 mb-4">
-                  The NLUO Centre for Mediation and Negotiation is dedicated to advancing knowledge and practice in the domain of Mediation and Negotiation. Our mission is four-fold:
-                </p>
+                <h3 className="text-xl font-bold text-blue-600 mb-4">Key Objectives</h3>
                 <ul className="text-gray-600 space-y-2 text-sm">
-                  <li>• Conducting interdisciplinary research on dispute causes, mediation dynamics, and legal frameworks</li>
-                  <li>• Offering practical learning experiences through FDPs, diploma and certificate courses</li>
-                  <li>• Establishing collaborations with academic and professional institutions</li>
-                  <li>• Promoting mediation regionally and globally through ODR services</li>
+                  <li>• Promote scholarly discourse on mediation and negotiation practices</li>
+                  <li>• Share insights on the Mediation Act 2023 and its implementation</li>
+                  <li>• Analyze contemporary ADR trends and emerging technologies</li>
+                  <li>• Foster collaboration between academics and practitioners</li>
+                  <li>• Provide practical guidance for mediation professionals</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* NLUO Mediation Cell */}
+          {/* What We Cover */}
           <section className="mb-16">
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
-                NLUO <span className="text-blue-600">Mediation Cell</span>
+                What We <span className="text-blue-600">Cover</span>
               </h2>
               
               <div className="prose max-w-none text-gray-600 leading-relaxed">
                 <p className="text-lg mb-6">
-                  The NLUO Mediation Cell is the first higher institution run mediation cell in India to provide live mediation services (both private and court-referred mediation) as a part of its social activism. The Cell aims to handle multifarious legal disputes including family, matrimonial, property, land and consumer disputes through mediation with the help of faculties-cum-trained mediators.
-                </p>
-                <p className="mb-6">
-                  In the beginning, the Cell is said to extend the focus on people from nearby places and will gradually extend to the whole state and provide free mediation services both physically and virtually through Online Dispute Resolution (ODR). With this initiative, NLUO is striving hard to achieve the constitutional goal of access to justice and free legal aid.
-                </p>
-                <p className="mb-8">
-                  NLUO, with the establishment of the NLUO Mediation Cell, is also not far from achieving SDG 16 under the UN Sustainable Development Goals 2030, i.e., Peace, Justice and, Strong Institutions.
+                  The NLUO Mediation Chronicle covers a wide range of topics relevant to the evolving landscape of Alternative Dispute Resolution (ADR) in India and internationally.
                 </p>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Facilities Offered</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-blue-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Free Mediation Services</h4>
-                  <p className="text-gray-600 text-sm">Free mediation services and legal assistance for all</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">Mediation Act 2023</h4>
+                  <p className="text-gray-600 text-sm">Analysis and commentary on India's landmark mediation legislation</p>
                 </div>
                 <div className="bg-green-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Online Dispute Resolution</h4>
-                  <p className="text-gray-600 text-sm">ODR services for convenient remote mediation</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">Case Studies</h4>
+                  <p className="text-gray-600 text-sm">Real-world mediation success stories and lessons learned</p>
                 </div>
                 <div className="bg-purple-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Multi-lingual Sessions</h4>
-                  <p className="text-gray-600 text-sm">Available in Odia, Hindi, and English</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">Online Dispute Resolution</h4>
+                  <p className="text-gray-600 text-sm">Technology's role in modern dispute resolution</p>
                 </div>
                 <div className="bg-orange-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Certified Mediators</h4>
-                  <p className="text-gray-600 text-sm">Trained and certified mediation professionals</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">International Perspectives</h4>
+                  <p className="text-gray-600 text-sm">Global mediation practices and comparative studies</p>
                 </div>
                 <div className="bg-red-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Variety of Disputes</h4>
-                  <p className="text-gray-600 text-sm">Consumer, Land, Property, Family, Matrimonial</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">Training & Education</h4>
+                  <p className="text-gray-600 text-sm">Mediator training methodologies and best practices</p>
                 </div>
                 <div className="bg-indigo-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Private Facilities</h4>
-                  <p className="text-gray-600 text-sm">Private rooms and flexible schedules</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">Policy Analysis</h4>
+                  <p className="text-gray-600 text-sm">ADR policy developments and recommendations</p>
                 </div>
               </div>
             </div>
           </section>
 
 
-          {/* Our Team */}
+          {/* Editorial Process */}
           <section className="mb-16">
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
-                Our <span className="text-blue-600">Team</span>
+                Editorial <span className="text-blue-600">Process</span>
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div className="text-center">
-                  <h3 className="text-lg font-bold text-blue-600 mb-2">Director</h3>
-                  <p className="text-gray-700">Mr. Abhay Kumar</p>
+                  <div className="w-32 h-32 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Users className="h-16 w-16 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Submission Review</h3>
+                  <p className="text-blue-600 font-medium mb-2">Initial Assessment</p>
+                  <p className="text-gray-600 text-sm">All submissions undergo thorough initial review for relevance, quality, and adherence to guidelines.</p>
                 </div>
                 
                 <div className="text-center">
-                  <h3 className="text-lg font-bold text-blue-600 mb-2">Co-Directors</h3>
-                  <p className="text-gray-700">Dr. Akshay Verma</p>
-                  <p className="text-gray-700">Ms. Suryasmita Parida</p>
+                  <div className="w-32 h-32 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                    <Award className="h-16 w-16 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Peer Review</h3>
+                  <p className="text-green-600 font-medium mb-2">Expert Evaluation</p>
+                  <p className="text-gray-600 text-sm">Selected pieces undergo peer review by subject matter experts and experienced practitioners.</p>
                 </div>
                 
                 <div className="text-center">
-                  <h3 className="text-lg font-bold text-blue-600 mb-2">Mentor</h3>
-                  <p className="text-gray-700">Sri Valli M</p>
-                </div>
-                
-                <div className="text-center">
-                  <h3 className="text-lg font-bold text-blue-600 mb-2">Co-ordinators</h3>
-                  <p className="text-gray-700">Chandra Mauli Mishra</p>
-                  <p className="text-gray-700">Yashaswi Agrima</p>
-                </div>
-                
-                <div className="text-center">
-                  <h3 className="text-lg font-bold text-blue-600 mb-2">Social Media Head</h3>
-                  <p className="text-gray-700">Nimisha Sarma</p>
-                </div>
-                
-                <div className="text-center">
-                  <h3 className="text-lg font-bold text-blue-600 mb-2">Research Head</h3>
-                  <p className="text-gray-700">Manvi</p>
+                  <div className="w-32 h-32 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
+                    <Target className="h-16 w-16 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Publication</h3>
+                  <p className="text-purple-600 font-medium mb-2">Final Stage</p>
+                  <p className="text-gray-600 text-sm">Approved articles are edited, formatted, and published with proper attribution and academic integrity.</p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Contact Information */}
+          {/* Get Involved */}
           <section className="mb-16">
             <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-lg p-8">
               <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
-                Contact <span className="text-blue-600">Us</span>
+                Get <span className="text-blue-600">Involved</span>
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="text-center bg-white rounded-lg p-4 shadow-md">
-                  <Phone className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                  <h3 className="font-bold text-gray-900 mb-1">Chandra Mauli Mishra</h3>
-                  <p className="text-gray-600 text-sm">+91-7379132929</p>
-                </div>
-                
-                <div className="text-center bg-white rounded-lg p-4 shadow-md">
-                  <Phone className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                  <h3 className="font-bold text-gray-900 mb-1">Nimisha Sarma</h3>
-                  <p className="text-gray-600 text-sm">+91-9864858821</p>
-                </div>
-                
-                <div className="text-center bg-white rounded-lg p-4 shadow-md">
-                  <Mail className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                  <h3 className="font-bold text-gray-900 mb-1">Email</h3>
-                  <p className="text-gray-600 text-sm">cmn@nluo.ac.in</p>
+                  <BookOpen className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                  <h3 className="font-bold text-gray-900 mb-1">Submit Articles</h3>
+                  <p className="text-gray-600 text-sm">Share your insights and research</p>
                 </div>
                 
                 <div className="text-center bg-white rounded-lg p-4 shadow-md">
                   <Users className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                  <h3 className="font-bold text-gray-900 mb-1">Social Media</h3>
-                  <p className="text-gray-600 text-sm">Instagram & LinkedIn</p>
+                  <h3 className="font-bold text-gray-900 mb-1">Join Editorial Team</h3>
+                  <p className="text-gray-600 text-sm">Contribute as editor or reviewer</p>
                 </div>
+                
+                <div className="text-center bg-white rounded-lg p-4 shadow-md">
+                  <Mail className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                  <h3 className="font-bold text-gray-900 mb-1">Editorial Queries</h3>
+                  <p className="text-gray-600 text-sm">cmn@nluo.ac.in</p>
+                </div>
+                
+                <div className="text-center bg-white rounded-lg p-4 shadow-md">
+                  <Target className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                  <h3 className="font-bold text-gray-900 mb-1">Follow Guidelines</h3>
+                  <p className="text-gray-600 text-sm">Review submission policies</p>
+                </div>
+              </div>
+              
+              <div className="mt-8 text-center">
+                <a 
+                  href="/submissions" 
+                  className="inline-flex items-center bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                >
+                  View Submission Guidelines
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </div>
             </div>
           </section>

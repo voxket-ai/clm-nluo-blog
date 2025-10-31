@@ -8,42 +8,42 @@ const boardMembers = [
     name: "Prof. (Dr.) V. K Ahuja",
     position: "Director",
     organization: "Indian Law Institute",
-    image: "/api/placeholder/200/200",
+    image: "/api/placeholder/200/200", // No image available
     linkedin: "#"
   },
   {
     name: "Pauline McKay",
     position: "Co-ordinator",
     organization: "University of Strathclyde Mediation Clinic",
-    image: "/api/placeholder/200/200",
+    image: "/persons/Pauline_Mckay.jpg",
     linkedin: "#"
   },
   {
     name: "Daniel Brantes Ferreira",
     position: "CEO",
     organization: "Brazilian Centre for Mediation and Arbitration",
-    image: "/api/placeholder/200/200",
+    image: "/persons/Daniel Brantes Ferreira.jpg",
     linkedin: "#"
   },
   {
     name: "Prof. (Dr.) Sunanda Bharti",
     position: "Professor of Law",
     organization: "Law Centre - I, University of Delhi",
-    image: "/api/placeholder/200/200",
+    image: "/persons/Prof. (Dr.) Sunanda Bharti.jpg",
     linkedin: "#"
   },
   {
-    name: "Prof. Ved Kumari",
+    name: "Prof. (Dr.) Ved Kumari",
     position: "Vice-Chancellor",
     organization: "National Law University Odisha",
-    image: "/api/placeholder/200/200",
+    image: "/persons/Prof. (Dr.) Ved Kumari.jpg",
     linkedin: "#"
   },
   {
-    name: "Akshay Verma",
+    name: "Dr. Akshay Verma",
     position: "Co-Director",
     organization: "NLUO CMN",
-    image: "/api/placeholder/200/200",
+    image: "/persons/Dr. Akshay Verma.jpg",
     linkedin: "#"
   }
 ]
@@ -103,8 +103,18 @@ export default function EditorialBlogPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {boardMembers.map((member, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
-                    <span className="text-white text-xl font-bold">{member.name.split(' ').map(n => n[0]).join('')}</span>
+                  <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-blue-200">
+                    {member.image.includes('placeholder') ? (
+                      <div className="w-full h-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                        <span className="text-white text-xl font-bold">{member.name.split(' ').map(n => n[0]).join('')}</span>
+                      </div>
+                    ) : (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
                   <p className="text-blue-600 font-medium mb-1">{member.position}</p>

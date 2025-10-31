@@ -15,8 +15,8 @@ export default function MessageFromVCPage() {
               Message from the <span className="text-blue-600">Vice-Chancellor</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              A personal message from Prof. Dr. Srikrishna Deva Rao, Vice-Chancellor of 
-              National Law University Odisha, on the vision and mission of the Centre for Corporate Law.
+              A personal message from Prof. (Dr.) Ved Kumari, Vice-Chancellor of 
+              National Law University Odisha, on the vision and mission of the Centre for Mediation and Negotiation.
             </p>
           </div>
 
@@ -24,12 +24,17 @@ export default function MessageFromVCPage() {
           <div className="bg-blue-50 rounded-lg p-8 mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
               <div className="text-center lg:text-left">
-                <div className="w-48 h-48 mx-auto lg:mx-0 rounded-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center mb-4">
-                  <span className="text-white text-4xl font-bold">SDR</span>
+                <div className="w-48 h-48 mx-auto lg:mx-0 rounded-full overflow-hidden border-4 border-blue-200 shadow-lg mb-4">
+                  <img
+                    src="/persons/Prof. (Dr.) Ved Kumari.jpg"
+                    alt="Prof. (Dr.) Ved Kumari"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Prof. Dr. Srikrishna Deva Rao</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Prof. (Dr.) Ved Kumari</h2>
                 <p className="text-blue-600 font-medium mb-2">Vice-Chancellor</p>
                 <p className="text-gray-600">National Law University Odisha</p>
+                <p className="text-sm text-gray-500 mt-2">Former Dean & Head, Faculty of Law, University of Delhi</p>
               </div>
               
               <div className="lg:col-span-2">
@@ -40,23 +45,23 @@ export default function MessageFromVCPage() {
                       Academic Excellence
                     </h3>
                     <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Ph.D. in Constitutional Law</li>
-                      <li>• LL.M. in Public Law</li>
-                      <li>• B.A. LL.B. (Hons.) Gold Medalist</li>
-                      <li>• 25+ years in legal academia</li>
+                      <li>• Ph.D. in Juvenile Justice System</li>
+                      <li>• LL.M. (Delhi University)</li>
+                      <li>• Teaching since 1983</li>
+                      <li>• 40+ years in legal academia</li>
                     </ul>
                   </div>
                   
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
                       <Award className="h-5 w-5 mr-2 text-green-500" />
-                      Key Contributions
+                      Key Specializations
                     </h3>
                     <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Legal Education Reform</li>
-                      <li>• Constitutional Law Research</li>
-                      <li>• Policy Advisory Roles</li>
-                      <li>• Academic Leadership</li>
+                      <li>• Juvenile Justice</li>
+                      <li>• Criminal Law & Gender Issues</li>
+                      <li>• Judicial Training & Clinical Education</li>
+                      <li>• Restorative Justice</li>
                     </ul>
                   </div>
                 </div>
@@ -79,57 +84,73 @@ export default function MessageFromVCPage() {
               </p>
               
               <p>
-                It gives me immense pleasure to welcome you to the Centre for Corporate Law at National Law University Odisha. 
-                As we embark on this journey of academic excellence and scholarly pursuit, I am reminded of the profound 
-                responsibility we bear in shaping the future of corporate law education and practice in India.
+                It gives me immense pleasure to welcome you to the Centre for Mediation and Negotiation at National Law University Odisha 
+                and to introduce you to the NLUO Mediation Chronicle. As someone who has dedicated over four decades to legal education 
+                and has witnessed the transformative power of alternative dispute resolution, I am deeply committed to advancing the 
+                field of mediation and negotiation in India.
               </p>
               
               <p>
-                The establishment of NLUO Mediation Chronicle represents more than just an academic initiative; it embodies our commitment 
-                to bridging the gap between theoretical knowledge and practical application. In today's rapidly evolving 
-                corporate landscape, where legal frameworks must adapt to technological innovations, global market dynamics, 
-                and changing societal expectations, the need for rigorous, accessible, and timely legal scholarship has never been greater.
+                Throughout my academic journey, beginning from my introduction to juvenile delinquency in 1978 to my extensive work 
+                in judicial training and restorative justice, I have observed how effective communication, understanding, and 
+                peaceful resolution of conflicts can transform lives and communities. The establishment of the NLUO Mediation Chronicle 
+                represents our institutional commitment to these principles.
               </p>
               
               <p>
-                Our Centre for Corporate Law was conceived with a clear vision: to become a premier institution for corporate 
-                law research, education, and policy advocacy. We recognize that corporate law is not merely a collection of 
-                rules and regulations, but a dynamic field that shapes economic growth, protects stakeholder interests, and 
-                ensures sustainable business practices.
+                Our Centre for Mediation and Negotiation was conceived with a vision to become India's premier institution for 
+                Alternative Dispute Resolution (ADR). We recognize that in our increasingly complex legal landscape, traditional 
+                adversarial approaches must be complemented by collaborative, restorative methods that focus on healing relationships 
+                and finding mutually beneficial solutions.
               </p>
               
               <p>
-                Through NLUO Mediation Chronicle, we aim to create a vibrant intellectual community where practitioners, academics, students, 
-                and policymakers can engage in meaningful dialogue about the most pressing issues in corporate law. Our 
-                distinguished advisory board, comprising leading experts from India and abroad, ensures that our content 
-                maintains the highest standards of academic rigor while remaining relevant to contemporary legal practice.
+                The NLUO Mediation Cell, India's first mediation cell operated by a higher education institution, exemplifies our 
+                commitment to practical application of these principles. By providing free mediation services to the community, 
+                we bridge the gap between academic theory and real-world impact, while training the next generation of mediators 
+                and legal professionals.
               </p>
               
               <p>
-                I am particularly proud of our commitment to open access scholarship. In an era where knowledge should be 
-                democratized, we believe that high-quality legal research should be freely available to all who seek to 
-                understand and contribute to the field of corporate law. This philosophy aligns with our university's broader 
-                mission of serving society through education and research.
+                My experience as the first woman academic to head the Delhi Judicial Academy (2009-2011) taught me the importance 
+                of innovative teaching methods and participatory learning. The Village Immersion Programme for Judicial Officers, 
+                which I pioneered, exposed judges to grassroots social issues – an approach we continue to embrace in our mediation 
+                training programs.
               </p>
               
               <p>
-                As we move forward, I encourage all members of our community – whether you are a seasoned practitioner, 
-                an emerging scholar, or a curious student – to actively participate in this intellectual endeavor. Submit 
-                your research, engage with our content, attend our events, and help us build a repository of knowledge 
-                that will benefit generations of legal professionals.
+                Through the NLUO Mediation Chronicle, we aim to create a vibrant intellectual community where practitioners, academics, 
+                students, and policymakers can engage in meaningful dialogue about mediation, negotiation, and restorative justice. 
+                Our publication will serve as a platform for sharing research, best practices, and innovative approaches to conflict 
+                resolution.
               </p>
               
               <p>
-                The challenges facing corporate law today – from governance reforms and regulatory compliance to ESG 
-                considerations and technological disruption – require collaborative solutions. Through NLUO Mediation Chronicle, we hope 
-                to foster the kind of interdisciplinary dialogue and innovative thinking that will drive meaningful progress 
-                in our field.
+                I am particularly proud of our commitment to making quality legal education and resources accessible to all. 
+                Just as I introduced the "Andragogy – the Art of Teaching Adults" course to improve legal education, we believe 
+                that knowledge about peaceful dispute resolution should be democratized and made available to everyone who seeks 
+                to understand and contribute to this vital field.
               </p>
               
               <p>
-                I extend my heartfelt gratitude to our faculty, advisory board members, contributing authors, and readers 
-                who make this initiative possible. Together, we are not just documenting the evolution of corporate law; 
-                we are actively participating in shaping its future.
+                As we advance towards achieving SDG 16 – Peace, Justice and Strong Institutions – I encourage all members of our 
+                community to actively participate in this intellectual endeavor. Submit your research, share your experiences, 
+                engage with our content, and help us build a repository of knowledge that will benefit generations of legal 
+                professionals and society at large.
+              </p>
+              
+              <p>
+                The challenges facing dispute resolution today – from the implementation of the Mediation Act 2023 to the integration 
+                of technology in ODR platforms – require collaborative solutions and innovative thinking. Through our Centre and 
+                the Mediation Chronicle, we hope to foster the kind of interdisciplinary dialogue that will drive meaningful progress 
+                in creating a more just and peaceful society.
+              </p>
+              
+              <p>
+                I extend my heartfelt gratitude to our dedicated faculty, distinguished advisory board members, contributing authors, 
+                and readers who make this initiative possible. Together, we are not just documenting the evolution of mediation and 
+                negotiation; we are actively participating in shaping a future where conflicts are resolved with dignity, 
+                understanding, and mutual respect.
               </p>
               
               <p>
@@ -137,9 +158,49 @@ export default function MessageFromVCPage() {
               </p>
               
               <div className="mt-8 border-t pt-6">
-                <p className="font-semibold text-gray-900">Prof. Dr. Srikrishna Deva Rao</p>
+                <p className="font-semibold text-gray-900">Prof. (Dr.) Ved Kumari</p>
                 <p className="text-blue-600">Vice-Chancellor</p>
                 <p className="text-gray-600">National Law University Odisha</p>
+                <p className="text-sm text-gray-500">Former Dean & Head, Faculty of Law, University of Delhi</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Distinguished Achievements */}
+          <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+              Distinguished <span className="text-blue-600">Achievements</span>
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-blue-50 rounded-lg p-4">
+                <h4 className="font-semibold text-gray-900 mb-2">Academic Leadership</h4>
+                <p className="text-gray-600 text-sm">First woman academic to head Delhi Judicial Academy as Chairperson (2009-2011)</p>
+              </div>
+              
+              <div className="bg-green-50 rounded-lg p-4">
+                <h4 className="font-semibold text-gray-900 mb-2">International Recognition</h4>
+                <p className="text-gray-600 text-sm">Fellow of Commonwealth Judicial Education Institute, Canada (2010)</p>
+              </div>
+              
+              <div className="bg-purple-50 rounded-lg p-4">
+                <h4 className="font-semibold text-gray-900 mb-2">Commonwealth Fellow</h4>
+                <p className="text-gray-600 text-sm">Commonwealth Fellow at Warwick University, UK (1998)</p>
+              </div>
+              
+              <div className="bg-orange-50 rounded-lg p-4">
+                <h4 className="font-semibold text-gray-900 mb-2">Fulbright Scholar</h4>
+                <p className="text-gray-600 text-sm">Fulbright Fellow at Vanderbilt University, USA (1997)</p>
+              </div>
+              
+              <div className="bg-red-50 rounded-lg p-4">
+                <h4 className="font-semibold text-gray-900 mb-2">Juvenile Justice Pioneer</h4>
+                <p className="text-gray-600 text-sm">Author of "Treatise on Juvenile Justice Act 1986" - referred to as the "Bible" in juvenile justice</p>
+              </div>
+              
+              <div className="bg-indigo-50 rounded-lg p-4">
+                <h4 className="font-semibold text-gray-900 mb-2">Innovation in Training</h4>
+                <p className="text-gray-600 text-sm">Introduced Village Immersion Programme for Judicial Officers and E-courses on Judicial Ethics</p>
               </div>
             </div>
           </div>

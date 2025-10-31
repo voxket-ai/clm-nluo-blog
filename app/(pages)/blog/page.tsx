@@ -63,7 +63,7 @@ const blogPosts = [
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-50">
       <Navbar />
       
       <main className="py-16">
@@ -74,54 +74,12 @@ export default function BlogPage() {
               NLUO Mediation <span className="text-blue-600">Chronicle</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover in-depth analysis, expert commentary, and the latest developments in corporate law from leading legal professionals and scholars.
+              Discover in-depth analysis, expert commentary, and the latest developments in Mediation and Negotiation under ADR from leading legal professionals and scholars.
             </p>
           </div>
+          <div className='flex w-full items-center justify-center'>
 
-          {/* Blog Posts Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <article key={post.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group">
-                <div className="h-48 bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center relative">
-                  <span className="text-white text-lg font-medium">{post.category}</span>
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <div className="flex items-center text-sm text-gray-500 mb-3">
-                    <User className="h-4 w-4 mr-1" />
-                    <span>{post.author}</span>
-                    <span className="mx-2">•</span>
-                    <span>{post.date}</span>
-                    <span className="mx-2">•</span>
-                    <Clock className="h-4 w-4 mr-1" />
-                    <span>{post.readTime}</span>
-                  </div>
-                  
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">
-                    <Link href={`/blog/${post.id}`}>
-                      {post.title}
-                    </Link>
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                  
-                  <Link 
-                    href={`/blog/${post.id}`}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
-                  >
-                    Read More
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>
-              </article>
-            ))}
+          <p>No Articles Available</p>
           </div>
 
           {/* Load More Button */}

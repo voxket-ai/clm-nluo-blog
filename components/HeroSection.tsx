@@ -15,7 +15,7 @@ export default function HeroSection() {
   }
 
   return (
-    <div className="relative overflow-hidden bg-linear-to-br from-blue-50 via-indigo-50 to-purple-50 py-16 md:py-24">
+    <div className="relative overflow-hidden bg-linear-to-br from-slate-100 via-blue-50 to-indigo-100 py-16 md:py-24">
       {/* Enhanced Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large floating orbs */}
@@ -116,14 +116,51 @@ export default function HeroSection() {
               </div>
             </div>
 
+            {/* Image Gallery Preview */}
+            <div className="relative bg-linear-to-br from-slate-100/90 to-blue-50/80 backdrop-blur-sm rounded-lg shadow-lg p-6 border border-slate-200/40 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">NLUO Mediation Centre Highlights</h3>
+              <div className="grid grid-cols-3 gap-3">
+                <div className="relative overflow-hidden rounded-md group/img">
+                  <img
+                    src="/images/photo2.jpeg"
+                    alt="NLUO Campus"
+                    className="w-full h-20 object-cover transition-transform duration-300 group-hover/img:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="relative overflow-hidden rounded-md group/img">
+                  <img
+                    src="/images/photo3.jpeg"
+                    alt="Mediation Session"
+                    className="w-full h-20 object-cover transition-transform duration-300 group-hover/img:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="relative overflow-hidden rounded-md group/img">
+                  <img
+                    src="/images/photo4.jpeg"
+                    alt="Academic Event"
+                    className="w-full h-20 object-cover transition-transform duration-300 group-hover/img:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              </div>
+              <p className="text-sm text-gray-600 mt-3">Explore our mediation centre facilities and academic events</p>
+            </div>
+
             {/* (Stats removed per request) */}
           </div>
 
           {/* Right Column - Enhanced Featured Content */}
           <div className="space-y-6 animate-fade-in-up delay-700">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group relative">
-              {/* Enhanced header with animated elements */}
-              <div className="h-48 bg-linear-to-r from-blue-400 via-indigo-500 to-slate-500 relative overflow-hidden">
+              {/* Enhanced header with animated elements and image */}
+              <div className="h-48 relative overflow-hidden">
+                <img
+                  src="/images/photo1.jpeg"
+                  alt="NLUO Mediation Chronicle Featured"
+                  className="w-full h-full object-cover"
+                />
                 {/* Multiple animated layers */}
                 <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/15 to-transparent animate-shimmer"></div>
                 <div className="absolute inset-0 bg-linear-to-br from-blue-300/20 via-transparent to-slate-300/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -154,8 +191,8 @@ export default function HeroSection() {
                   Explore how India's new Mediation Act is revolutionizing alternative dispute resolution mechanisms.
                 </p>
                 <button className="relative text-blue-600 hover:text-blue-700 font-medium flex items-center group-hover:translate-x-1 transition-all duration-300 overflow-hidden">
-                  <span className="relative z-10">Read More</span>
-                  <ArrowRight className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+                  <span className="relative z-10">Featured</span>
+                  {/* <ArrowRight className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" /> */}
                   <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </button>
               </div>

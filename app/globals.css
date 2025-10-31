@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
-/* Force light mode theme */
+/* Modern sophisticated theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #1e293b;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 }
 
-/* Remove dark mode preferences - force light mode */
+/* Modern light theme with subtle gray backgrounds */
 html {
-  background-color: #ffffff;
-  color: #171717;
+  background-color: #f8fafc;
+  color: #1e293b;
 }
 
 body {
-  background-color: #ffffff;
-  color: #171717;
+  background-color: #f8fafc;
+  color: #1e293b;
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 

@@ -1,11 +1,29 @@
-'use client'
 
-import { useState } from 'react'
+'use client'
+import React, { useState } from 'react'
 import { Mail, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export default function HeroSection() {
   const [email, setEmail] = useState('')
+  const [carouselIndex, setCarouselIndex] = useState(0)
+  const carouselImages = [
+    '/images/photo1.jpeg',
+    '/images/photo2.jpeg',
+    '/images/photo3.jpeg',
+    '/images/photo4.jpeg',
+    '/images/photo6.jpeg',
+    '/images/photo7.jpeg',
+    '/images/photo8.jpeg',
+  ]
+
+  // Carousel auto-advance
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCarouselIndex((prev) => (prev + 1) % carouselImages.length)
+    }, 3500)
+    return () => clearInterval(interval)
+  }, [carouselImages.length])
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault()
@@ -14,8 +32,12 @@ export default function HeroSection() {
     setEmail('')
   }
 
+  const goToSlide = (idx: number) => setCarouselIndex(idx)
+
   return (
-    <div className="relative overflow-hidden bg-linear-to-br from-slate-100 via-blue-50 to-indigo-100 py-16 md:py-24">
+    <>
+      {/* Full-width Hero Section */}
+      <div className="relative w-full overflow-hidden bg-linear-to-br from-slate-100 via-blue-50 to-indigo-100 py-16 md:py-24">
       {/* Enhanced Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large floating orbs */}
@@ -50,7 +72,7 @@ export default function HeroSection() {
         <div className="absolute bottom-1/3 left-0 w-full h-px bg-linear-to-r from-transparent via-slate-200/30 to-transparent animate-shimmer delay-1000"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Main Content */}
           <div className="space-y-8">
@@ -116,39 +138,6 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Image Gallery Preview */}
-            <div className="relative bg-linear-to-br from-slate-100/90 to-blue-50/80 backdrop-blur-sm rounded-lg shadow-lg p-6 border border-slate-200/40 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">NLUO Mediation Centre Highlights</h3>
-              <div className="grid grid-cols-3 gap-3">
-                <div className="relative overflow-hidden rounded-md group/img">
-                  <img
-                    src="/images/photo2.jpeg"
-                    alt="NLUO Campus"
-                    className="w-full h-20 object-cover transition-transform duration-300 group-hover/img:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="relative overflow-hidden rounded-md group/img">
-                  <img
-                    src="/images/photo3.jpeg"
-                    alt="Mediation Session"
-                    className="w-full h-20 object-cover transition-transform duration-300 group-hover/img:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="relative overflow-hidden rounded-md group/img">
-                  <img
-                    src="/images/photo4.jpeg"
-                    alt="Academic Event"
-                    className="w-full h-20 object-cover transition-transform duration-300 group-hover/img:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300"></div>
-                </div>
-              </div>
-              <p className="text-sm text-gray-600 mt-3">Explore our mediation centre facilities and academic events</p>
-            </div>
-
-            {/* (Stats removed per request) */}
           </div>
 
           {/* Right Column - Enhanced Featured Content */}
@@ -209,5 +198,44 @@ export default function HeroSection() {
         </div>
       </div>
     </div>
+
+      {/* Big Carousel Section */}
+      <section className="w-full bg-white py-12 md:py-20">
+        <div className="max-w-5xl mx-auto px-2 md:px-0">
+          <div className="mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Gallery Highlights</h2>
+            <p className="text-lg text-gray-600">Explore our mediation centre facilities and academic events</p>
+          </div>
+          <div className="relative w-full aspect-16/7 bg-slate-100 rounded-xl shadow-lg overflow-hidden flex items-center justify-center">
+            {carouselImages.map((img, idx) => (
+              <img
+                key={img}
+                src={img}
+                alt={`Gallery image ${idx + 1}`}
+                className={
+                  'absolute top-0 left-0 w-full h-full object-contain transition-opacity duration-700 bg-black' +
+                  (carouselIndex === idx ? ' opacity-100 z-10' : ' opacity-0 z-0')
+                }
+                style={{ pointerEvents: carouselIndex === idx ? 'auto' : 'none', backgroundColor: '#111' }}
+              />
+            ))}
+            {/* Carousel dots */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+              {carouselImages.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={
+                    'w-3 h-3 rounded-full border border-blue-400 bg-white transition-all duration-300' +
+                    (carouselIndex === idx ? ' bg-blue-500 scale-125' : ' opacity-60')
+                  }
+                  aria-label={`Go to slide ${idx + 1}`}
+                  onClick={() => goToSlide(idx)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }

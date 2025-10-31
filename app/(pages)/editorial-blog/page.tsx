@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Linkedin } from 'lucide-react'
+import { link } from 'fs'
 
 // Advisory Editorial Board members
 const boardMembers = [
@@ -44,7 +45,7 @@ const boardMembers = [
     position: "Co-Director",
     organization: "NLUO CMN",
     image: "/persons/Dr. Akshay Verma.jpg",
-    linkedin: "#"
+    linkedin: "https://in.linkedin.com/in/dr-akshay-verma-397b68170?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile"
   }
 ]
 
@@ -53,7 +54,8 @@ const guestEditor = {
   name: "Aniruddha Mahadevan Sethi",
   position: "Guest Editor",
   organization: "Mediation & Negotiation Expert",
-  image: "/api/placeholder/200/200"
+  image: "/api/placeholder/200/200",
+  linkedin: "https://in.linkedin.com/in/aniruddha-mahadevan-sethi-b297b5194?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile"
 }
 
 // Student Editors

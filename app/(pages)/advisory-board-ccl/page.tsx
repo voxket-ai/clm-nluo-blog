@@ -206,7 +206,7 @@ export default function AdvisoryBoardPage() {
                   organization: "National Law University Odisha",
                   location: "Odisha, India",
                   expertise: ["Law", "Legal Education", "University Administration"],
-                  linkedin: "",
+                  linkedin: "https://in.linkedin.com/in/vedkumari?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile",
                   image: "",
                   bio: "Prof. Ved Kumar is the Vice Chancellor of National Law University Odisha, with a distinguished career in legal education and administration."
                 }}
@@ -219,7 +219,7 @@ export default function AdvisoryBoardPage() {
                   organization: "Law Centre-I, University of Delhi",
                   location: "Delhi, India",
                   expertise: ["Law", "Legal Research", "Teaching"],
-                  linkedin: "",
+                  linkedin: "https://in.linkedin.com/in/sunanda-bharti-1aaa2b7?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile",
                   image: "",
                   bio: "Prof. (Dr.) Sunanda Bharti is a Professor of Law at Law Centre-I, University of Delhi, known for her contributions to legal research and teaching."
                 }}

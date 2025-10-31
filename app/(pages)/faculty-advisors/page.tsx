@@ -365,7 +365,7 @@ export default function FacultyAdvisorsPage() {
                   <img
                     src="/images/photo7.jpeg"
                     alt="NLUO Campus View"
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 text-white">
@@ -379,7 +379,7 @@ export default function FacultyAdvisorsPage() {
                   <img
                     src="/images/photo8.jpeg"
                     alt="Mediation Facilities"
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 text-white">
@@ -393,7 +393,7 @@ export default function FacultyAdvisorsPage() {
                   <img
                     src="/images/photo2.jpeg"
                     alt="Academic Events"
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 text-white">

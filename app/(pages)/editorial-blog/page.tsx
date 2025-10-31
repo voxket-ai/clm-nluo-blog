@@ -68,7 +68,7 @@ const studentEditors = [
   {
     name: "Manvi",
     position: "Student Editor",
-    image: "/api/placeholder/200/200"
+    image: "/persons/manvi.jpeg"
   }
 ]
 

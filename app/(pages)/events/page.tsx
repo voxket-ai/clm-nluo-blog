@@ -22,16 +22,28 @@ const upcomingEvents = [
 
 const pastEvents = [
   {
+    id: 1,
+    title: "Single Credit Course: Restorative Practice and Justice",
+    subtitle: "Theory and Tools for Building Compassionate Communities",
+    date: "15th November – 30th November, 2025",
+    time: "16 hours across multiple sessions",
+    location: "Online Mode",
+    description: "NLUO CMN collaborated with Accords International to conduct a comprehensive course on restorative justice, trauma-informed care, and community-centered approaches. The program featured international instructors and interactive methodologies including case studies, simulations, and restorative circle practices.",
+    speakers: ["Dr. Akshay Verma", "Jeri Fields", "Dr. Sal Corbin", "Theresa Huggins", "Upasana Singh", "Dr. Akanksha Marwah"],
+    category: "Course",
+    attendees: "54 participants from India and US"
+  },
+  {
     id: 2,
     title: "2nd GAJE-NLUO Mediation and Negotiation Conclave",
     subtitle: "International Conclave",
     date: "29th January – 2nd February, 2025",
     time: "5 Days Program",
     location: "NLUO Campus & Virtual",
-    description: "The second GAJE-NLUO Mediation and Negotiation Conclave featured expert-led workshops on mediation and negotiation, an International Conference on Dispute Resolution Mechanisms, and the 2nd NLUO National Negotiation Competition.",
-    speakers: ["International ADR Experts", "Leading Mediators"],
+    description: "The second GAJE-NLUO Mediation and Negotiation Conclave featured expert-led workshops on mediation and negotiation, an International Conference on Dispute Resolution Mechanisms, and the 2nd NLUO National Negotiation Competition with NALSAR Hyderabad emerging as winners.",
+    speakers: ["Prof. Ved Kumari", "Sr. Prof. V.K. Ahuja", "Charlie Irvine", "Daniel Brantes Ferreira", "Prof. Sunanda Bharti"],
     category: "Conclave",
-    attendees: "250+ participants"
+    attendees: "200+ participants"
   },
   {
     id: 3,
@@ -40,7 +52,7 @@ const pastEvents = [
     date: "25th January - 26th January, 2025",
     time: "Full Day",
     location: "NLUO Campus",
-    description: "The Centre participated in the third annual Flower Fest at NLUO by setting up an awareness stall showcasing mediation services and introducing skilled mediators to the community.",
+    description: "The Centre participated in the third annual Flower Fest at NLUO by setting up an awareness stall showcasing mediation services and introducing skilled mediators to the community with overwhelmingly positive response.",
     category: "Outreach",
     attendees: "Community engagement"
   },
@@ -53,7 +65,7 @@ const pastEvents = [
     location: "Online Mode",
     description: "Successfully conducted course blending theoretical insights with experiential learning through simulations, case studies, and role-plays on ADR mechanisms, communication techniques, and the Mediation Act 2023.",
     category: "Course",
-    attendees: "43 students"
+    attendees: "66 participants"
   },
   {
     id: 5,
@@ -90,6 +102,17 @@ const pastEvents = [
   },
   {
     id: 8,
+    title: "Field Visit (Door-to-Door Survey) under ADR Course",
+    subtitle: "Community Survey",
+    date: "14th & 30th October, 2023",
+    time: "Full Day",
+    location: "Sectors 11, 12, and 13 of CDA, Cuttack",
+    description: "160 NLUO students conducted extensive field outreach visit surveying 350 households to assess awareness about ADR processes and inform residents about mediation services.",
+    category: "Outreach",
+    attendees: "350 households surveyed"
+  },
+  {
+    id: 9,
     title: "1st GAJE-NLUO Mediation and Negotiation Conclave",
     subtitle: "Inaugural Conclave",
     date: "9th August – 13th August 2023",
@@ -100,7 +123,7 @@ const pastEvents = [
     attendees: "250+ participants"
   },
   {
-    id: 9,
+    id: 10,
     title: "2nd Outreach Drive under Project KUTMB",
     subtitle: "Community Outreach",
     date: "16th July 2023",
@@ -108,11 +131,11 @@ const pastEvents = [
     location: "Baba Tilakanagar Village",
     description: "CMN conducted outreach drive to educate villagers about mediation process, emphasizing hassle-free approach and speedy justice through door-to-door interactions and demonstrations.",
     category: "Outreach",
-    attendees: "Village community",
+    attendees: "37 villagers (28 children, 7 women, 2 men)",
     recording: "#"
   },
   {
-    id: 10,
+    id: 11,
     title: "1st Outreach Drive under Project KUTMB",
     subtitle: "Community Outreach",
     date: "8th July 2023",
@@ -124,7 +147,29 @@ const pastEvents = [
     recording: "#"
   },
   {
-    id: 11,
+    id: 12,
+    title: "CMN stall at NLUO Flower show",
+    subtitle: "Outreach Program",
+    date: "21st – 23rd January, 2023",
+    time: "3 Days",
+    location: "NLUO Campus",
+    description: "Centre set up awareness stall during Annual Flower Fest explaining advantages of mediation over litigation. Witnessed overwhelming response with visitors showing great interest in mediation services.",
+    category: "Outreach",
+    attendees: "Festival visitors"
+  },
+  {
+    id: 13,
+    title: "Outreach Awareness Programmes under Project KUTUMB",
+    subtitle: "Community Outreach",
+    date: "4th September, 25th September & 16th October, 2022",
+    time: "Full Day",
+    location: "Brajbeharipur, Munda Sahi, and Babatilka Nagar",
+    description: "Series of Medico-Legal Camps where CMN students conducted skits and awareness activities about mediation as effective dispute resolution tool. Community members actively engaged with questions and discussions.",
+    category: "Outreach",
+    attendees: "Village communities"
+  },
+  {
+    id: 14,
     title: "NLUO Mediation Cell Inauguration",
     subtitle: "Historic Launch",
     date: "15th August 2022",
@@ -134,15 +179,42 @@ const pastEvents = [
     category: "Inauguration",
     attendees: "NLUO community and local residents",
     recording: "#"
+  },
+  {
+    id: 15,
+    title: "Legal Literacy and Outreach Drive",
+    subtitle: "Community Education",
+    date: "2nd August 2022",
+    time: "Full Day",
+    location: "Jankia Legal Aid Clinic",
+    description: "NLUO CMN collaborated with Legal Aid Society and Pro Bono Club to educate unprivileged masses about mediation through interactive roleplays and multilingual handouts in Odia.",
+    category: "Outreach",
+    attendees: "Rural community members"
+  },
+  {
+    id: 16,
+    title: "Workshop on Mediators Opening Statement",
+    subtitle: "Professional Training",
+    date: "1st July 2022",
+    time: "2 Hours",
+    location: "Online via Zoom",
+    description: "NLUO CMN's first workshop in collaboration with Accords International covering mediator's opening statement structure, legal landscape of mediation, and practical demonstrations with role plays.",
+    speakers: ["Ms. Upasana Singh", "Ms. Akanksha Marwah"],
+    category: "Workshop",
+    attendees: "Students from multiple universities"
   }
 ]
 
 // Function to get the detail page URL for each event
 function getEventDetailUrl(eventId: number, eventTitle: string): string {
   const eventRoutes: { [key: number]: string } = {
+    1: '/events/restorative-justice-course-2025',
     2: '/events/gaje-conclave-2025',
     3: '/events/flower-show-2025', 
-    4: '/events/single-credit-course-2024'
+    4: '/events/single-credit-course-2024',
+    // Add more specific routes for major events as needed
+    9: '/events/gaje-conclave-2023',
+    14: '/events/mediation-cell-inauguration'
   }
   
   return eventRoutes[eventId] || '#'

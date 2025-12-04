@@ -6,24 +6,17 @@ import { link } from 'fs'
 // Advisory Editorial Board members
 const boardMembers = [
   {
+    name: "Prof. (Dr.) Ved Kumari",
+    position: "Vice-Chancellor",
+    organization: "National Law University Odisha",
+    image: "/persons/Prof. (Dr.) Ved Kumari.jpg",
+    linkedin: "#"
+  },
+  {
     name: "Prof. (Dr.) V. K Ahuja",
     position: "Director",
     organization: "Indian Law Institute",
     image: "/api/placeholder/200/200", // No image available
-    linkedin: "#"
-  },
-  {
-    name: "Pauline McKay",
-    position: "Co-ordinator",
-    organization: "University of Strathclyde Mediation Clinic",
-    image: "/persons/Pauline_Mckay.jpg",
-    linkedin: "#"
-  },
-  {
-    name: "Daniel Brantes Ferreira",
-    position: "CEO",
-    organization: "Brazilian Centre for Mediation and Arbitration",
-    image: "/persons/Daniel Brantes Ferreira.jpg",
     linkedin: "#"
   },
   {
@@ -34,10 +27,17 @@ const boardMembers = [
     linkedin: "#"
   },
   {
-    name: "Prof. (Dr.) Ved Kumari",
-    position: "Vice-Chancellor",
-    organization: "National Law University Odisha",
-    image: "/persons/Prof. (Dr.) Ved Kumari.jpg",
+    name: "Daniel Brantes Ferreira",
+    position: "CEO",
+    organization: "Brazilian Centre for Mediation and Arbitration",
+    image: "/persons/Daniel Brantes Ferreira.jpg",
+    linkedin: "#"
+  },
+  {
+    name: "Pauline McKay",
+    position: "Co-ordinator",
+    organization: "University of Strathclyde Mediation Clinic",
+    image: "/persons/Pauline_Mckay.jpg",
     linkedin: "#"
   },
   {

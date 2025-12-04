@@ -54,7 +54,7 @@ export default function AboutTheBlogPage() {
                 <h3 className="text-xl font-bold text-blue-600 mb-4">Key Objectives</h3>
                 <ul className="text-gray-600 space-y-2 text-sm">
                   <li>• Promote scholarly discourse on mediation and negotiation practices</li>
-                  <li>• Share insights on the Mediation Act 2023 and its implementation</li>
+                  <li>• Share Insights on Law of Mediation and its implementation</li>
                   <li>• Analyze contemporary ADR trends and emerging technologies</li>
                   <li>• Foster collaboration between academics and practitioners</li>
                   <li>• Provide practical guidance for mediation professionals</li>

@@ -324,15 +324,6 @@ export default function FacultyAdvisorsPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Users className="h-16 w-16 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Prof. (Dr.) V.K. Ahuja</h3>
-                  <p className="text-blue-600 font-medium mb-2">Chief Advisor & Chairperson</p>
-                  <p className="text-gray-600 text-sm">Leading our mediation initiatives with extensive expertise in dispute resolution and legal education.</p>
-                </div>
-                
-                <div className="text-center">
                   <div className="w-32 h-32 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
                     <Award className="h-16 w-16 text-green-600" />
                   </div>

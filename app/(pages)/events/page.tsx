@@ -1,7 +1,10 @@
+'use client'
+
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Calendar, Clock, MapPin, Users, ExternalLink, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 
 // Upcoming events data
 const upcomingEvents = [
@@ -205,6 +208,60 @@ const pastEvents = [
   }
 ]
 
+// Featured event images
+const featuredImages = [
+  {
+    src: "/events/event2.jpeg",
+    title: "GAJE-NLUO Mediation Conclave",
+    description: "Our flagship international event bringing together global ADR experts"
+  },
+  {
+    src: "/events/event1.jpeg",
+   title: "GAJE-NLUO Mediation Conclave",
+    description: "Our flagship international event bringing together global ADR experts"
+  },
+  {
+    src: "/events/event3.jpeg",
+   title: "GAJE-NLUO Mediation Conclave",
+    description: "Our flagship international event bringing together global ADR experts"
+  },
+  {
+    src: "/events/event4.jpeg",
+    title: "GAJE-NLUO Mediation Conclave",
+    description: "Our flagship international event bringing together global ADR experts"
+  },
+  {
+    src: "/events/event5.jpeg",
+  title: "GAJE-NLUO Mediation Conclave",
+    description: "Our flagship international event bringing together global ADR experts"
+  },
+  {
+    src: "/events/event6.jpeg",
+    title: "GAJE-NLUO Mediation Conclave",
+    description: "Our flagship international event bringing together global ADR experts"
+  },
+  {
+    src: "/events/event7.jpeg",
+   title: "GAJE-NLUO Mediation Conclave",
+    description: "Our flagship international event bringing together global ADR experts"
+  },
+  {
+    src: "/events/event8.jpeg",
+   title: "GAJE-NLUO Mediation Conclave",
+    description: "Our flagship international event bringing together global ADR experts"
+  },
+  {
+    src: "/events/event9.jpeg",
+    title: "GAJE-NLUO Mediation Conclave",
+    description: "Our flagship international event bringing together global ADR experts"
+  },
+  {
+    src: "/events/event10.jpeg",
+    title: "GAJE-NLUO Mediation Conclave",
+    description: "Our flagship international event bringing together global ADR experts"
+  }
+]
+
 // Function to get the detail page URL for each event
 function getEventDetailUrl(eventId: number, eventTitle: string): string {
   const eventRoutes: { [key: number]: string } = {
@@ -335,6 +392,94 @@ function EventCard({ event, isPast = false }: { event: any, isPast?: boolean }) 
   )
 }
 
+function FeaturedEventsCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % featuredImages.length)
+    }, 5000) // Change image every 5 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index)
+  }
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? featuredImages.length - 1 : prevIndex - 1
+    )
+  }
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % featuredImages.length)
+  }
+
+  return (
+    <div className="relative h-80 rounded-lg overflow-hidden shadow-xl group">
+      {/* Images */}
+      {featuredImages.map((image, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === currentIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <img
+            src={image.src}
+            alt={image.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-blue-900/70 via-transparent to-indigo-900/70">
+            <div className="absolute bottom-8 left-8 text-white">
+              <h3 className="text-2xl font-bold mb-2">{image.title}</h3>
+              <p className="text-blue-100">{image.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={goToPrevious}
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        aria-label="Previous image"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button
+        onClick={goToNext}
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        aria-label="Next image"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Dots Indicator */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {featuredImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex 
+                ? 'bg-white w-8' 
+                : 'bg-white/50 hover:bg-white/75'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function EventsPage() {
   return (
     <div className="min-h-screen bg-slate-50">
@@ -355,19 +500,7 @@ export default function EventsPage() {
 
           {/* Featured Event Images */}
           <div className="mb-16">
-            <div className="relative h-80 rounded-lg overflow-hidden shadow-xl">
-              <img
-                src="/images/photo3.jpeg"
-                alt="NLUO Mediation Events"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-linear-to-r from-blue-900/70 via-transparent to-indigo-900/70">
-                <div className="absolute bottom-8 left-8 text-white">
-                  <h3 className="text-2xl font-bold mb-2">GAJE-NLUO Mediation Conclave</h3>
-                  <p className="text-blue-100">Our flagship international event bringing together global ADR experts</p>
-                </div>
-              </div>
-            </div>
+            <FeaturedEventsCarousel />
           </div>
 
           {/* Upcoming Events */}
@@ -388,26 +521,7 @@ export default function EventsPage() {
             </div>
           </section>
 
-          {/* Newsletter Signup for Events */}
-          <div className="bg-linear-to-r from-blue-50/90 to-indigo-50/80 backdrop-blur-sm rounded-lg p-8 mb-16 border border-blue-100/40">
-            <div className="max-w-2xl mx-auto text-center">
-              <Calendar className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Never Miss an Event</h3>
-              <p className="text-gray-600 mb-6">
-                Subscribe to our events newsletter and be the first to know about upcoming webinars, conferences, and workshops.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <button className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-medium">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
+        
 
           {/* Past Events */}
           <section>
@@ -428,10 +542,7 @@ export default function EventsPage() {
             
             {/* Load More Button */}
             <div className="text-center">
-              <button className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
-                View All Past Events
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </button>
+             
             </div>
           </section>
         </div>

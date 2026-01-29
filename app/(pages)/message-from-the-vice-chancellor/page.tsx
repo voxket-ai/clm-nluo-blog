@@ -31,7 +31,7 @@ export default function MessageFromVCPage() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Prof. (Dr.) Ved Kumari</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Prof.Ved Kumari</h2>
                 <p className="text-blue-600 font-medium mb-2">Vice-Chancellor</p>
                 <p className="text-gray-600">National Law University Odisha</p>
                 <p className="text-sm text-gray-500 mt-2">Former Dean & Head, Faculty of Law, University of Delhi</p>
@@ -80,82 +80,42 @@ export default function MessageFromVCPage() {
             
             <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
               <p>
-                Dear Colleagues, Students, and Friends of Legal Academia,
+                Dear Members of the Legal Fraternity and Student Community,
               </p>
               
               <p>
-                It gives me immense pleasure to welcome you to the Centre for Mediation and Negotiation at National Law University Odisha 
-                and to introduce you to the NLUO Mediation Chronicle. As someone who has dedicated over four decades to legal education 
-                and has witnessed the transformative power of alternative dispute resolution, I am deeply committed to advancing the 
-                field of mediation and negotiation in India.
+                It gives me immense pleasure to welcome you to the NLUO Centre for Mediation and Negotiation and to introduce the inaugural issue of the NLUO Mediation Chronicle.
               </p>
               
               <p>
-                Throughout my academic journey, beginning from my introduction to juvenile delinquency in 1978 to my extensive work 
-                in judicial training and restorative justice, I have observed how effective communication, understanding, and 
-                peaceful resolution of conflicts can transform lives and communities. The establishment of the NLUO Mediation Chronicle 
-                represents our institutional commitment to these principles.
+               Having spent over four decades in legal education, I have witnessed the transformative power of Alternative Dispute Resolution (ADR) firsthand. My journey from early work in juvenile justice to judicial training has reinforced a singular truth: that effective communication and the peaceful resolution of conflicts have the power to heal not just individuals, but entire communities. The establishment of this Chronicle is a testament to our institutional commitment to these values.
               </p>
               
               <p>
-                Our Centre for Mediation and Negotiation was conceived with a vision to become India's premier institution for 
-                Alternative Dispute Resolution (ADR). We recognize that in our increasingly complex legal landscape, traditional 
-                adversarial approaches must be complemented by collaborative, restorative methods that focus on healing relationships 
-                and finding mutually beneficial solutions.
+                We conceived the Centre with the aspiration of becoming India's premier institution for Mediation and Negotiation. In an increasingly complex legal landscape, we recognize that traditional adversarial approaches must be complemented by collaborative, restorative methods. We are moving towards a future where the focus shifts from winning arguments to healing relationships and finding mutually beneficial solutions.
               </p>
               
               <p>
-                The NLUO Mediation Cell, India's first mediation cell operated by a higher education institution, exemplifies our 
-                commitment to practical application of these principles. By providing free mediation services to the community, 
-                we bridge the gap between academic theory and real-world impact, while training the next generation of mediators 
-                and legal professionals.
+                We take great pride in the NLUO Mediation Cell, the first of its kind operated by a higher education institution in India. By providing free mediation services to the community, we are bridging the gap between academic theory and real-world impact. This initiative not only serves the public but ensures that our students—the next generation of legal professionals—are trained in the art of empathy and practical problem-solving.
               </p>
               
               <p>
-                My experience as the first woman academic to head the Delhi Judicial Academy (2009-2011) taught me the importance 
-                of innovative teaching methods and participatory learning. The Village Immersion Programme for Judicial Officers, 
-                which I pioneered, exposed judges to grassroots social issues – an approach we continue to embrace in our mediation 
-                training programs.
+                Through the NLUO Mediation Chronicle, we aim to foster a vibrant intellectual community. We envision this publication as a nexus where practitioners, academics, students, and policymakers can engage in meaningful dialogue. Whether discussing the implementation of the Mediation Act 2023 or the integration of technology in ODR, this platform is yours to share research, best practices, and innovative thinking.
               </p>
               
               <p>
-                Through the NLUO Mediation Chronicle, we aim to create a vibrant intellectual community where practitioners, academics, 
-                students, and policymakers can engage in meaningful dialogue about mediation, negotiation, and restorative justice. 
-                Our publication will serve as a platform for sharing research, best practices, and innovative approaches to conflict 
-                resolution.
+                As we advance towards achieving SDG 16 (Peace, Justice, and Strong Institutions), I invite you to actively participate in this endeavour. Let us build a repository of knowledge that democratizes the understanding of dispute resolution.
               </p>
               
               <p>
-                I am particularly proud of our commitment to making quality legal education and resources accessible to all. 
-                Just as I introduced the "Andragogy – the Art of Teaching Adults" course to improve legal education, we believe 
-                that knowledge about peaceful dispute resolution should be democratized and made available to everyone who seeks 
-                to understand and contribute to this vital field.
-              </p>
-              
-              <p>
-                As we advance towards achieving SDG 16 – Peace, Justice and Strong Institutions – I encourage all members of our 
-                community to actively participate in this intellectual endeavor. Submit your research, share your experiences, 
-                engage with our content, and help us build a repository of knowledge that will benefit generations of legal 
-                professionals and society at large.
-              </p>
-              
-              <p>
-                The challenges facing dispute resolution today – from the implementation of the Mediation Act 2023 to the integration 
-                of technology in ODR platforms – require collaborative solutions and innovative thinking. Through our Centre and 
-                the Mediation Chronicle, we hope to foster the kind of interdisciplinary dialogue that will drive meaningful progress 
-                in creating a more just and peaceful society.
-              </p>
-              
-              <p>
-                I extend my heartfelt gratitude to our dedicated faculty, distinguished advisory board members, contributing authors, 
-                and readers who make this initiative possible. Together, we are not just documenting the evolution of mediation and 
-                negotiation; we are actively participating in shaping a future where conflicts are resolved with dignity, 
-                understanding, and mutual respect.
+                I extend my heartfelt gratitude to our dedicated faculty, distinguished advisory board members, contributing authors, and readers who make this initiative possible. Together, we are not just documenting the evolution of mediation and negotiation; we are actively participating in shaping a future where conflicts are resolved with dignity, understanding, and mutual respect.
               </p>
               
               <p>
                 With warm regards and best wishes for your academic and professional pursuits,
               </p>
+              
+              
               
               <div className="mt-8 border-t pt-6">
                 <p className="font-semibold text-gray-900">Prof. (Dr.) Ved Kumari</p>
@@ -271,30 +231,7 @@ export default function MessageFromVCPage() {
             </div>
           </section>
 
-          {/* Contact Information */}
-          <div className="bg-gray-50 rounded-lg p-8 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Connect with the Vice-Chancellor's Office</h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              For official communications, academic collaborations, or institutional partnerships, 
-              please reach out through the Vice-Chancellor's office.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:vc@nluo.ac.in"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-              >
-                Email the Vice-Chancellor
-              </a>
-              
-              <a
-                href="tel:+91-671-2866850"
-                className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium"
-              >
-                Office Contact
-              </a>
-            </div>
-          </div>
+        
         </div>
       </main>
       

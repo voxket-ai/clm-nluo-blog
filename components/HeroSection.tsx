@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Mail, ArrowRight, Play, Star, Users, Award } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 export default function HeroSection() {
   const [email, setEmail] = useState('')
@@ -70,36 +71,27 @@ export default function HeroSection() {
                 into Dialogue
               </h1>
               <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl">
-                Join NLUO's Centre for Mediation and Negotiation in revolutionizing 
+                Join NLUO Centre for Mediation and Negotiation in revolutionizing 
                 conflict resolution through education, practice, and innovation.
               </p>
             </div>
 
-            {/* Stats Row */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 text-center">
-              <div className="group">
-                <div className="text-3xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">50+</div>
-                <div className="text-gray-400 text-sm">Events</div>
-              </div>
-              <div className="group">
-                <div className="text-3xl font-bold text-white mb-1 group-hover:text-purple-400 transition-colors">1000+</div>
-                <div className="text-gray-400 text-sm">Participants</div>
-              </div>
-              <div className="group">
-                <div className="text-3xl font-bold text-white mb-1 group-hover:text-pink-400 transition-colors">5+</div>
-                <div className="text-gray-400 text-sm">Years</div>
-              </div>
-            </div>
+        
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="group relative px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
-                <div className="absolute inset-0 bg-linear-to-r from-blue-700 to-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-                <span className="relative flex items-center">
-                  Explore Programs
-                  <ArrowRight className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
-                </span>
-              </button>
+             <Link href="/events">
+                <button
+                  type="button"
+                  className="group relative px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
+                >
+                  <div className="absolute inset-0 bg-linear-to-r from-blue-700 to-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                  <span className="relative flex items-center">
+                    Explore Programs
+                    <ArrowRight className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </button>
+              </Link>
               
               <button className="group flex items-center justify-center px-8 py-4 border-2 border-white/20 text-white rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
                 <Play className="mr-2 w-5 h-5" />
@@ -160,39 +152,11 @@ export default function HeroSection() {
                     <span className="text-white text-sm">Live Mediation Sessions</span>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
-                    India's First Institutional ADR Forum
+                    India's first institional Mediation Forum
                   </h3>
                   <p className="text-gray-300 text-sm">
                     Transforming conflict resolution through innovative practices
                   </p>
-                </div>
-                
-                {/* Floating badges */}
-                <div className="absolute top-6 right-6 bg-green-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
-                  ● Live
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Achievement Cards */}
-            <div className="absolute -top-6 -left-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 transform hover:scale-105 transition-transform">
-              <div className="flex items-center">
-                <Award className="w-8 h-8 text-yellow-400 mr-3" />
-                <div>
-                  <div className="text-white font-bold text-lg">Excellence</div>
-                  <div className="text-gray-400 text-sm">Award Winner</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute -bottom-6 -right-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 transform hover:scale-105 transition-transform">
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-linear-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-white font-bold">5★</span>
-                </div>
-                <div>
-                  <div className="text-white font-bold text-lg">4.9/5</div>
-                  <div className="text-gray-400 text-sm">Success Rate</div>
                 </div>
               </div>
             </div>

@@ -95,7 +95,7 @@ export default function Navbar() {
                           "ml-2 h-4 w-4 transition-all duration-300 relative z-10",
                           activeDropdown === item.name && "rotate-180"
                         )} />
-                        <div className="absolute inset-0 bg-linear-to-r from-blue-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute inset-0 bg-linear-to-r from-blue-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
                       </button>
                       
                       {/* Enhanced Dropdown Menu */}
@@ -109,7 +109,7 @@ export default function Navbar() {
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
-                                className="group flex items-center px-5 py-3 text-sm font-medium text-slate-700 hover:bg-linear-to-r hover:from-blue-50/80 hover:to-indigo-50/60 hover:text-blue-600 transition-all duration-300 border-l-2 border-transparent hover:border-blue-400 mx-2 rounded-lg"
+                                className="relative z-20 group flex items-center px-5 py-3 text-sm font-medium text-slate-700 hover:bg-linear-to-r hover:from-blue-50/80 hover:to-indigo-50/60 hover:text-blue-600 transition-all duration-300 border-l-2 border-transparent hover:border-blue-400 mx-2 rounded-lg"
                                 onClick={() => setActiveDropdown(null)}
                               >
                                 <div className="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-blue-500 transition-colors duration-300 mr-3"></div>
@@ -168,7 +168,7 @@ export default function Navbar() {
                         "h-5 w-5 transition-all duration-300 relative z-10",
                         activeDropdown === item.name && "rotate-180 text-blue-600"
                       )} />
-                      <div className="absolute inset-0 bg-linear-to-r from-blue-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                      <div className="absolute inset-0 bg-linear-to-r from-blue-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
                     </button>
                     
                     {activeDropdown === item.name && (

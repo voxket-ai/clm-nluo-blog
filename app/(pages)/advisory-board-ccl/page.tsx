@@ -91,11 +91,22 @@ function BoardMemberCard({ member }: { member: typeof advisoryBoard[0] }) {
     <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
       <div className="p-6">
         <div className="flex items-start gap-4 mb-4">
-          <div className="w-20 h-20 rounded-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center shrink-0">
-            <span className="text-white text-lg font-bold">
-              {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
-            </span>
-          </div>
+          <div className="w-20 h-20 rounded-full overflow-hidden shrink-0">
+              {member.image ? (
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                  <span className="text-white text-lg font-bold">
+                    {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                  </span>
+                </div>
+              )}
+            </div>
+
           
           <div className="flex-1 min-w-0">
             <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
@@ -181,7 +192,7 @@ export default function AdvisoryBoardPage() {
                   location: "Scotland, United Kingdom",
                   expertise: ["Mediation", "Negotiation", "Dispute Resolution"],
                   linkedin: "https://uk.linkedin.com/in/pauline-mckay-430a07195?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile",
-                  image: "",
+                  image: "/persons/Pauline_McKay.jpg",
                   bio: "Pauline McKay is the Co-Ordinator at the University of Strathclyde Mediation Clinic, bringing extensive experience in mediation and negotiation."
                 }}
               />
@@ -194,8 +205,8 @@ export default function AdvisoryBoardPage() {
                   location: "Brazil",
                   expertise: ["Mediation", "Arbitration", "Conflict Resolution"],
                   linkedin: "https://br.linkedin.com/in/danielbrantes?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile",
-                  image: "",
-                  bio: "Daniel Brantes Ferreira is the CEO of the Brazilian Centre for Mediation and Arbitration, recognized for his leadership in mediation and arbitration."
+                  image: "/persons/Daniel Brantes Ferreira.jpg",
+                  bio: "Daniel Brantes Ferreira holds a Ph.D. in Law and is the founding partner of DBFLaw. He serves as Editor-in-Chief of the Brazilian Journal of Alternative Dispute Resolution (RBADR) and Co-Editor-in-Chief of the International Journal of Law in Changing World (IJLCW). A leading author and researcher in the field of dispute resolution, Daniel is a Fellow of the Chartered Institute of Arbitrators (CIArb). He is a licensed lawyer and accountant in Brazil, with extensive experience in both domestic and international ADR proceedings."
                 }}
               />
               {/* Prof. Ved Kumar */}
@@ -207,7 +218,7 @@ export default function AdvisoryBoardPage() {
                   location: "Odisha, India",
                   expertise: ["Law", "Legal Education", "University Administration"],
                   linkedin: "https://in.linkedin.com/in/vedkumari?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile",
-                  image: "",
+                  image: "/persons/Prof. (Dr.) Ved Kumari.jpg",
                   bio: "Prof. Ved Kumar is the Vice Chancellor of National Law University Odisha, with a distinguished career in legal education and administration."
                 }}
               />
@@ -220,7 +231,7 @@ export default function AdvisoryBoardPage() {
                   location: "Delhi, India",
                   expertise: ["Law", "Legal Research", "Teaching"],
                   linkedin: "https://in.linkedin.com/in/sunanda-bharti-1aaa2b7?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile",
-                  image: "",
+                  image: "/persons/Prof. (Dr.) Sunanda Bharti.jpg",
                   bio: "Prof. (Dr.) Sunanda Bharti is a Professor of Law at Law Centre-I, University of Delhi, known for her contributions to legal research and teaching."
                 }}
               />

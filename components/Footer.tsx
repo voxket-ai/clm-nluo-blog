@@ -101,7 +101,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link 
                     href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 block cursor-pointer"
                   >
                     {link.name}
                   </Link>
@@ -112,31 +112,10 @@ export default function Footer() {
 
           {/* Newsletter Signup */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Stay Updated</h4>
-            <p className="text-gray-300 mb-4">
-              Subscribe to our newsletter for the latest updates and insights.
-            </p>
-            
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
-                required
-              />
-              <button
-                type="submit"
-                className="w-full px-4 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center font-medium"
-              >
-                Subscribe
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
-            </form>
+          
 
             {/* Social Media Links */}
-            <div className="mt-6">
+            <div className="">
               <h5 className="text-sm font-semibold mb-3 text-gray-400">Follow Us</h5>
               <div className="flex space-x-4">
                 {socialLinks.map((social) => {

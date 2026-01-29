@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Mail, ArrowRight, Play, Star, Users, Award } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 export default function HeroSection() {
   const [email, setEmail] = useState('')
@@ -79,13 +80,18 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="group relative px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
-                <div className="absolute inset-0 bg-linear-to-r from-blue-700 to-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-                <span className="relative flex items-center">
-                  Explore Programs
-                  <ArrowRight className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
-                </span>
-              </button>
+             <Link href="/events">
+                <button
+                  type="button"
+                  className="group relative px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
+                >
+                  <div className="absolute inset-0 bg-linear-to-r from-blue-700 to-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                  <span className="relative flex items-center">
+                    Explore Programs
+                    <ArrowRight className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </button>
+              </Link>
               
               <button className="group flex items-center justify-center px-8 py-4 border-2 border-white/20 text-white rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
                 <Play className="mr-2 w-5 h-5" />

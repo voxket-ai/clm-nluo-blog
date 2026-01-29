@@ -129,7 +129,7 @@ export default function SubmissionsPage() {
                 <div>
                   <p className="font-medium text-gray-900">Email your submission to:</p>
                   <a 
-                    href="mailto: nmc@nluo.ac.in"
+                    href="mailto:nmc@nluo.ac.in"
                     className="text-blue-600 hover:text-blue-700 font-medium text-lg"
                   >
                     nmc@nluo.ac.in

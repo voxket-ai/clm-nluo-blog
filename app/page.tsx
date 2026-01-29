@@ -88,12 +88,13 @@ export default function Home() {
               Join our community of mediators, legal professionals, and peace-builders working to create a more harmonious world.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                Start Learning
-              </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-                Contact Us
-              </button>
+              
+              <a href="mailto:nmc@nluo.ac.in">
+                <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                  Contact Us
+                </button>
+              </a>
+
             </div>
           </div>
         </section>

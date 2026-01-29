@@ -222,19 +222,17 @@ export default function RecentBlogsSection() {
             Explore cutting-edge research, expert analysis, and practical insights in mediation and alternative dispute resolution.
           </p>
         </div>
-
         {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {/* Featured Article */}
-          {featuredPost && (
-            <BlogCard post={featuredPost} featured={true} />
-          )}
-          
-          {/* Regular Articles */}
-          {regularPosts.slice(0, 4).map((post) => (
-            <BlogCard key={post.id} post={post} />
-          ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="col-span-full flex flex-col items-center justify-center text-center py-16">
+          <p className="text-2xl font-semibold text-gray-700 mb-2">
+            No articles available
+          </p>
+          <p className="text-gray-500 max-w-md">
+            New articles will appear here once they are published. Please check back later.
+          </p>
         </div>
+      </div>
 
         {/* Bottom CTA */}
         <div className="text-center">

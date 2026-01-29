@@ -56,7 +56,7 @@ export default function SubmissionsPage() {
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-start">
                     <FileText className="h-5 w-5 text-blue-500 mr-2 mt-0.5 shrink-0" />
-                    Mediation Act, 2023 Analysis
+                    Mediation Act, 2023 and related legislations,Analysis
                   </li>
                   <li className="flex items-start">
                     <FileText className="h-5 w-5 text-blue-500 mr-2 mt-0.5 shrink-0" />
@@ -129,10 +129,10 @@ export default function SubmissionsPage() {
                 <div>
                   <p className="font-medium text-gray-900">Email your submission to:</p>
                   <a 
-                    href="mailto:cmn@nluo.ac.in"
+                    href="mailto: nmc@nluo.ac.in"
                     className="text-blue-600 hover:text-blue-700 font-medium text-lg"
                   >
-                    cmn@nluo.ac.in
+                    nmc@nluo.ac.in
                   </a>
                 </div>
                 <div className="text-sm text-gray-600">

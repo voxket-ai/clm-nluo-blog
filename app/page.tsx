@@ -9,58 +9,6 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        
-        {/* Stats Section */}
-        <section className="py-16 bg-white/50 backdrop-blur-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center group">
-                <div className="relative mx-auto w-16 h-16 mb-4">
-                  <div className="absolute inset-0 bg-linear-to-r from-blue-500 to-indigo-600 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                  <div className="absolute inset-2 bg-linear-to-r from-blue-600 to-indigo-700 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">50+</span>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">50+</h3>
-                <p className="text-gray-600">Events Conducted</p>
-              </div>
-              
-              <div className="text-center group">
-                <div className="relative mx-auto w-16 h-16 mb-4">
-                  <div className="absolute inset-0 bg-linear-to-r from-emerald-500 to-teal-600 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                  <div className="absolute inset-2 bg-linear-to-r from-emerald-600 to-teal-700 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">1K+</span>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">1,000+</h3>
-                <p className="text-gray-600">Participants</p>
-              </div>
-              
-              <div className="text-center group">
-                <div className="relative mx-auto w-16 h-16 mb-4">
-                  <div className="absolute inset-0 bg-linear-to-r from-purple-500 to-pink-600 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                  <div className="absolute inset-2 bg-linear-to-r from-purple-600 to-pink-700 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">100+</span>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">100+</h3>
-                <p className="text-gray-600">Cases Mediated</p>
-              </div>
-              
-              <div className="text-center group">
-                <div className="relative mx-auto w-16 h-16 mb-4">
-                  <div className="absolute inset-0 bg-linear-to-r from-orange-500 to-red-600 rounded-full opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                  <div className="absolute inset-2 bg-linear-to-r from-orange-600 to-red-700 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">5+</span>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">5+</h3>
-                <p className="text-gray-600">Years Experience</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Features Section */}
         <section className="py-20 bg-linear-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/api/placeholder/1920/1080')] opacity-5"></div>

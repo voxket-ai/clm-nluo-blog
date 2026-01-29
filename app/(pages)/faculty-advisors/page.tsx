@@ -277,10 +277,10 @@ export default function FacultyAdvisorsPage() {
                 <p className="text-lg mb-6">
                   The NLUO Mediation Cell is the first higher institution run mediation cell in India to provide live mediation services (both private and court-referred mediation) as a part of its social activism. The Cell aims to handle multifarious legal disputes including family, matrimonial, property, land and consumer disputes through mediation with the help of faculties-cum-trained mediators.
                 </p>
-                <p className="mb-6">
+                <p className=" text-lg mb-6">
                   In the beginning, the Cell is said to extend the focus on people from nearby places and will gradually extend to the whole state and provide free mediation services both physically and virtually through Online Dispute Resolution (ODR). With this initiative, NLUO is striving hard to achieve the constitutional goal of access to justice and free legal aid.
                 </p>
-                <p className="mb-8">
+                <p className="text-lg mb-8">
                   NLUO, with the establishment of the NLUO Mediation Cell, is also not far from achieving SDG 16 under the UN Sustainable Development Goals 2030, i.e., Peace, Justice and, Strong Institutions.
                 </p>
               </div>
@@ -420,7 +420,7 @@ export default function FacultyAdvisorsPage() {
                 <div className="text-center bg-white rounded-lg p-4 shadow-md">
                   <Mail className="h-8 w-8 text-blue-600 mx-auto mb-2" />
                   <h3 className="font-bold text-gray-900 mb-1">Email</h3>
-                  <p className="text-gray-600 text-sm">cmn@nluo.ac.in</p>
+                  <p className="text-gray-600 text-sm">nluo.ac.icmn@n</p>
                 </div>
                 
                 <div className="text-center bg-white rounded-lg p-4 shadow-md">

@@ -16,7 +16,7 @@ const boardMembers = [
     name: "Prof. (Dr.) V. K Ahuja",
     position: "Director",
     organization: "Indian Law Institute",
-    image: "/api/placeholder/200/200", // No image available
+    image: "/persons/img1.jpeg", // No image available
     linkedin: "#"
   },
   {
@@ -54,7 +54,7 @@ const guestEditor = {
   name: "Aniruddha Mahadevan Sethi",
   position: "Guest Editor",
   organization: "Mediation & Negotiation Expert",
-  image: "/api/placeholder/200/200",
+  image: "/persons/img2.jpeg",
   linkedin: "https://in.linkedin.com/in/aniruddha-mahadevan-sethi-b297b5194?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile"
 }
 
@@ -63,12 +63,12 @@ const studentEditors = [
   {
     name: "Yashaswi Agrima",
     position: "Student Editor",
-    image: "/api/placeholder/200/200"
+    image: "/persons/img3.jpeg"
   },
   {
     name: "Manvi",
     position: "Student Editor",
-    image: "/persons/manvi.jpeg"
+    image: "/persons/img4.jpeg"
   }
 ]
 
@@ -77,7 +77,7 @@ const blogAdministrator = {
   name: "Nimisha Sarma",
   position: "Blog Administrator",
   organization: "NLUO CMN",
-  image: "/api/placeholder/200/200"
+  image: "/persons/img5.jpeg"
 }
 
 export default function EditorialBlogPage() {
@@ -142,9 +142,19 @@ export default function EditorialBlogPage() {
             </h2>
             <div className="max-w-md mx-auto">
               <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-linear-to-r from-green-400 to-teal-500 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">{guestEditor.name.split(' ').map(n => n[0]).join('')}</span>
-                </div>
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-blue-200">
+                    {guestEditor.image.includes('placeholder') ? (
+                      <div className="w-full h-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                        <span className="text-white text-xl font-bold">{guestEditor.name.split(' ').map(n => n[0]).join('')}</span>
+                      </div>
+                    ) : (
+                      <img
+                        src={guestEditor.image}
+                        alt={guestEditor.name}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                  </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{guestEditor.name}</h3>
                 <p className="text-blue-600 font-medium mb-1">{guestEditor.position}</p>
                 <p className="text-gray-600 text-sm">{guestEditor.organization}</p>
@@ -160,8 +170,18 @@ export default function EditorialBlogPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
               {studentEditors.map((editor, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-linear-to-r from-indigo-400 to-purple-500 flex items-center justify-center">
-                    <span className="text-white text-xl font-bold">{editor.name.split(' ').map(n => n[0]).join('')}</span>
+                  <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-blue-200">
+                    {editor.image.includes('placeholder') ? (
+                      <div className="w-full h-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                        <span className="text-white text-xl font-bold">{editor.name.split(' ').map(n => n[0]).join('')}</span>
+                      </div>
+                    ) : (
+                      <img
+                        src={editor.image}
+                        alt={editor.name}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{editor.name}</h3>
                   <p className="text-blue-600 font-medium">{editor.position}</p>
@@ -177,9 +197,19 @@ export default function EditorialBlogPage() {
             </h2>
             <div className="max-w-md mx-auto">
               <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-linear-to-r from-purple-400 to-pink-500 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold">{blogAdministrator.name.split(' ').map(n => n[0]).join('')}</span>
-                </div>
+                 <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-blue-200">
+                    {blogAdministrator.image.includes('placeholder') ? (
+                      <div className="w-full h-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                        <span className="text-white text-xl font-bold">{blogAdministrator.name.split(' ').map(n => n[0]).join('')}</span>
+                      </div>
+                    ) : (
+                      <img
+                        src={blogAdministrator.image}
+                        alt={blogAdministrator.name}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                  </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{blogAdministrator.name}</h3>
                 <p className="text-blue-600 font-medium mb-1">{blogAdministrator.position}</p>
                 <p className="text-gray-600 text-sm">{blogAdministrator.organization}</p>

@@ -26,14 +26,15 @@ export default function AboutTheBlogPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               About the <span className="text-blue-600">Chronicle</span>
             </h2>
-            <div className="prose max-w-none text-gray-600 leading-relaxed text-lg">
+            <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed text-justify">
               <p className="mb-6">
-                The NLUO Mediation Chronicle is a scholarly blog platform initiated by the Centre for Mediation and Negotiation (CMN) at the National Law University Odisha. It serves as a dynamic forum for advancing discourse, ideas, and reflections in the field of mediation and negotiation.
+                The NLUO Mediation Chronicle is a scholarly blog platform initiated by the Centre for Mediation and Negotiation (NLUO CMN) at the National Law University Odisha. It serves as a dynamic forum for advancing discourse, ideas, and reflections in the field of mediation and negotiation.
               </p>
               <p className="mb-6">
                 Our blog aims to promote accessible and practice-oriented discussions that contribute to the growth of mediation culture in India and beyond. We encourage contributions that explore contemporary developments in mediation and negotiation, evolving ADR mechanisms, and innovative dispute resolution practices.
               </p>
             </div>
+
           </div>
 
           {/* Purpose and Objectives */}
@@ -79,7 +80,7 @@ export default function AboutTheBlogPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="bg-blue-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-900 mb-2">Mediation Act 2023</h4>
-                  <p className="text-gray-600 text-sm">Analysis and commentary on India's landmark mediation legislation</p>
+                  <p className="text-gray-600 text-sm">Mediation Legislations</p>
                 </div>
                 <div className="bg-green-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-900 mb-2">Case Studies</h4>

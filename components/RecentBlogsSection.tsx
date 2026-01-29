@@ -249,10 +249,7 @@ export default function RecentBlogsSection() {
                 <ArrowRight className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>
-            
-            <button className="px-8 py-4 border-2 border-gray-300 text-gray-700 hover:border-blue-500 hover:text-blue-600 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-blue-50">
-              Subscribe to Newsletter
-            </button>
+
           </div>
         </div>
       </div>

@@ -193,12 +193,12 @@ export default function FacultyAdvisorsPage() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
                   About the <span className="text-blue-600">Centre</span>
                 </h2>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-6 leading-relaxed text-justify">
                   The NLUO Centre for Mediation and Negotiation (NLUO CMN) was established in March 2014 by Hon'ble Justices 
                   Ananga Kumar Patnaik, V. Gopala Gowda, and Adarsh Kumar Goel. It is dedicated to promoting academic research 
                   and practical training in Alternative Dispute Resolution (ADR).
                 </p>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-justify">
                   As India's first mediation cell operated by a higher-education institution, the Centre aspires to be a Centre of 
                   Excellence in ADR, fostering peaceful dispute resolution, mutual understanding, and effective communication.
                 </p>
@@ -274,13 +274,13 @@ export default function FacultyAdvisorsPage() {
               </h2>
               
               <div className="prose max-w-none text-gray-600 leading-relaxed">
-                <p className="text-lg mb-6">
+                <p className="text-lg mb-6 text-justify">
                   The NLUO Mediation Cell is the first higher institution run mediation cell in India to provide live mediation services (both private and court-referred mediation) as a part of its social activism. The Cell aims to handle multifarious legal disputes including family, matrimonial, property, land and consumer disputes through mediation with the help of faculties-cum-trained mediators.
                 </p>
-                <p className=" text-lg mb-6">
+                <p className=" text-lg mb-6 text-justify">
                   In the beginning, the Cell is said to extend the focus on people from nearby places and will gradually extend to the whole state and provide free mediation services both physically and virtually through Online Dispute Resolution (ODR). With this initiative, NLUO is striving hard to achieve the constitutional goal of access to justice and free legal aid.
                 </p>
-                <p className="text-lg mb-8">
+                <p className="text-lg mb-8 text-justify">
                   NLUO, with the establishment of the NLUO Mediation Cell, is also not far from achieving SDG 16 under the UN Sustainable Development Goals 2030, i.e., Peace, Justice and, Strong Institutions.
                 </p>
               </div>

@@ -13,7 +13,11 @@ export const metadata: Metadata = {
   keywords: "mediation, negotiation, ADR, alternative dispute resolution, NLUO, mediation chronicle, dispute resolution, mediation act 2023",
   authors: [{ name: "NLUO Centre for Mediation and Negotiation" }],
   creator: "NLUO CMN",
-  publisher: "NLUO CMN"
+  publisher: "NLUO CMN",
+  icons: {
+    icon: "/CMN(1).png",
+    apple: "/CMN(1).png",
+  },
 };
 
 export default function RootLayout({

@@ -78,40 +78,40 @@ export default function MessageFromVCPage() {
               </div>
             </div>
             
-            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4 text-justify">
               <p>
                 Dear Members of the Legal Fraternity and Student Community,
               </p>
               
-              <p>
+              <p className='text-justify'>
                 It gives me immense pleasure to welcome you to the NLUO Centre for Mediation and Negotiation and to introduce the inaugural issue of the NLUO Mediation Chronicle.
               </p>
               
-              <p>
+              <p className='text-justify'>
                Having spent over four decades in legal education, I have witnessed the transformative power of Alternative Dispute Resolution (ADR) firsthand. My journey from early work in juvenile justice to judicial training has reinforced a singular truth: that effective communication and the peaceful resolution of conflicts have the power to heal not just individuals, but entire communities. The establishment of this Chronicle is a testament to our institutional commitment to these values.
               </p>
               
-              <p>
+              <p className='text-justify'>
                 We conceived the Centre with the aspiration of becoming India's premier institution for Mediation and Negotiation. In an increasingly complex legal landscape, we recognize that traditional adversarial approaches must be complemented by collaborative, restorative methods. We are moving towards a future where the focus shifts from winning arguments to healing relationships and finding mutually beneficial solutions.
               </p>
               
-              <p>
+              <p className='text-justify'>
                 We take great pride in the NLUO Mediation Cell, the first of its kind operated by a higher education institution in India. By providing free mediation services to the community, we are bridging the gap between academic theory and real-world impact. This initiative not only serves the public but ensures that our students—the next generation of legal professionals—are trained in the art of empathy and practical problem-solving.
               </p>
               
-              <p>
+              <p className='text-justify'>
                 Through the NLUO Mediation Chronicle, we aim to foster a vibrant intellectual community. We envision this publication as a nexus where practitioners, academics, students, and policymakers can engage in meaningful dialogue. Whether discussing the implementation of the Mediation Act 2023 or the integration of technology in ODR, this platform is yours to share research, best practices, and innovative thinking.
               </p>
               
-              <p>
+              <p className='text-justify'>
                 As we advance towards achieving SDG 16 (Peace, Justice, and Strong Institutions), I invite you to actively participate in this endeavour. Let us build a repository of knowledge that democratizes the understanding of dispute resolution.
               </p>
               
-              <p>
+              <p className='text-justify'>
                 I extend my heartfelt gratitude to our dedicated faculty, distinguished advisory board members, contributing authors, and readers who make this initiative possible. Together, we are not just documenting the evolution of mediation and negotiation; we are actively participating in shaping a future where conflicts are resolved with dignity, understanding, and mutual respect.
               </p>
               
-              <p>
+              <p className='text-justify'>
                 With warm regards and best wishes for your academic and professional pursuits,
               </p>
               

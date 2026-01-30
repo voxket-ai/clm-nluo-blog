@@ -205,7 +205,18 @@ const pastEvents = [
     speakers: ["Ms. Upasana Singh", "Ms. Akanksha Marwah"],
     category: "Workshop",
     attendees: "Students from multiple universities"
-  }
+  },
+   {
+    id: 17,
+    title: "NLUO CMN Stall at 4th NLUO Flower Show",
+    subtitle: "Outreach Program",
+    date: "24th January - 25th January, 2026",
+    time: "Full Day",
+    location: "NLUO Campus",
+    description: "The Centre participated in the fourth annual Flower Fest at NLUO by setting up an awareness stall showcasing mediation services and introducing skilled mediators to the community with overwhelmingly positive response.",
+    category: "Outreach",
+    attendees: "Community engagement"
+  },
 ]
 
 // Featured event images
@@ -265,13 +276,14 @@ const featuredImages = [
 // Function to get the detail page URL for each event
 function getEventDetailUrl(eventId: number, eventTitle: string): string {
   const eventRoutes: { [key: number]: string } = {
-    1: '/events/restorative-justice-course-2025',
+    1: '/events/restorative-justice',
     2: '/events/gaje-conclave-2025',
     3: '/events/flower-show-2025', 
     4: '/events/single-credit-course-2024',
     // Add more specific routes for major events as needed
     9: '/events/gaje-conclave-2023',
-    14: '/events/mediation-cell-inauguration'
+    14: '/events/mediation-cell-inauguration',
+    17:'/events/flower-show-2026'
   }
   
   return eventRoutes[eventId] || '#'

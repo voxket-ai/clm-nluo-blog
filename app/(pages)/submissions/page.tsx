@@ -149,17 +149,17 @@ export default function SubmissionsPage() {
             <div className="space-y-6">
               <div className="bg-white rounded-lg shadow p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">What is the review process?</h3>
-                <p className="text-gray-600">The Chronicle follows a structured two-tier blind peer-review system. Tier-1 review by Student Editors (4 working days), followed by Tier-2 review by Board of Editors. Total process: Approximately within 30 days.</p>
+                <p className="text-gray-600 text-justify">The Chronicle follows a structured two-tier blind peer-review system. Tier-1 review by Student Editors (4 working days), followed by Tier-2 review by Board of Editors. Total process: Approximately within 30 days.</p>
               </div>
               
               <div className="bg-white rounded-lg shadow p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">What types of submissions are accepted?</h3>
-                <p className="text-gray-600">We accept Articles, Case Comments, Legislative Comments, and Book Reviews falling within the scope of Mediation and Alternative Dispute Resolution.</p>
+                <p className="text-gray-600 text-justify">We accept Articles, Case Comments, Legislative Comments, and Book Reviews falling within the scope of Mediation and Alternative Dispute Resolution.</p>
               </div>
               
               <div className="bg-white rounded-lg shadow p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">What is the plagiarism policy?</h3>
-                <p className="text-gray-600">We maintain strict adherence to UGC guidelines with a 10% similarity limit. All submissions undergo pre-screening using industry-standard plagiarism detection software.</p>
+                <p className="text-gray-600 text-justify">We maintain strict adherence to UGC guidelines with a 10% similarity limit. All submissions undergo pre-screening using industry-standard plagiarism detection software.</p>
               </div>
             </div>
           </div>

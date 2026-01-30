@@ -46,14 +46,14 @@ export default function AboutTheBlogPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <h3 className="text-xl font-bold text-blue-600 mb-4">Our Purpose</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-justify">
                   To create a vibrant intellectual platform that bridges the gap between academic research and practical application in mediation and negotiation. We strive to make cutting-edge ADR knowledge accessible to practitioners, scholars, students, and policymakers.
                 </p>
               </div>
               
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <h3 className="text-xl font-bold text-blue-600 mb-4">Key Objectives</h3>
-                <ul className="text-gray-600 space-y-2 text-sm">
+                <ul className="text-gray-600 space-y-2 text-sm text-justify">
                   <li>• Promote scholarly discourse on mediation and negotiation practices</li>
                   <li>• Share Insights on Law of Mediation and its implementation</li>
                   <li>• Analyze contemporary ADR trends and emerging technologies</li>

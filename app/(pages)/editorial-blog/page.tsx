@@ -10,42 +10,42 @@ const boardMembers = [
     position: "Vice-Chancellor",
     organization: "National Law University Odisha",
     image: "/persons/Prof. (Dr.) Ved Kumari.jpg",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/vedkumari/"
   },
   {
     name: "Prof. (Dr.) V. K Ahuja",
     position: "Director",
     organization: "Indian Law Institute",
     image: "/persons/img1.jpeg", // No image available
-    linkedin: "#"
+    linkedin: " https://www.linkedin.com/in/v-k-ahuja-0ba2bb104/"
   },
   {
     name: "Prof. (Dr.) Sunanda Bharti",
     position: "Professor of Law",
     organization: "Law Centre - I, University of Delhi",
     image: "/persons/Prof. (Dr.) Sunanda Bharti.jpg",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/sunanda-bharti-1aaa2b7/"
   },
   {
     name: "Daniel Brantes Ferreira",
     position: "CEO",
     organization: "Brazilian Centre for Mediation and Arbitration",
     image: "/persons/Daniel Brantes Ferreira.jpg",
-    linkedin: "#"
+    linkedin: " https://www.linkedin.com/in/danielbrantes/?locale=en"
   },
   {
     name: "Pauline McKay",
     position: "Co-ordinator",
     organization: "University of Strathclyde Mediation Clinic",
     image: "/persons/Pauline_Mckay.jpg",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/pauline-mckay-430a07195/"
   },
   {
     name: "Dr. Akshay Verma",
     position: "Co-Director",
     organization: "NLUO CMN",
     image: "/persons/Dr. Akshay Verma.jpg",
-    linkedin: "https://in.linkedin.com/in/dr-akshay-verma-397b68170?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile"
+    linkedin: "https://www.linkedin.com/in/dr-akshay-verma-397b68170/"
   }
 ]
 

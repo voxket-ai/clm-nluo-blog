@@ -420,7 +420,7 @@ export default function FacultyAdvisorsPage() {
                 <div className="text-center bg-white rounded-lg p-4 shadow-md">
                   <Mail className="h-8 w-8 text-blue-600 mx-auto mb-2" />
                   <h3 className="font-bold text-gray-900 mb-1">Email</h3>
-                  <p className="text-gray-600 text-sm">nluo.ac.icmn@n</p>
+                  <p className="text-gray-600 text-sm">cmn@nluo.ac.in</p>
                 </div>
                 
                 <div className="text-center bg-white rounded-lg p-4 shadow-md">

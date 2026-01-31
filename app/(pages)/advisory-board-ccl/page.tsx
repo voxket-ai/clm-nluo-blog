@@ -192,7 +192,7 @@ export default function AdvisoryBoardPage() {
                   location: "Scotland, United Kingdom",
                   expertise: ["Mediation", "Negotiation", "Dispute Resolution"],
                   linkedin: "https://uk.linkedin.com/in/pauline-mckay-430a07195?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile",
-                  image: "/persons/Pauline_McKay.jpg",
+                  image: "/persons/PM.jpg",
                   bio: "Pauline McKay is the Co-Ordinator at the University of Strathclyde Mediation Clinic, bringing extensive experience in mediation and negotiation."
                 }}
               />

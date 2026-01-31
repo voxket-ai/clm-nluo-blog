@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   creator: "NLUO CMN",
   publisher: "NLUO CMN",
   icons: {
-    icon: "/CMN(1).png",
-    apple: "/CMN(1).png",
+    icon: "/CMN.png",
+      apple: "/CMN.png",
   },
 };
 

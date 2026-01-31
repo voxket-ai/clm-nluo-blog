@@ -24,6 +24,17 @@ const upcomingEvents = [
 ]
 
 const pastEvents = [
+   {
+    id: 17,
+    title: "NLUO CMN Stall at 4th NLUO Flower Show",
+    subtitle: "Outreach Program",
+    date: "24th January - 25th January, 2026",
+    time: "Full Day",
+    location: "NLUO Campus",
+    description: "The Centre participated in the fourth annual Flower Fest at NLUO by setting up an awareness stall showcasing mediation services and introducing skilled mediators to the community with overwhelmingly positive response.",
+    category: "Outreach",
+    attendees: "Community engagement"
+  },
   {
     id: 1,
     title: "Single Credit Course: Restorative Practice and Justice",
@@ -206,17 +217,7 @@ const pastEvents = [
     category: "Workshop",
     attendees: "Students from multiple universities"
   },
-   {
-    id: 17,
-    title: "NLUO CMN Stall at 4th NLUO Flower Show",
-    subtitle: "Outreach Program",
-    date: "24th January - 25th January, 2026",
-    time: "Full Day",
-    location: "NLUO Campus",
-    description: "The Centre participated in the fourth annual Flower Fest at NLUO by setting up an awareness stall showcasing mediation services and introducing skilled mediators to the community with overwhelmingly positive response.",
-    category: "Outreach",
-    attendees: "Community engagement"
-  },
+  
 ]
 
 // Featured event images

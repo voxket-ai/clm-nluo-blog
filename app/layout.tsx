@@ -14,10 +14,6 @@ export const metadata: Metadata = {
   authors: [{ name: "NLUO Centre for Mediation and Negotiation" }],
   creator: "NLUO CMN",
   publisher: "NLUO CMN",
-  icons: {
-    icon: "/CMN.png",
-      apple: "/CMN.png",
-  },
 };
 
 export default function RootLayout({

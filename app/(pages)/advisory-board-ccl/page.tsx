@@ -212,7 +212,7 @@ export default function AdvisoryBoardPage() {
               {/* Prof. Ved Kumar */}
               <BoardMemberCard
                 member={{
-                  name: "Prof. Ved Kumar",
+                  name: "Prof. Ved Kumari",
                   position: "Vice Chancellor",
                   organization: "National Law University Odisha",
                   location: "Odisha, India",

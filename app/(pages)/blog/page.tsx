@@ -71,7 +71,7 @@ export default function BlogPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              NLUO Mediation <span className="text-blue-600">Chronicle</span>
+              NLUO Mediation <span className="text-blue-600">Blogs</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover in-depth analysis, expert commentary, and the latest developments in Mediation and Negotiation under ADR from leading legal professionals and scholars.

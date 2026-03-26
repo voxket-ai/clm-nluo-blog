@@ -8,9 +8,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NLUO Mediation Chronicle - Mediation & Negotiation Insights",
-  description: "The NLUO Mediation Chronicle is a platform dedicated to advancing discourse, ideas, and reflections in the field of mediation and negotiation, promoting accessible and practice-oriented discussions.",
-  keywords: "mediation, negotiation, ADR, alternative dispute resolution, NLUO, mediation chronicle, dispute resolution, mediation act 2023",
+  title: "NLUO Mediation Blogs - Mediation & Negotiation Insights",
+  description: "The NLUO Mediation Blogs is a platform dedicated to advancing discourse, ideas, and reflections in the field of mediation and negotiation, promoting accessible and practice-oriented discussions.",
+  keywords: "mediation, negotiation, ADR, alternative dispute resolution, NLUO, mediation blogs, dispute resolution, mediation act 2023",
   authors: [{ name: "NLUO Centre for Mediation and Negotiation" }],
   creator: "NLUO CMN",
   publisher: "NLUO CMN",

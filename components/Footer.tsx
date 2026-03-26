@@ -17,7 +17,7 @@ import {
 const footerLinks = {
   quickLinks: [
     { name: 'Home', href: '/' },
-    { name: 'NLUO Mediation Chronicle', href: '/blog' },
+    { name: 'NLUO Mediation Blogs', href: '/blog' },
     { name: 'Submissions', href: '/submissions' },
     { name: 'Events', href: '/events' }
   ],
@@ -53,7 +53,7 @@ export default function Footer() {
           {/* Brand & Description */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold text-blue-400 mb-4">NLUO Mediation Chronicle</h3>
+              <h3 className="text-2xl font-bold text-blue-400 mb-4">NLUO Mediation Blogs</h3>
               <p className="text-gray-300 leading-relaxed">
                 A platform dedicated to advancing discourse, ideas, and reflections in the field of mediation and negotiation. 
                 An initiative of the Centre for Mediation and Negotiation at NLUO.

@@ -93,7 +93,7 @@ export default function EditorialBlogPage() {
               Editorial <span className="text-blue-600">Structure</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet our editorial team organized in four distinct tiers, each playing a crucial role in maintaining the quality and standards of NLUO Mediation Chronicle.
+              Meet our editorial team organized in four distinct tiers, each playing a crucial role in maintaining the quality and standards of NLUO Mediation Blogs.
             </p>
           </div>
 

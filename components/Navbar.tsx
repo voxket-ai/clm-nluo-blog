@@ -31,7 +31,7 @@ const navigationItems = [
     name: 'About',
     href: '/about-the-blog',
     submenu: [
-      { name: 'About the Chronicle', href: '/about-the-blog' },
+      { name: 'About the Blogs', href: '/about-the-blog' },
       { name: 'About the Centre', href: '/faculty-advisors' },
       { name: 'Advisory Board', href: '/advisory-board-ccl' },
       { name: 'Message from VC', href: '/message-from-the-vice-chancellor' }
@@ -69,7 +69,7 @@ export default function Navbar() {
                   NLUO Mediation
                 </div>
                 <div className="text-sm md:text-base font-bold text-slate-600 tracking-wide">
-                  Chronicle
+                  Blogs
                 </div>
               </div>
             </Link>

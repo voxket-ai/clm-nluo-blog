@@ -149,7 +149,7 @@ export default function HeroSection() {
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.3),transparent)]"></div>
                   </div>
                   <span className="relative flex items-center justify-center">
-                    Explore Programs
+                    Explore Programmes
                     <ArrowRight className="ml-2 w-5 h-5 transform group-hover:translate-x-2 transition-transform" />
                   </span>
                 </button>

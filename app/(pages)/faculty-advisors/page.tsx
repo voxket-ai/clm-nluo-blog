@@ -177,7 +177,7 @@ export default function FacultyAdvisorsPage() {
               </h2>
               <p className="text-gray-600 leading-relaxed">
                 Our faculty advisors bring decades of combined experience in legal education, research, 
-                and practice. They provide strategic guidance to NLUO Mediation Chronicle, ensuring that our content 
+                and practice. They provide strategic guidance to NLUO Mediation Blogs, ensuring that our content 
                 maintains the highest standards of academic rigor while remaining relevant to contemporary 
                 legal practice. Each advisor contributes their unique expertise in specialized areas of 
                 corporate law, creating a comprehensive knowledge base for our publications and research initiatives.

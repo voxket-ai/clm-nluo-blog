@@ -13,7 +13,7 @@ export default function AboutTheBlogPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About <span className="text-blue-600">NLUO Mediation Chronicle</span>
+              About <span className="text-blue-600">NLUO Mediation Blogs</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               A platform dedicated to advancing discourse, ideas, and reflections in the field of mediation and negotiation, 
@@ -24,11 +24,11 @@ export default function AboutTheBlogPage() {
           {/* About the Blog */}
           <div className="bg-linear-to-br from-blue-50/90 to-slate-100/80 rounded-lg shadow-lg p-8 mb-12 border border-blue-100/40">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-              About the <span className="text-blue-600">Chronicle</span>
+              About the <span className="text-blue-600">Blogs</span>
             </h2>
             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed text-justify">
               <p className="mb-6">
-                The NLUO Mediation Chronicle is a scholarly blog platform initiated by the Centre for Mediation and Negotiation (NLUO CMN) at the National Law University Odisha. It serves as a dynamic forum for advancing discourse, ideas, and reflections in the field of mediation and negotiation.
+                The NLUO Mediation Blogs is a scholarly blog platform initiated by the Centre for Mediation and Negotiation (NLUO CMN) at the National Law University Odisha. It serves as a dynamic forum for advancing discourse, ideas, and reflections in the field of mediation and negotiation.
               </p>
               <p className="mb-6">
                 Our blog aims to promote accessible and practice-oriented discussions that contribute to the growth of mediation culture in India and beyond. We encourage contributions that explore contemporary developments in mediation and negotiation, evolving ADR mechanisms, and innovative dispute resolution practices.
@@ -73,7 +73,7 @@ export default function AboutTheBlogPage() {
               
               <div className="prose max-w-none text-gray-600 leading-relaxed">
                 <p className="text-lg mb-6">
-                  The NLUO Mediation Chronicle covers a wide range of topics relevant to the evolving landscape of Alternative Dispute Resolution (ADR) in India and internationally.
+                  The NLUO Mediation Blogs covers a wide range of topics relevant to the evolving landscape of Alternative Dispute Resolution (ADR) in India and internationally.
                 </p>
               </div>
               

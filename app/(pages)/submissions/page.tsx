@@ -15,7 +15,7 @@ export default function SubmissionsPage() {
               Article <span className="text-blue-600">Submissions</span>
             </h1>
             <p className="text-xl text-gray-600">
-              The NLUO Mediation Chronicle accepts submissions from experts, working professionals, academicians and students. 
+              The NLUO Mediation Blogs accepts submissions from experts, working professionals, academicians and students. 
               We welcome articles, case comments, legislative comments and book reviews in the field of mediation and ADR.
             </p>
           </div>
@@ -111,7 +111,7 @@ export default function SubmissionsPage() {
                     <CheckCircle className="h-8 w-8 text-green-600" />
                   </div>
                   <h4 className="font-semibold text-gray-900 mb-2">4. Publish</h4>
-                  <p className="text-sm text-gray-600">Article goes live on NLUO Mediation Chronicle with author attribution</p>
+                  <p className="text-sm text-gray-600">Article goes live on NLUO Mediation Blogs with author attribution</p>
                 </div>
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function SubmissionsPage() {
             <div className="space-y-6">
               <div className="bg-white rounded-lg shadow p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">What is the review process?</h3>
-                <p className="text-gray-600 text-justify">The Chronicle follows a structured two-tier blind peer-review system. Tier-1 review by Student Editors (4 working days), followed by Tier-2 review by Board of Editors. Total process: Approximately within 30 days.</p>
+                <p className="text-gray-600 text-justify">The Blogs follows a structured two-tier blind peer-review system. Tier-1 review by Student Editors (4 working days), followed by Tier-2 review by Board of Editors. Total process: Approximately within 30 days.</p>
               </div>
               
               <div className="bg-white rounded-lg shadow p-6">

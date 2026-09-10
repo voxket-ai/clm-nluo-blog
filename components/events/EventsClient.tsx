@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import {
   Calendar,
   Clock,
@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useEdit } from '@/components/editable/EditProvider'
+import Editable from '@/components/editable/Editable'
 import EventDialog from '@/components/events/EventDialog'
 import ConfirmDialog from '@/components/ui/ConfirmDialog'
 import type { EventView } from '@/lib/events'
@@ -39,7 +40,6 @@ export default function EventsClient({
 }) {
   const edit = useEdit()
   const router = useRouter()
-  const searchParams = useSearchParams()
   const [dialogOpen, setDialogOpen] = useState(false)
   const [editing, setEditing] = useState<EventView | null>(null)
   const [confirming, setConfirming] = useState<EventView | null>(null)
@@ -49,14 +49,17 @@ export default function EventsClient({
   const canManage = Boolean(edit?.isAdmin)
 
   // The admin toolbar links here with ?new=1 to open the composer directly.
+  // Read from location rather than useSearchParams: that hook forces this
+  // component under a Suspense boundary, which hydrates after the edit-mode
+  // state has already flipped and produces an attribute mismatch.
   useEffect(() => {
     if (!canManage) return
-    if (searchParams.get('new') === '1') {
+    if (new URLSearchParams(window.location.search).get('new') === '1') {
       setEditing(null)
       setDialogOpen(true)
       router.replace('/events', { scroll: false })
     }
-  }, [searchParams, canManage, router])
+  }, [canManage, router])
 
   const remove = async (event: EventView) => {
     setDeleting(true)
@@ -98,7 +101,10 @@ export default function EventsClient({
       <section className="mb-16">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
           <h2 className="text-3xl font-bold text-gray-900">
-            Upcoming <span className="text-blue-600">Events</span>
+            <Editable id="events.upcoming.title" as="span" label="Upcoming heading">Upcoming</Editable>{' '}
+            <span className="text-blue-600">
+              <Editable id="events.upcoming.title-accent" as="span" label="Upcoming heading (blue)">Events</Editable>
+            </span>
           </h2>
           <div className="flex items-center gap-3">
             <span className="text-sm text-gray-500">
@@ -136,7 +142,10 @@ export default function EventsClient({
       <section>
         <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
           <h2 className="text-3xl font-bold text-gray-900">
-            Past <span className="text-blue-600">Events</span>
+            <Editable id="events.past.title" as="span" label="Past heading">Past</Editable>{' '}
+            <span className="text-blue-600">
+              <Editable id="events.past.title-accent" as="span" label="Past heading (blue)">Events</Editable>
+            </span>
           </h2>
           <span className="text-sm text-gray-500">
             {past.length} {past.length === 1 ? 'event' : 'events'} completed

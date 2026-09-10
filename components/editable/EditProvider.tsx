@@ -10,7 +10,7 @@ import {
   useState,
 } from 'react'
 import { useRouter } from 'next/navigation'
-import type { ContentMap, ContentType } from '@/lib/contentKeys'
+import { hasStyle, type ContentMap, type ContentType, type TextStyle } from '@/lib/contentKeys'
 
 export interface PendingChange {
   key: string
@@ -18,6 +18,8 @@ export interface PendingChange {
   value: string
   alt?: string
   page?: string
+  /** Per-slot formatting: font, size, colour, alignment. */
+  style?: TextStyle
   /** Default from the code, so the editor can offer "reset to original". */
   original: string
 }
@@ -29,6 +31,10 @@ interface EditContextValue {
   /** Current value for a slot: pending edit > saved override > code default. */
   resolve: (key: string, fallback: string) => string
   resolveAlt: (key: string, fallback: string) => string
+  /** Current formatting for a slot: pending > saved > none. */
+  resolveStyle: (key: string) => TextStyle | undefined
+  /** Merge formatting into a slot without disturbing its text. */
+  restyle: (key: string, style: TextStyle, original: string) => void
   stage: (change: PendingChange) => void
   unstage: (key: string) => void
   pending: Record<string, PendingChange>
@@ -149,6 +155,15 @@ export default function EditProvider({
     [pending, content]
   )
 
+  const resolveStyle = useCallback(
+    (key: string): TextStyle | undefined => {
+      const staged = pending[key]
+      if (staged && 'style' in staged) return staged.style
+      return content[key]?.style
+    },
+    [pending, content]
+  )
+
   const stage = useCallback((change: PendingChange) => {
     setLastError('')
     setPending((prev) => {
@@ -160,6 +175,32 @@ export default function EditProvider({
       return next
     })
   }, [])
+
+  const restyle = useCallback(
+    (key: string, style: TextStyle, original: string) => {
+      setLastError('')
+      setPending((prev) => {
+        const existing = prev[key]
+        const merged = { ...(existing?.style ?? content[key]?.style ?? {}), ...style }
+        // A field set back to '' is a removal, not a value.
+        Object.keys(merged).forEach((k) => {
+          if (!merged[k as keyof TextStyle]) delete merged[k as keyof TextStyle]
+        })
+        return {
+          ...prev,
+          [key]: {
+            key,
+            type: 'text',
+            value: existing?.value ?? content[key]?.value ?? original,
+            original,
+            page: typeof window !== 'undefined' ? window.location.pathname : '',
+            style: Object.keys(merged).length ? merged : undefined,
+          },
+        }
+      })
+    },
+    [content]
+  )
 
   const unstage = useCallback((key: string) => {
     setPending((prev) => {
@@ -198,10 +239,12 @@ export default function EditProvider({
           changes: changes.map((c) => ({
             key: c.key,
             type: c.type,
-            // An emptied slot means "go back to the wording in the code".
-            value: c.value === c.original ? '' : c.value,
+            // An emptied slot means "go back to the wording in the code" -
+            // unless it carries formatting, which must outlive the text reset.
+            value: c.value === c.original && !hasStyle(c.style) ? '' : c.value,
             alt: c.alt,
             page: c.page,
+            style: c.style,
           })),
         }),
       })
@@ -249,6 +292,8 @@ export default function EditProvider({
       setEditMode,
       resolve,
       resolveAlt,
+      resolveStyle,
+      restyle,
       stage,
       unstage,
       pending,
@@ -261,7 +306,7 @@ export default function EditProvider({
       setNotice,
     }),
     [
-      isAdmin, editMode, setEditMode, resolve, resolveAlt, stage, unstage,
+      isAdmin, editMode, setEditMode, resolve, resolveAlt, resolveStyle, restyle, stage, unstage,
       pending, dirtyCount, saving, save, discard, lastError, notice, setNotice,
     ]
   )

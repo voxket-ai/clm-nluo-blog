@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -106,9 +105,7 @@ export default async function EventsPage() {
               </div>
             </div>
           ) : (
-            <Suspense fallback={<div className="h-64" />}>
-              <EventsClient upcoming={upcoming} past={past} />
-            </Suspense>
+            <EventsClient upcoming={upcoming} past={past} />
           )}
         </div>
       </main>

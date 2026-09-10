@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { useEdit } from '@/components/editable/EditProvider'
-import { normalizeText } from '@/lib/contentKeys'
+import { normalizeText, type TextStyle } from '@/lib/contentKeys'
+import FormatToolbar from '@/components/editable/FormatToolbar'
 
 type Tag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'span' | 'div' | 'li' | 'strong' | 'em' | 'label'
 
@@ -38,12 +39,15 @@ export default function Editable({
   const edit = useEdit()
   const ref = useRef<HTMLElement>(null)
   const [focused, setFocused] = useState(false)
+  const [formatting, setFormatting] = useState(false)
+  const [node, setNode] = useState<HTMLElement | null>(null)
   const Tag = as as React.ElementType
 
   const original = children
   const value = edit ? edit.resolve(id, original) : original
   const active = Boolean(edit?.editMode)
   const isDirty = Boolean(edit?.pending[id])
+  const style = edit?.resolveStyle(id)
 
   const commit = useCallback(() => {
     const node = ref.current
@@ -74,6 +78,9 @@ export default function Editable({
     if (event.key === 'Escape') {
       event.preventDefault()
       if (ref.current) ref.current.innerText = value
+      // Close the format bar here too: this handler runs first and blurs the
+      // node, so the bar's own Escape listener cannot be relied on.
+      setFormatting(false)
       ref.current?.blur()
       return
     }
@@ -101,12 +108,18 @@ export default function Editable({
   }, [value, focused])
 
   if (!active) {
-    return <Tag className={className}>{value}</Tag>
+    return (
+      <Tag className={className} style={style as React.CSSProperties | undefined}>
+        {value}
+      </Tag>
+    )
   }
 
   return (
+    <>
     <Tag
       ref={ref}
+      style={style as React.CSSProperties | undefined}
       className={cn(
         className,
         'nluo-editable',
@@ -121,7 +134,11 @@ export default function Editable({
       aria-label={label || `Edit ${id}`}
       data-edit-id={id}
       data-edit-label={label || id}
-      onFocus={() => setFocused(true)}
+      onFocus={() => {
+        setFocused(true)
+        setNode(ref.current)
+        setFormatting(true)
+      }}
       onBlur={() => {
         setFocused(false)
         commit()
@@ -131,5 +148,22 @@ export default function Editable({
     >
       {value}
     </Tag>
+
+    {formatting && (
+      <FormatToolbar
+        target={node}
+        style={style}
+        label={label || id}
+        onChange={(patch: TextStyle) => edit?.restyle(id, patch, original)}
+        onReset={() => {
+          edit?.restyle(id, {
+            fontFamily: '', fontSize: '', fontWeight: '', fontStyle: '',
+            textDecoration: '', color: '', textAlign: '', letterSpacing: '', lineHeight: '',
+          }, original)
+        }}
+        onClose={() => setFormatting(false)}
+      />
+    )}
+    </>
   )
 }

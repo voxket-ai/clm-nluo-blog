@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import Editable from '@/components/editable/Editable'
 import EditableImage from '@/components/editable/EditableImage'
 import { useEdit } from '@/components/editable/EditProvider'
+import { slotId } from '@/lib/contentKeys'
 
 const navigationItems = [
   { name: 'Home', href: '/' },
@@ -122,7 +123,9 @@ export default function Navbar() {
                             : 'text-slate-600 hover:text-slate-900'
                         )}
                       >
-                        {item.name}
+                        <Editable id={slotId('nav', item.name)} as="span" label="Menu label">
+                          {item.name}
+                        </Editable>
                         <ChevronDown
                           className={cn(
                             'h-3.5 w-3.5 transition-transform duration-200',
@@ -138,7 +141,9 @@ export default function Navbar() {
                           active ? 'text-blue-600' : 'text-slate-600 hover:text-slate-900'
                         )}
                       >
-                        {item.name}
+                        <Editable id={slotId('nav', item.name)} as="span" label="Menu label">
+                          {item.name}
+                        </Editable>
                         {active && (
                           <span className="absolute inset-x-3 -bottom-[3px] h-0.5 rounded-full bg-blue-600" />
                         )}
@@ -159,7 +164,9 @@ export default function Navbar() {
                                 : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                             )}
                           >
-                            {subItem.name}
+                            <Editable id={slotId('nav.sub', subItem.name)} as="span" label="Submenu label">
+                              {subItem.name}
+                            </Editable>
                           </Link>
                         ))}
                       </div>
@@ -221,7 +228,9 @@ export default function Navbar() {
                       }
                       className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-700 transition-colors hover:bg-slate-50"
                     >
-                      {item.name}
+                      <Editable id={slotId('nav', item.name)} as="span" label="Menu label">
+                        {item.name}
+                      </Editable>
                       <ChevronDown
                         className={cn(
                           'h-4 w-4 text-slate-400 transition-transform',
@@ -241,7 +250,9 @@ export default function Navbar() {
                             }}
                             className="block rounded-lg px-3 py-2 text-sm text-slate-600 transition-colors hover:text-blue-600"
                           >
-                            {subItem.name}
+                            <Editable id={slotId('nav.sub', subItem.name)} as="span" label="Submenu label">
+                              {subItem.name}
+                            </Editable>
                           </Link>
                         ))}
                       </div>
@@ -256,7 +267,9 @@ export default function Navbar() {
                       isActive(item) ? 'text-blue-600' : 'text-slate-700 hover:bg-slate-50'
                     )}
                   >
-                    {item.name}
+                    <Editable id={slotId('nav', item.name)} as="span" label="Menu label">
+                      {item.name}
+                    </Editable>
                   </Link>
                 )}
               </div>

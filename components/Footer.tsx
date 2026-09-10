@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Editable from '@/components/editable/Editable'
+import { slotId } from '@/lib/contentKeys'
 import { Linkedin, Instagram, Mail, MapPin } from 'lucide-react'
 
 const footerLinks = {
@@ -83,7 +84,9 @@ export default function Footer() {
                     href={link.href}
                     className="text-sm text-slate-400 transition-colors hover:text-white"
                   >
-                    {link.name}
+                    <Editable id={slotId('footer.link', link.name)} as="span" label="Footer link">
+                      {link.name}
+                    </Editable>
                   </Link>
                 </li>
               ))}
@@ -101,7 +104,9 @@ export default function Footer() {
                     href={link.href}
                     className="text-sm text-slate-400 transition-colors hover:text-white"
                   >
-                    {link.name}
+                    <Editable id={slotId('footer.link', link.name)} as="span" label="Footer link">
+                      {link.name}
+                    </Editable>
                   </Link>
                 </li>
               ))}
@@ -135,10 +140,15 @@ export default function Footer() {
 
       <div className="border-t border-slate-800">
         <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
-          <p className="text-xs text-slate-500">
-            © 2025 by NLUO Centre for Mediation and Negotiation — National Law University Odisha. All rights
-            reserved.
-          </p>
+          <Editable
+            id="footer.copyright"
+            as="p"
+            multiline
+            label="Copyright line"
+            className="text-xs text-slate-500"
+          >
+            © 2025 by NLUO Centre for Mediation and Negotiation — National Law University Odisha. All rights reserved.
+          </Editable>
         </div>
       </div>
     </footer>

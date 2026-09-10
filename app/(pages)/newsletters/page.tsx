@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import { Calendar, Download, Eye, Mail, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Editable from '@/components/editable/Editable'
+import { slotId } from '@/lib/contentKeys'
 
 // Sample newsletter data
 const newsletters = [
@@ -156,7 +157,9 @@ export default function NewslettersPage() {
                 <div key={newsletter.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                   <div className="h-32 bg-linear-to-r from-blue-500 to-indigo-600 flex items-center justify-center relative">
                     <div className="text-center text-white">
-                      <h3 className="text-lg font-bold">{newsletter.title}</h3>
+                      <h3 className="text-lg font-bold">
+                        <Editable id={slotId('newsletter', newsletter.title, 'title')} as="span" label="Newsletter title">{newsletter.title}</Editable>
+                      </h3>
                     </div>
                     <div className="absolute top-3 right-3 bg-white bg-opacity-20 rounded-full px-2 py-1 text-xs text-white">
                       <Editable id="newsletters.pdf" as="span">PDF</Editable>
@@ -166,15 +169,17 @@ export default function NewslettersPage() {
                   <div className="p-6">
                     <div className="flex items-center text-sm text-gray-500 mb-3">
                       <Calendar className="h-4 w-4 mr-1" />
-                      <span>{newsletter.publishDate}</span>
+                      <span>
+                        <Editable id={slotId('newsletter', newsletter.title, 'date')} as="span" label="Publish date">{newsletter.publishDate}</Editable>
+                      </span>
                     </div>
                     
                     <h4 className="text-lg font-bold text-gray-900 mb-2">
-                      {newsletter.subtitle}
+                      <Editable id={slotId('newsletter', newsletter.title, 'subtitle')} as="span" label="Newsletter subtitle">{newsletter.subtitle}</Editable>
                     </h4>
                     
                     <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                      {newsletter.description}
+                      <Editable id={slotId('newsletter', newsletter.title, 'description')} as="span" multiline label="Newsletter description">{newsletter.description}</Editable>
                     </p>
                     
                     {/* Topics */}
@@ -182,7 +187,7 @@ export default function NewslettersPage() {
                       <div className="flex flex-wrap gap-1">
                         {newsletter.topics.slice(0, 2).map((topic, index) => (
                           <span key={index} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
-                            {topic}
+                            <Editable id={slotId('newsletter', newsletter.title, 'topic', index)} as="span" label="Topic tag">{topic}</Editable>
                           </span>
                         ))}
                         {newsletter.topics.length > 2 && (

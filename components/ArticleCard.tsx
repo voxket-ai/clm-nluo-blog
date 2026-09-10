@@ -3,6 +3,7 @@ import { ArrowRight, Clock, Star, User } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { type Article, categoryColor, formatArticleDate, initials } from '@/lib/articles'
 import ArticleAdminControls from '@/components/blog/ArticleAdminControls'
+import Editable from '@/components/editable/Editable'
 
 interface ArticleCardProps {
   article: Article
@@ -59,12 +60,12 @@ export default function ArticleCard({ article, featured = false }: ArticleCardPr
           {article.featured && (
             <span className="px-3 py-1 bg-yellow-500 text-white rounded-full text-xs font-semibold flex items-center shadow-sm">
               <Star className="w-3 h-3 mr-1" />
-              Featured
+              <Editable id="cmp.articlecard.featured" as="span">Featured</Editable>
             </span>
           )}
           {article.trending && (
             <span className="px-3 py-1 bg-red-500 text-white rounded-full text-xs font-semibold shadow-sm">
-              Trending
+              <Editable id="cmp.articlecard.trending" as="span">Trending</Editable>
             </span>
           )}
         </div>
@@ -111,7 +112,7 @@ export default function ArticleCard({ article, featured = false }: ArticleCardPr
             href={href}
             className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors group/link"
           >
-            Read More
+            <Editable id="cmp.articlecard.read-more" as="span">Read More</Editable>
             <ArrowRight className="ml-1 w-4 h-4 transform group-hover/link:translate-x-1 transition-transform duration-300" />
           </Link>
 

@@ -14,6 +14,8 @@ const SiteContentSchema = new Schema(
     value: { type: String, required: true, maxlength: 20000 },
     /** Alt text for image slots; ignored for text. */
     alt: { type: String, default: '', maxlength: 300 },
+    /** Optional per-slot formatting (font, size, colour, alignment). */
+    style: { type: Schema.Types.Mixed, default: undefined },
     page: { type: String, default: '', maxlength: 160 },
     updatedBy: { type: String, default: 'admin', maxlength: 90 },
   },

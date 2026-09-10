@@ -4,10 +4,13 @@ import { connectToDatabase } from '@/lib/mongodb'
 import SiteContent from '@/models/SiteContent'
 import {
   CONTENT_LIMITS,
+  hasStyle,
   isValidContentKey,
   isValidImageValue,
+  sanitizeStyle,
   type ContentMap,
   type ContentType,
+  type TextStyle,
 } from '@/lib/contentKeys'
 
 /**
@@ -21,7 +24,7 @@ import {
 export const getContentMap = cache(async (): Promise<ContentMap> => {
   try {
     await connectToDatabase()
-    const rows = await SiteContent.find({}).select('key type value alt').lean()
+    const rows = await SiteContent.find({}).select('key type value alt style').lean()
 
     const map: ContentMap = {}
     for (const row of rows) {
@@ -29,6 +32,7 @@ export const getContentMap = cache(async (): Promise<ContentMap> => {
         value: row.value,
         alt: row.alt || undefined,
         type: (row.type as ContentType) || 'text',
+        style: sanitizeStyle(row.style),
       }
     }
     return map
@@ -44,6 +48,7 @@ export interface ContentWrite {
   value: string
   alt?: string
   page?: string
+  style?: TextStyle
 }
 
 export interface WriteResult {
@@ -70,8 +75,12 @@ export async function saveContent(writes: ContentWrite[], updatedBy: string): Pr
 
     const type: ContentType = write.type === 'image' ? 'image' : 'text'
     const value = typeof write.value === 'string' ? write.value : ''
+    const style = sanitizeStyle(write.style)
 
-    if (value === '') {
+    // An empty value means "go back to the wording in the code" - but only
+    // when there is no formatting to preserve, otherwise the styling would be
+    // silently discarded along with it.
+    if (value === '' && !hasStyle(style)) {
       operations.push({ deleteOne: { filter: { key: write.key } } })
       result.removed.push(write.key)
       continue
@@ -93,6 +102,7 @@ export async function saveContent(writes: ContentWrite[], updatedBy: string): Pr
           $set: {
             type,
             value,
+            style: style ?? null,
             alt: (write.alt || '').slice(0, CONTENT_LIMITS.altMax),
             page: (write.page || '').slice(0, 160),
             updatedBy,
@@ -125,6 +135,7 @@ export async function listOverrides() {
     key: row.key,
     type: row.type as ContentType,
     value: row.value,
+    style: sanitizeStyle(row.style),
     page: row.page || '',
     updatedBy: row.updatedBy || 'admin',
     updatedAt: new Date(row.updatedAt ?? Date.now()).toISOString(),

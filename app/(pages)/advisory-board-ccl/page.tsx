@@ -1,6 +1,9 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Linkedin, Building, MapPin, Award, Users, Target } from 'lucide-react'
+import Editable from '@/components/editable/Editable'
+import EditableImage from '@/components/editable/EditableImage'
+import { slotId } from '@/lib/contentKeys'
 
 // Sample advisory board data
 const advisoryBoard = [
@@ -93,9 +96,11 @@ function BoardMemberCard({ member }: { member: typeof advisoryBoard[0] }) {
         <div className="flex items-start gap-4 mb-4">
           <div className="w-20 h-20 rounded-full overflow-hidden shrink-0">
               {member.image ? (
-                <img
+                <EditableImage
+                  id={slotId('advisory', member.name, 'photo')}
                   src={member.image}
                   alt={member.name}
+                  label={`Photo of ${member.name}`}
                   className="w-full h-full object-cover"
                 />
               ) : (
@@ -109,31 +114,41 @@ function BoardMemberCard({ member }: { member: typeof advisoryBoard[0] }) {
 
           
           <div className="flex-1 min-w-0">
-            <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
-            <p className="text-blue-600 font-medium text-sm mb-1">{member.position}</p>
+            <h3 className="text-lg font-bold text-gray-900 mb-1">
+              <Editable id={slotId('advisory', member.name, 'name')} as="span" label="Member name">{member.name}</Editable>
+            </h3>
+            <p className="text-blue-600 font-medium text-sm mb-1">
+              <Editable id={slotId('advisory', member.name, 'position')} as="span" label="Member role">{member.position}</Editable>
+            </p>
             <div className="flex items-center text-xs text-gray-600 mb-2">
               <Building className="h-3 w-3 mr-1" />
-              <span className="truncate">{member.organization}</span>
+              <span className="truncate">
+                <Editable id={slotId('advisory', member.name, 'organization')} as="span" label="Member organisation">{member.organization}</Editable>
+              </span>
             </div>
             <div className="flex items-center text-xs text-gray-500">
               <MapPin className="h-3 w-3 mr-1" />
-              <span>{member.location}</span>
+              <span>
+                <Editable id={slotId('advisory', member.name, 'location')} as="span" label="Member location">{member.location}</Editable>
+              </span>
             </div>
           </div>
         </div>
         
         <div className="mb-4">
-          <h4 className="font-semibold text-gray-900 mb-2 text-sm">Areas of Expertise</h4>
+          <h4 className="font-semibold text-gray-900 mb-2 text-sm"><Editable id="advisory-board-ccl.areas-of-expertise" as="span">Areas of Expertise</Editable></h4>
           <div className="flex flex-wrap gap-1">
             {member.expertise.map((area, index) => (
               <span key={index} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
-                {area}
+                <Editable id={slotId('advisory', member.name, 'expertise', index)} as="span" label="Expertise tag">{area}</Editable>
               </span>
             ))}
           </div>
         </div>
         
-        <p className="text-sm text-gray-600 mb-4 leading-relaxed">{member.bio}</p>
+        <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+          <Editable id={slotId('advisory', member.name, 'bio')} as="span" multiline label="Member biography">{member.bio}</Editable>
+        </p>
         
         <div className="flex items-center justify-between">
           <a
@@ -143,12 +158,12 @@ function BoardMemberCard({ member }: { member: typeof advisoryBoard[0] }) {
             className="inline-flex items-center text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors"
           >
             <Linkedin className="h-4 w-4 mr-1" />
-            LinkedIn
+            <Editable id="advisory-board-ccl.linkedin" as="span">LinkedIn</Editable>
           </a>
           
           <div className="flex items-center text-xs text-gray-500">
             <Award className="h-3 w-3 mr-1" />
-            <span>Advisory Board</span>
+            <span><Editable id="advisory-board-ccl.advisory-board" as="span">Advisory Board</Editable></span>
           </div>
         </div>
       </div>
@@ -166,7 +181,7 @@ export default function AdvisoryBoardPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Advisory <span className="text-blue-600">Board</span>
+              <Editable id="advisory-board-ccl.advisory" as="span">Advisory</Editable> <span className="text-blue-600"><Editable id="advisory-board-ccl.board" as="span">Board</Editable></span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Our Advisory Board comprises distinguished legal professionals, practitioners, and experts 
@@ -180,7 +195,7 @@ export default function AdvisoryBoardPage() {
           {/* Advisory Board Members */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-              Board <span className="text-blue-600">Members</span>
+              <Editable id="advisory-board-ccl.board-2" as="span">Board</Editable> <span className="text-blue-600"><Editable id="advisory-board-ccl.members" as="span">Members</Editable></span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {/* Pauline McKay */}
@@ -241,7 +256,7 @@ export default function AdvisoryBoardPage() {
           {/* Board Functions */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-              Board <span className="text-blue-600">Functions</span>
+              <Editable id="advisory-board-ccl.board-3" as="span">Board</Editable> <span className="text-blue-600"><Editable id="advisory-board-ccl.functions" as="span">Functions</Editable></span>
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -249,9 +264,9 @@ export default function AdvisoryBoardPage() {
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Target className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">Strategic Guidance</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-3"><Editable id="advisory-board-ccl.strategic-guidance" as="span">Strategic Guidance</Editable></h3>
                 <p className="text-gray-600 text-sm">
-                  Providing strategic direction for research priorities, content development, and academic initiatives.
+                  <Editable id="advisory-board-ccl.providing-strategic-direction-for-research-prior" as="span">Providing strategic direction for research priorities, content development, and academic initiatives.</Editable>
                 </p>
               </div>
               
@@ -259,9 +274,9 @@ export default function AdvisoryBoardPage() {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="h-8 w-8 text-green-600" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">Knowledge Sharing</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-3"><Editable id="advisory-board-ccl.knowledge-sharing" as="span">Knowledge Sharing</Editable></h3>
                 <p className="text-gray-600 text-sm">
-                  Contributing expertise through guest articles, lectures, and participation in academic discussions.
+                  <Editable id="advisory-board-ccl.contributing-expertise-through-guest-articles-le" as="span">Contributing expertise through guest articles, lectures, and participation in academic discussions.</Editable>
                 </p>
               </div>
               
@@ -269,9 +284,9 @@ export default function AdvisoryBoardPage() {
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="h-8 w-8 text-purple-600" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">Quality Assurance</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-3"><Editable id="advisory-board-ccl.quality-assurance" as="span">Quality Assurance</Editable></h3>
                 <p className="text-gray-600 text-sm">
-                  Ensuring the highest standards of academic rigor and practical relevance in all publications.
+                  <Editable id="advisory-board-ccl.ensuring-the-highest-standards-of-academic-rigor" as="span">Ensuring the highest standards of academic rigor and practical relevance in all publications.</Editable>
                 </p>
               </div>
             </div>

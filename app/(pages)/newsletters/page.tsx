@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Calendar, Download, Eye, Mail, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import Editable from '@/components/editable/Editable'
 
 // Sample newsletter data
 const newsletters = [
@@ -77,7 +78,7 @@ export default function NewslettersPage() {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              NLUO Mediation Blogs <span className="text-blue-600">#Insights</span>
+              <Editable id="newsletters.nluo-mediation-blogs" as="span">NLUO Mediation Blogs</Editable> <span className="text-blue-600"><Editable id="newsletters.insights" as="span">#Insights</Editable></span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
               Our monthly newsletter provides comprehensive insights into the latest developments in corporate law, 
@@ -88,8 +89,8 @@ export default function NewslettersPage() {
             <div className="max-w-md mx-auto">
               <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
                 <Mail className="h-8 w-8 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Stay Updated</h3>
-                <p className="text-gray-600 mb-4 text-sm">Subscribe to receive #Insights directly in your inbox</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3"><Editable id="newsletters.stay-updated" as="span">Stay Updated</Editable></h3>
+                <p className="text-gray-600 mb-4 text-sm"><Editable id="newsletters.subscribe-to-receive-insights-directly-in-your-i" as="span">Subscribe to receive #Insights directly in your inbox</Editable></p>
                 <div className="flex gap-2">
                   <input
                     type="email"
@@ -97,7 +98,7 @@ export default function NewslettersPage() {
                     className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                   />
                   <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm">
-                    Subscribe
+                    <Editable id="newsletters.subscribe" as="span">Subscribe</Editable>
                   </button>
                 </div>
               </div>
@@ -109,7 +110,7 @@ export default function NewslettersPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  About <span className="text-blue-600">#Insights</span>
+                  <Editable id="newsletters.about" as="span">About</Editable> <span className="text-blue-600"><Editable id="newsletters.insights-2" as="span">#Insights</Editable></span>
                 </h2>
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   NLUO Mediation Blogs has endeavoured to release a monthly newsletter on mediation and negotiation titled '#Insights', 
@@ -125,11 +126,11 @@ export default function NewslettersPage() {
                 <div className="flex items-center space-x-6 text-sm text-gray-500">
                   <div className="flex items-center">
                     <Calendar className="h-4 w-4 mr-1" />
-                    <span>Monthly Publication</span>
+                    <span><Editable id="newsletters.monthly-publication" as="span">Monthly Publication</Editable></span>
                   </div>
                   <div className="flex items-center">
                     <Download className="h-4 w-4 mr-1" />
-                    <span>Free Download</span>
+                    <span><Editable id="newsletters.free-download" as="span">Free Download</Editable></span>
                   </div>
                 </div>
               </div>
@@ -137,8 +138,8 @@ export default function NewslettersPage() {
               <div className="h-64 bg-linear-to-r from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center">
                 <div className="text-center text-white">
                   <Mail className="h-16 w-16 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold">#Insights Newsletter</h3>
-                  <p className="text-blue-100">Corporate Law Analysis</p>
+                  <h3 className="text-xl font-bold"><Editable id="newsletters.insights-newsletter" as="span">#Insights Newsletter</Editable></h3>
+                  <p className="text-blue-100"><Editable id="newsletters.corporate-law-analysis" as="span">Corporate Law Analysis</Editable></p>
                 </div>
               </div>
             </div>
@@ -147,7 +148,7 @@ export default function NewslettersPage() {
           {/* Newsletter Archive */}
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Newsletter <span className="text-blue-600">Archive</span>
+              <Editable id="newsletters.newsletter" as="span">Newsletter</Editable> <span className="text-blue-600"><Editable id="newsletters.archive" as="span">Archive</Editable></span>
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -158,7 +159,7 @@ export default function NewslettersPage() {
                       <h3 className="text-lg font-bold">{newsletter.title}</h3>
                     </div>
                     <div className="absolute top-3 right-3 bg-white bg-opacity-20 rounded-full px-2 py-1 text-xs text-white">
-                      PDF
+                      <Editable id="newsletters.pdf" as="span">PDF</Editable>
                     </div>
                   </div>
                   
@@ -199,14 +200,14 @@ export default function NewslettersPage() {
                         className="flex items-center justify-center flex-1 px-3 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors text-sm"
                       >
                         <Eye className="h-4 w-4 mr-1" />
-                        Preview
+                        <Editable id="newsletters.preview" as="span">Preview</Editable>
                       </Link>
                       <Link
                         href={newsletter.downloadUrl}
                         className="flex items-center justify-center flex-1 px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm"
                       >
                         <Download className="h-4 w-4 mr-1" />
-                        Download
+                        <Editable id="newsletters.download" as="span">Download</Editable>
                       </Link>
                     </div>
                   </div>
@@ -217,7 +218,7 @@ export default function NewslettersPage() {
             {/* Load More */}
             <div className="text-center mt-12">
               <button className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
-                Load More Issues
+                <Editable id="newsletters.load-more-issues" as="span">Load More Issues</Editable>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
             </div>

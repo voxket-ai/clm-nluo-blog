@@ -1,32 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import { ChevronDown, Menu, X } from 'lucide-react'
+import { usePathname, useRouter } from 'next/navigation'
+import { ChevronDown, LogIn, LogOut, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Editable from '@/components/editable/Editable'
+import EditableImage from '@/components/editable/EditableImage'
+import { useEdit } from '@/components/editable/EditProvider'
 
 const navigationItems = [
-  {
-    name: 'Home',
-    href: '/'
-  },
-  {
-    name: 'Articles',
-    href: '/blog'
-  },
-  {
-    name: 'Editorial Board',
-    href: '/editorial-blog'
-  },
-  {
-    name: 'Submissions',
-    href: '/submissions'
-  },
-  {
-    name: 'Events',
-    href: '/events'
-  },
+  { name: 'Home', href: '/' },
+  { name: 'Articles', href: '/blog' },
+  { name: 'Editorial Board', href: '/editorial-blog' },
+  { name: 'Submissions', href: '/submissions' },
+  { name: 'Events', href: '/events' },
   {
     name: 'About',
     href: '/about-the-blog',
@@ -34,174 +22,268 @@ const navigationItems = [
       { name: 'About the Blogs', href: '/about-the-blog' },
       { name: 'About the Centre', href: '/faculty-advisors' },
       { name: 'Advisory Board', href: '/advisory-board-ccl' },
-      { name: 'Message from VC', href: '/message-from-the-vice-chancellor' }
-    ]
-  }
+      { name: 'Message from VC', href: '/message-from-the-vice-chancellor' },
+    ],
+  },
 ]
 
 export default function Navbar() {
+  const edit = useEdit()
+  const router = useRouter()
+  const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [signingOut, setSigningOut] = useState(false)
+  const aboutRef = useRef<HTMLLIElement>(null)
 
-  const toggleDropdown = (itemName: string) => {
-    setActiveDropdown(activeDropdown === itemName ? null : itemName)
+  // Close the About menu on an outside click or Escape.
+  useEffect(() => {
+    if (!activeDropdown) return
+    const onClick = (e: MouseEvent) => {
+      if (aboutRef.current && !aboutRef.current.contains(e.target as Node)) setActiveDropdown(null)
+    }
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setActiveDropdown(null)
+    document.addEventListener('mousedown', onClick)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onClick)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [activeDropdown])
+
+  const isActive = (item: (typeof navigationItems)[number]) => {
+    if (item.href === '/') return pathname === '/'
+    if (item.submenu) return item.submenu.some((s) => pathname.startsWith(s.href))
+    return pathname === item.href || pathname.startsWith(`${item.href}/`)
+  }
+
+  const signOut = async () => {
+    setSigningOut(true)
+    try {
+      await fetch('/api/admin/logout', { method: 'POST' })
+      edit?.setEditMode(false)
+      setMobileMenuOpen(false)
+      router.refresh()
+    } finally {
+      setSigningOut(false)
+    }
   }
 
   return (
-    <nav className="sticky top-0 bg-linear-to-r from-slate-100/95 to-blue-50/90 backdrop-blur-md shadow-xl border-b border-slate-200/50 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Enhanced Logo */}
-          <div className="shrink-0">
-            <Link href="/" className="flex items-center space-x-4 group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-lg group-hover:bg-blue-500/30 transition-all duration-300"></div>
-                <Image
-                  src="/logo.png"
-                  alt="NLUO Logo"
-                  width={56}
-                  height={56}
-                  className="rounded-full relative z-10 ring-2 ring-blue-100/50 group-hover:ring-blue-200/80 transition-all duration-300"
-                />
-              </div>
-              <div className="flex flex-col">
-                <div className="text-xl md:text-2xl font-black bg-linear-to-r from-blue-600 via-indigo-600 to-slate-700 bg-clip-text text-transparent">
-                  NLUO Mediation
-                </div>
-                <div className="text-sm md:text-base font-bold text-slate-600 tracking-wide">
-                  Blogs
-                </div>
-              </div>
-            </Link>
-          </div>
+    <nav className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-[72px] items-center justify-between gap-6">
+          {/* Wordmark */}
+          <Link href="/" className="group flex shrink-0 items-center gap-3">
+            <EditableImage
+              id="site.logo"
+              src="/logo.png"
+              alt="NLUO"
+              label="Site logo"
+              className="h-11 w-11 rounded-full object-cover ring-1 ring-slate-200 transition-shadow duration-300 group-hover:ring-blue-200"
+            />
+            <span className="flex flex-col leading-none">
+              <Editable
+                id="cmp.navbar.nluo-mediation"
+                as="span"
+                label="Site name"
+                className="text-[17px] font-semibold tracking-tight text-slate-900"
+              >
+                NLUO Mediation
+              </Editable>
+              <Editable
+                id="cmp.navbar.blogs"
+                as="span"
+                label="Site name (second line)"
+                className="mt-1 text-[11px] font-medium uppercase tracking-[0.18em] text-blue-600"
+              >
+                Blogs
+              </Editable>
+            </span>
+          </Link>
 
-          {/* Enhanced Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-2">
-              {navigationItems.map((item) => (
-                <div key={item.name} className="relative group">
-                  {item.submenu ? (
-                    <div>
+          {/* Primary navigation */}
+          <div className="hidden lg:block">
+            <ul className="flex items-center gap-1">
+              {navigationItems.map((item) => {
+                const active = isActive(item)
+                return (
+                  <li key={item.name} className="relative" ref={item.submenu ? aboutRef : undefined}>
+                    {item.submenu ? (
                       <button
-                        onClick={() => toggleDropdown(item.name)}
+                        onClick={() =>
+                          setActiveDropdown(activeDropdown === item.name ? null : item.name)
+                        }
+                        aria-expanded={activeDropdown === item.name}
                         className={cn(
-                          "flex items-center px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 relative overflow-hidden",
-                          "text-slate-700 hover:text-blue-600 hover:bg-white/60 hover:shadow-lg hover:scale-105",
-                          "border border-transparent hover:border-blue-100/50"
+                          'flex items-center gap-1 rounded-lg px-3 py-2 text-[14px] font-medium transition-colors duration-200',
+                          active || activeDropdown === item.name
+                            ? 'text-blue-600'
+                            : 'text-slate-600 hover:text-slate-900'
                         )}
                       >
-                        <span className="relative z-10">{item.name}</span>
-                        <ChevronDown className={cn(
-                          "ml-2 h-4 w-4 transition-all duration-300 relative z-10",
-                          activeDropdown === item.name && "rotate-180"
-                        )} />
-                        <div className="absolute inset-0 bg-linear-to-r from-blue-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
+                        {item.name}
+                        <ChevronDown
+                          className={cn(
+                            'h-3.5 w-3.5 transition-transform duration-200',
+                            activeDropdown === item.name && 'rotate-180'
+                          )}
+                        />
                       </button>
-                      
-                      {/* Enhanced Dropdown Menu */}
-                      {activeDropdown === item.name && (
-                        <div className={cn(
-                          "absolute mt-3 w-64 rounded-2xl shadow-2xl bg-white/95 backdrop-blur-md ring-1 ring-slate-200/50 border border-slate-100/50 animate-fade-in-up",
-                          item.name === 'About' ? 'right-0' : 'left-0'
-                        )}>
-                          <div className="py-2">
-                            {item.submenu.map((subItem, index) => (
-                              <Link
-                                key={subItem.name}
-                                href={subItem.href}
-                                className="relative z-20 group flex items-center px-5 py-3 text-sm font-medium text-slate-700 hover:bg-linear-to-r hover:from-blue-50/80 hover:to-indigo-50/60 hover:text-blue-600 transition-all duration-300 border-l-2 border-transparent hover:border-blue-400 mx-2 rounded-lg"
-                                onClick={() => setActiveDropdown(null)}
-                              >
-                                <div className="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-blue-500 transition-colors duration-300 mr-3"></div>
-                                {subItem.name}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className="relative px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:text-blue-600 hover:bg-white/60 hover:shadow-lg hover:scale-105 transition-all duration-300 border border-transparent hover:border-blue-100/50 overflow-hidden group"
-                    >
-                      <span className="relative z-10">{item.name}</span>
-                      <div className="absolute inset-0 bg-linear-to-r from-blue-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </Link>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={cn(
+                          'relative block rounded-lg px-3 py-2 text-[14px] font-medium transition-colors duration-200',
+                          active ? 'text-blue-600' : 'text-slate-600 hover:text-slate-900'
+                        )}
+                      >
+                        {item.name}
+                        {active && (
+                          <span className="absolute inset-x-3 -bottom-[3px] h-0.5 rounded-full bg-blue-600" />
+                        )}
+                      </Link>
+                    )}
 
-          {/* Enhanced Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="relative inline-flex items-center justify-center p-3 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-white/60 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-blue-100/50 group"
-            >
-              <div className="absolute inset-0 bg-linear-to-r from-blue-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6 relative z-10 transition-transform duration-300 rotate-90" />
-              ) : (
-                <Menu className="h-6 w-6 relative z-10 transition-transform duration-300" />
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Enhanced Mobile Navigation Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden animate-fade-in-up">
-          <div className="px-4 pt-4 pb-6 space-y-2 bg-linear-to-b from-slate-100/98 to-blue-50/95 backdrop-blur-md border-t border-slate-200/50">
-            {navigationItems.map((item) => (
-              <div key={item.name}>
-                {item.submenu ? (
-                  <div>
-                    <button
-                      onClick={() => toggleDropdown(item.name)}
-                      className="group flex items-center justify-between w-full px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:text-blue-600 hover:bg-white/60 hover:shadow-md transition-all duration-300 border border-transparent hover:border-blue-100/50"
-                    >
-                      <span className="relative z-10">{item.name}</span>
-                      <ChevronDown className={cn(
-                        "h-5 w-5 transition-all duration-300 relative z-10",
-                        activeDropdown === item.name && "rotate-180 text-blue-600"
-                      )} />
-                      <div className="absolute inset-0 bg-linear-to-r from-blue-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
-                    </button>
-                    
-                    {activeDropdown === item.name && (
-                      <div className="mt-2 ml-4 space-y-1">
+                    {item.submenu && activeDropdown === item.name && (
+                      <div className="absolute right-0 mt-2 w-60 origin-top-right animate-fade-in-up overflow-hidden rounded-xl border border-slate-200 bg-white py-1.5 shadow-lg shadow-slate-900/5">
                         {item.submenu.map((subItem) => (
                           <Link
                             key={subItem.name}
                             href={subItem.href}
-                            className="group flex items-center px-4 py-3 rounded-lg text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-white/50 hover:shadow-sm transition-all duration-300 border-l-2 border-slate-200 hover:border-blue-400"
-                            onClick={() => {
-                              setMobileMenuOpen(false)
-                              setActiveDropdown(null)
-                            }}
+                            onClick={() => setActiveDropdown(null)}
+                            className={cn(
+                              'block px-4 py-2.5 text-sm transition-colors',
+                              pathname.startsWith(subItem.href)
+                                ? 'bg-blue-50/70 font-medium text-blue-700'
+                                : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                            )}
                           >
-                            <div className="w-1.5 h-1.5 rounded-full bg-slate-400 group-hover:bg-blue-500 transition-colors duration-300 mr-3"></div>
                             {subItem.name}
                           </Link>
                         ))}
                       </div>
                     )}
-                  </div>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+
+          {/* Account */}
+          <div className="hidden shrink-0 lg:block">
+            {edit?.isAdmin ? (
+              <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50/80 py-1 pl-3 pr-1">
+                <span className="text-[13px] font-medium text-slate-500">Signed in</span>
+                <button
+                  type="button"
+                  onClick={signOut}
+                  disabled={signingOut}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[13px] font-medium text-slate-600 ring-1 ring-slate-200 transition-colors hover:text-red-600 hover:ring-red-200 disabled:opacity-50"
+                >
+                  <LogOut className="h-3.5 w-3.5" />
+                  {signingOut ? 'Signing out…' : 'Sign out'}
+                </button>
+              </div>
+            ) : (
+              <Link
+                href="/admin/login"
+                className="inline-flex items-center gap-1.5 text-[13px] font-medium text-slate-400 transition-colors hover:text-slate-700"
+              >
+                <LogIn className="h-3.5 w-3.5" />
+                Administrator
+              </Link>
+            )}
+          </div>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+            className="rounded-lg p-2 text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 lg:hidden"
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="animate-fade-in-up border-t border-slate-200 bg-white lg:hidden">
+          <div className="space-y-0.5 px-4 py-3">
+            {navigationItems.map((item) => (
+              <div key={item.name}>
+                {item.submenu ? (
+                  <>
+                    <button
+                      onClick={() =>
+                        setActiveDropdown(activeDropdown === item.name ? null : item.name)
+                      }
+                      className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-700 transition-colors hover:bg-slate-50"
+                    >
+                      {item.name}
+                      <ChevronDown
+                        className={cn(
+                          'h-4 w-4 text-slate-400 transition-transform',
+                          activeDropdown === item.name && 'rotate-180'
+                        )}
+                      />
+                    </button>
+                    {activeDropdown === item.name && (
+                      <div className="ml-3 border-l border-slate-200 pl-3">
+                        {item.submenu.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            onClick={() => {
+                              setMobileMenuOpen(false)
+                              setActiveDropdown(null)
+                            }}
+                            className="block rounded-lg px-3 py-2 text-sm text-slate-600 transition-colors hover:text-blue-600"
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
                 ) : (
                   <Link
                     href={item.href}
-                    className="group relative block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:text-blue-600 hover:bg-white/60 hover:shadow-md transition-all duration-300 border border-transparent hover:border-blue-100/50 overflow-hidden"
                     onClick={() => setMobileMenuOpen(false)}
+                    className={cn(
+                      'block rounded-lg px-3 py-2.5 text-[15px] font-medium transition-colors',
+                      isActive(item) ? 'text-blue-600' : 'text-slate-700 hover:bg-slate-50'
+                    )}
                   >
-                    <span className="relative z-10">{item.name}</span>
-                    <div className="absolute inset-0 bg-linear-to-r from-blue-50/50 to-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {item.name}
                   </Link>
                 )}
               </div>
             ))}
+
+            <div className="mt-2 border-t border-slate-200 pt-2">
+              {edit?.isAdmin ? (
+                <button
+                  type="button"
+                  onClick={signOut}
+                  disabled={signingOut}
+                  className="flex w-full items-center gap-2 rounded-lg px-3 py-2.5 text-[15px] font-medium text-red-600 transition-colors hover:bg-red-50 disabled:opacity-50"
+                >
+                  <LogOut className="h-4 w-4" />
+                  {signingOut ? 'Signing out…' : 'Sign out'}
+                </button>
+              ) : (
+                <Link
+                  href="/admin/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-500 transition-colors hover:bg-slate-50"
+                >
+                  <LogIn className="h-4 w-4" />
+                  Administrator
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       )}

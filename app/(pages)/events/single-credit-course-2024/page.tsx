@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Calendar, Clock, MapPin, Users, ArrowLeft, Award, BookOpen, Target } from 'lucide-react'
 import Link from 'next/link'
+import Editable from '@/components/editable/Editable'
 
 export default function SingleCreditCoursePage() {
   return (
@@ -16,35 +17,35 @@ export default function SingleCreditCoursePage() {
             className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 font-medium"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Events
+            <Editable id="events.single-credit-course-2024.back-to-events" as="span">Back to Events</Editable>
           </Link>
 
           {/* Header */}
           <div className="mb-12">
             <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-lg p-8">
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Single Credit Course on "Mediation and Negotiation: Styles, Strategies and Legalities"
+                <Editable id="events.single-credit-course-2024.single-credit-course-on-mediation-and-negotiatio" as="span">Single Credit Course on "Mediation and Negotiation: Styles, Strategies and Legalities"</Editable>
               </h1>
               <p className="text-xl text-gray-600 mb-6">
-                A comprehensive skill-based program designed to foster experiential learning in Alternative Dispute Resolution
+                <Editable id="events.single-credit-course-2024.a-comprehensive-skill-based-program-designed-to" as="span">A comprehensive skill-based program designed to foster experiential learning in Alternative Dispute Resolution</Editable>
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="flex items-center text-gray-600">
                   <Calendar className="h-5 w-5 mr-2 text-blue-500" />
-                  <span>7-29 December 2024</span>
+                  <span><Editable id="events.single-credit-course-2024.7-29-december-2024" as="span">7-29 December 2024</Editable></span>
                 </div>
                 <div className="flex items-center text-gray-600">
                   <Clock className="h-5 w-5 mr-2 text-blue-500" />
-                  <span>16 hours (8 sessions)</span>
+                  <span><Editable id="events.single-credit-course-2024.16-hours-8-sessions" as="span">16 hours (8 sessions)</Editable></span>
                 </div>
                 <div className="flex items-center text-gray-600">
                   <MapPin className="h-5 w-5 mr-2 text-blue-500" />
-                  <span>Online Mode</span>
+                  <span><Editable id="events.single-credit-course-2024.online-mode" as="span">Online Mode</Editable></span>
                 </div>
                 <div className="flex items-center text-gray-600">
                   <Users className="h-5 w-5 mr-2 text-blue-500" />
-                  <span>66 participants</span>
+                  <span><Editable id="events.single-credit-course-2024.66-participants" as="span">66 participants</Editable></span>
                 </div>
               </div>
             </div>
@@ -52,61 +53,61 @@ export default function SingleCreditCoursePage() {
 
           {/* Background */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Background</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6"><Editable id="events.single-credit-course-2024.background" as="span">Background</Editable></h2>
             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
               <p>
-                Recognizing the growing significance of Alternative Dispute Resolution (ADR), the NLUO Centre for Mediation and Negotiation hosted a Single Credit Course on 'Mediation and Negotiation: Styles, Strategies, and Legalities'. The course spanned over the month of December, for 16 hours in online mode, aiming to provide participants with practical skills in negotiation and mediation.
+                <Editable id="events.single-credit-course-2024.recognizing-the-growing-significance-of-alternat" as="span">Recognizing the growing significance of Alternative Dispute Resolution (ADR), the NLUO Centre for Mediation and Negotiation hosted a Single Credit Course on 'Mediation and Negotiation: Styles, Strategies, and Legalities'. The course spanned over the month of December, for 16 hours in online mode, aiming to provide participants with practical skills in negotiation and mediation.</Editable>
               </p>
               <p>
-                This initiative was designed to provide participants with practical skills and theoretical insights into the subject, ensuring a comprehensive understanding of its legal, strategic, and procedural aspects. The single-credit course was a skill-based program designed to foster experiential learning. Participants learned by doing, engaging in interactive methodologies such as case studies, simulations, and role-playing exercises.
+                <Editable id="events.single-credit-course-2024.this-initiative-was-designed-to-provide-particip" as="span">This initiative was designed to provide participants with practical skills and theoretical insights into the subject, ensuring a comprehensive understanding of its legal, strategic, and procedural aspects. The single-credit course was a skill-based program designed to foster experiential learning. Participants learned by doing, engaging in interactive methodologies such as case studies, simulations, and role-playing exercises.</Editable>
               </p>
               <p>
-                Led by renowned experts and practitioners, the course offered valuable insights into both foundational principles and advanced techniques. This initiative provided law students, legal professionals, and other participants with an opportunity to enhance their analytical, communication, and conflict-resolution skills, strengthening their expertise in the subject.
+                <Editable id="events.single-credit-course-2024.led-by-renowned-experts-and-practitioners-the-co" as="span">Led by renowned experts and practitioners, the course offered valuable insights into both foundational principles and advanced techniques. This initiative provided law students, legal professionals, and other participants with an opportunity to enhance their analytical, communication, and conflict-resolution skills, strengthening their expertise in the subject.</Editable>
               </p>
             </div>
           </section>
 
           {/* Learning Objectives */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Course Learning Objectives</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6"><Editable id="events.single-credit-course-2024.course-learning-objectives" as="span">Course Learning Objectives</Editable></h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-blue-50 rounded-lg p-6">
                 <div className="flex items-center mb-3">
                   <Target className="h-6 w-6 text-blue-600 mr-2" />
-                  <h3 className="font-semibold text-gray-900">CREATE</h3>
+                  <h3 className="font-semibold text-gray-900"><Editable id="events.single-credit-course-2024.create" as="span">CREATE</Editable></h3>
                 </div>
-                <p className="text-gray-600">To create awareness and educate the participants about the alternative remedies apart from the conventional legal system.</p>
+                <p className="text-gray-600"><Editable id="events.single-credit-course-2024.to-create-awareness-and-educate-the-participants" as="span">To create awareness and educate the participants about the alternative remedies apart from the conventional legal system.</Editable></p>
               </div>
               
               <div className="bg-green-50 rounded-lg p-6">
                 <div className="flex items-center mb-3">
                   <BookOpen className="h-6 w-6 text-green-600 mr-2" />
-                  <h3 className="font-semibold text-gray-900">EVALUATE & REMEMBER</h3>
+                  <h3 className="font-semibold text-gray-900"><Editable id="events.single-credit-course-2024.evaluate-remember" as="span">EVALUATE & REMEMBER</Editable></h3>
                 </div>
-                <p className="text-gray-600">To make participants able to interpret the current mediation law in light of the landmark judgments and recent developments.</p>
+                <p className="text-gray-600"><Editable id="events.single-credit-course-2024.to-make-participants-able-to-interpret-the-curre" as="span">To make participants able to interpret the current mediation law in light of the landmark judgments and recent developments.</Editable></p>
               </div>
               
               <div className="bg-purple-50 rounded-lg p-6">
                 <div className="flex items-center mb-3">
                   <Award className="h-6 w-6 text-purple-600 mr-2" />
-                  <h3 className="font-semibold text-gray-900">ANALYZE</h3>
+                  <h3 className="font-semibold text-gray-900"><Editable id="events.single-credit-course-2024.analyze" as="span">ANALYZE</Editable></h3>
                 </div>
-                <p className="text-gray-600">To enable participants to differentiate among various processes of ADR.</p>
+                <p className="text-gray-600"><Editable id="events.single-credit-course-2024.to-enable-participants-to-differentiate-among-va" as="span">To enable participants to differentiate among various processes of ADR.</Editable></p>
               </div>
               
               <div className="bg-orange-50 rounded-lg p-6">
                 <div className="flex items-center mb-3">
                   <Users className="h-6 w-6 text-orange-600 mr-2" />
-                  <h3 className="font-semibold text-gray-900">UNDERSTAND</h3>
+                  <h3 className="font-semibold text-gray-900"><Editable id="events.single-credit-course-2024.understand" as="span">UNDERSTAND</Editable></h3>
                 </div>
-                <p className="text-gray-600">To familiarize participants and enhance their understanding about the concepts and the legal provisions relating to ADR.</p>
+                <p className="text-gray-600"><Editable id="events.single-credit-course-2024.to-familiarize-participants-and-enhance-their-un" as="span">To familiarize participants and enhance their understanding about the concepts and the legal provisions relating to ADR.</Editable></p>
               </div>
             </div>
           </section>
 
           {/* Instructors */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Course Instructors</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6"><Editable id="events.single-credit-course-2024.course-instructors" as="span">Course Instructors</Editable></h2>
             <div className="bg-linear-to-br from-blue-50/80 to-slate-100/90 rounded-lg shadow-lg p-6 border border-blue-100/40">
               <div className="flex flex-wrap gap-3">
                 {[
@@ -127,7 +128,7 @@ export default function SingleCreditCoursePage() {
 
           {/* Course Schedule */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Course Schedule</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6"><Editable id="events.single-credit-course-2024.course-schedule" as="span">Course Schedule</Editable></h2>
             <div className="space-y-4">
               {[
                 {
@@ -193,42 +194,42 @@ export default function SingleCreditCoursePage() {
 
           {/* Learning Outcomes */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Learning Outcomes</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6"><Editable id="events.single-credit-course-2024.learning-outcomes" as="span">Learning Outcomes</Editable></h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-green-50 rounded-lg p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">KNOWLEDGE</h3>
-                <p className="text-gray-600">Participants understood fundamental ADR concepts, identified dispute limitations in formal judicial systems, and learned to choose appropriate resolution methods.</p>
+                <h3 className="font-semibold text-gray-900 mb-3"><Editable id="events.single-credit-course-2024.knowledge" as="span">KNOWLEDGE</Editable></h3>
+                <p className="text-gray-600"><Editable id="events.single-credit-course-2024.participants-understood-fundamental-adr-concepts" as="span">Participants understood fundamental ADR concepts, identified dispute limitations in formal judicial systems, and learned to choose appropriate resolution methods.</Editable></p>
               </div>
               
               <div className="bg-blue-50 rounded-lg p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">ATTITUDE</h3>
-                <p className="text-gray-600">Participants developed skills to solve hypothetical problems amicably through ADR mechanisms and encourage others to use ADR.</p>
+                <h3 className="font-semibold text-gray-900 mb-3"><Editable id="events.single-credit-course-2024.attitude" as="span">ATTITUDE</Editable></h3>
+                <p className="text-gray-600"><Editable id="events.single-credit-course-2024.participants-developed-skills-to-solve-hypotheti" as="span">Participants developed skills to solve hypothetical problems amicably through ADR mechanisms and encourage others to use ADR.</Editable></p>
               </div>
               
               <div className="bg-purple-50 rounded-lg p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">SKILL</h3>
-                <p className="text-gray-600">Participants enhanced communication, negotiation strategies, and learned to employ best techniques knowing their BATNA, WATNA, and MLATNA.</p>
+                <h3 className="font-semibold text-gray-900 mb-3"><Editable id="events.single-credit-course-2024.skill" as="span">SKILL</Editable></h3>
+                <p className="text-gray-600"><Editable id="events.single-credit-course-2024.participants-enhanced-communication-negotiation" as="span">Participants enhanced communication, negotiation strategies, and learned to employ best techniques knowing their BATNA, WATNA, and MLATNA.</Editable></p>
               </div>
               
               <div className="bg-orange-50 rounded-lg p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">ETHICS</h3>
-                <p className="text-gray-600">Participants learned to solve ethical dilemmas while acting as negotiators and mediators, respecting individual dignity in dialogue.</p>
+                <h3 className="font-semibold text-gray-900 mb-3"><Editable id="events.single-credit-course-2024.ethics" as="span">ETHICS</Editable></h3>
+                <p className="text-gray-600"><Editable id="events.single-credit-course-2024.participants-learned-to-solve-ethical-dilemmas-w" as="span">Participants learned to solve ethical dilemmas while acting as negotiators and mediators, respecting individual dignity in dialogue.</Editable></p>
               </div>
             </div>
           </section>
 
           {/* Participants' Feedback */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Participants' Feedback</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6"><Editable id="events.single-credit-course-2024.participants-feedback" as="span">Participants' Feedback</Editable></h2>
             <div className="bg-gray-50 rounded-lg p-6">
               <p className="text-gray-600 leading-relaxed mb-4">
-                Participants provided overwhelmingly positive feedback, emphasizing the value of interactive sessions and the integration of key negotiation concepts like BATNA, WATNA, and ZOPA. They particularly appreciated the engaging activities, such as story-weaving exercises and practical role-plays, which helped bridge the gap between theoretical content and real-life applications.
+                <Editable id="events.single-credit-course-2024.participants-provided-overwhelmingly-positive-fe" as="span">Participants provided overwhelmingly positive feedback, emphasizing the value of interactive sessions and the integration of key negotiation concepts like BATNA, WATNA, and ZOPA. They particularly appreciated the engaging activities, such as story-weaving exercises and practical role-plays, which helped bridge the gap between theoretical content and real-life applications.</Editable>
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                While the majority found all modules to be both practical and informative, a few suggestions were made for improvement. These included providing more detailed explanations of the negotiation plan, incorporating more practical scenarios into theoretical modules, and including short, impromptu negotiations to further enrich the learning experience.
+                <Editable id="events.single-credit-course-2024.while-the-majority-found-all-modules-to-be-both" as="span">While the majority found all modules to be both practical and informative, a few suggestions were made for improvement. These included providing more detailed explanations of the negotiation plan, incorporating more practical scenarios into theoretical modules, and including short, impromptu negotiations to further enrich the learning experience.</Editable>
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Overall, the course was deemed a great success, with participants offering constructive feedback to enhance its future iterations.
+                <Editable id="events.single-credit-course-2024.overall-the-course-was-deemed-a-great-success-wi" as="span">Overall, the course was deemed a great success, with participants offering constructive feedback to enhance its future iterations.</Editable>
               </p>
             </div>
           </section>
@@ -240,7 +241,7 @@ export default function SingleCreditCoursePage() {
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to All Events
+              <Editable id="events.single-credit-course-2024.back-to-all-events" as="span">Back to All Events</Editable>
             </Link>
           </div>
         </div>

@@ -1,14 +1,41 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { Mail, ArrowRight, Play, Star, Users, Award, Sparkles, TrendingUp } from 'lucide-react'
+import { Mail, ArrowRight, Play, Star, Users, Award, Sparkles, TrendingUp, Image as ImageIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Editable from '@/components/editable/Editable'
+import { useEdit } from '@/components/editable/EditProvider'
+import ImagePicker from '@/components/editable/ImagePicker'
 import Link from 'next/link'
+
+/**
+ * Particle positions come from a fixed pseudo-random sequence rather than
+ * Math.random(): random values generated during render differ between the
+ * server and the client and break hydration.
+ */
+const PARTICLES = (() => {
+  let seed = 20260910
+  const next = () => {
+    seed = (seed * 1103515245 + 12345) % 2147483648
+    return seed / 2147483648
+  }
+  return Array.from({ length: 40 }, () => ({
+    left: `${(next() * 100).toFixed(3)}%`,
+    top: `${(next() * 100).toFixed(3)}%`,
+    width: `${(next() * 6 + 1).toFixed(2)}px`,
+    height: `${(next() * 6 + 1).toFixed(2)}px`,
+    opacity: Number((next() * 0.5 + 0.1).toFixed(3)),
+    animationDelay: `${(next() * 3).toFixed(2)}s`,
+    animationDuration: `${(2 + next() * 4).toFixed(2)}s`,
+  }))
+})()
 
 export default function HeroSection() {
   const [email, setEmail] = useState('')
   const [isVisible, setIsVisible] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const edit = useEdit()
+  const [slidePickerOpen, setSlidePickerOpen] = useState(false)
   
   const images = [
     '/events/event1.jpeg',
@@ -27,13 +54,17 @@ export default function HeroSection() {
     setIsVisible(true)
   }, [])
 
+  const editMode = Boolean(edit?.editMode)
+
   useEffect(() => {
+    // Freeze the carousel in edit mode; a slide that moves cannot be replaced.
+    if (editMode) return
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
     }, 3000)
 
     return () => clearInterval(interval)
-  }, [images.length])
+  }, [images.length, editMode])
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -84,15 +115,7 @@ export default function HeroSection() {
                 "absolute bg-white rounded-full",
                 i % 3 === 0 ? "animate-pulse" : "animate-bounce"
               )}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                width: `${Math.random() * 6 + 1}px`,
-                height: `${Math.random() * 6 + 1}px`,
-                opacity: Math.random() * 0.5 + 0.1,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 4}s`
-              }}
+              style={PARTICLES[i]}
             />
           ))}
         </div>
@@ -116,22 +139,25 @@ export default function HeroSection() {
             {/* Enhanced Badge with glow */}
             <div className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 rounded-full text-blue-300 text-sm font-semibold backdrop-blur-md shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300 group">
               <Sparkles className="w-4 h-4 mr-2 animate-pulse" />
-              <span className="group-hover:scale-105 inline-block transition-transform">India's Leading Mediation Centre</span>
+              <Editable id="home.hero.badge" as="span" label="Hero badge" className="group-hover:scale-105 inline-block transition-transform">India&apos;s Leading Mediation Centre</Editable>
               <TrendingUp className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </div>
 
             {/* Enhanced Main Headline with text effects */}
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-7xl xl:text-8xl font-extrabold text-white leading-[1.1] tracking-tight">
-                <span className="inline-block hover:scale-105 transition-transform duration-300">Transform</span>
+                <Editable id="home.hero.headline-1" as="span" label="Headline word 1" className="inline-block hover:scale-105 transition-transform duration-300">Transform</Editable>
                 <span className="block mt-2 bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-[gradient_6s_ease_infinite] bg-[length:200%_auto]">
-                  Disputes
+                  <Editable id="home.hero.headline-2" as="span" label="Headline word 2 (gradient)">Disputes</Editable>
                 </span>
-                <span className="inline-block hover:scale-105 transition-transform duration-300">into Dialogue</span>
+                <Editable id="home.hero.headline-3" as="span" label="Headline word 3" className="inline-block hover:scale-105 transition-transform duration-300">into Dialogue</Editable>
               </h1>
               <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl backdrop-blur-sm">
-                Join <span className="text-blue-400 font-semibold">NLUO Centre for Mediation and Negotiation</span> in revolutionizing 
-                conflict resolution through education, practice, and innovation.
+                <Editable id="home.hero.sub-lead" as="span" label="Hero sub-heading (start)">Join</Editable>{' '}
+                <span className="text-blue-400 font-semibold">
+                  <Editable id="home.hero.sub-name" as="span" label="Hero sub-heading (highlighted name)">NLUO Centre for Mediation and Negotiation</Editable>
+                </span>{' '}
+                <Editable id="home.hero.sub-tail" as="span" multiline label="Hero sub-heading (end)">in revolutionizing conflict resolution through education, practice, and innovation.</Editable>
               </p>
             </div>
 
@@ -142,14 +168,14 @@ export default function HeroSection() {
               <Link href="/events">
                 <button
                   type="button"
-                  className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 text-white rounded-full font-bold text-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-xl shadow-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/70"
+                  className="group relative px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-sm hover:shadow-md"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-600 to-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                  <div className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.3),transparent)]"></div>
                   </div>
                   <span className="relative flex items-center justify-center">
-                    Explore Programmes
+                    <Editable id="cmp.herosection.explore-programmes" as="span">Explore Programmes</Editable>
                     <ArrowRight className="ml-2 w-5 h-5 transform group-hover:translate-x-2 transition-transform" />
                   </span>
                 </button>
@@ -158,7 +184,7 @@ export default function HeroSection() {
               <Link href="/story">
                 <button className="group flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white rounded-full font-bold text-lg hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-md shadow-lg hover:shadow-xl hover:-translate-y-1">
                   <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                  Watch Story
+                  <Editable id="cmp.herosection.watch-story" as="span">Watch Story</Editable>
                 </button>
               </Link>
             </div>
@@ -172,8 +198,8 @@ export default function HeroSection() {
                     <Mail className="w-5 h-5 text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white">Stay Updated</h3>
-                    <p className="text-xs text-gray-400">Get the latest insights & events</p>
+                    <Editable id="home.hero.newsletter-title" as="h3" label="Newsletter box title" className="text-lg font-bold text-white">Stay Updated</Editable>
+                    <Editable id="home.hero.newsletter-sub" as="p" label="Newsletter box subtitle" className="text-xs text-gray-400">Get the latest insights &amp; events</Editable>
                   </div>
                 </div>
                 <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
@@ -187,9 +213,9 @@ export default function HeroSection() {
                   />
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    className="px-6 py-3 bg-blue-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                   >
-                    Subscribe
+                    <Editable id="cmp.herosection.subscribe" as="span">Subscribe</Editable>
                   </button>
                 </form>
               </div>
@@ -213,7 +239,7 @@ export default function HeroSection() {
                   {images.map((image, index) => (
                     <img
                       key={index}
-                      src={image}
+                      src={edit ? edit.resolve(`home.hero.slide-${index + 1}`, image) : image}
                       alt={`Event ${index + 1}`}
                       className={cn(
                         "absolute inset-0 w-full h-full object-cover transition-all duration-1000",
@@ -225,6 +251,17 @@ export default function HeroSection() {
                   ))}
                 </div>
                 
+                {editMode && (
+                  <button
+                    type="button"
+                    onClick={() => setSlidePickerOpen(true)}
+                    className="absolute left-4 top-4 z-20 inline-flex items-center gap-2 rounded-full bg-slate-900/90 px-4 py-2 text-xs font-semibold text-white shadow-lg backdrop-blur-sm transition-transform hover:scale-105"
+                  >
+                    <ImageIcon className="h-4 w-4" />
+                    Replace slide {currentImageIndex + 1}
+                  </button>
+                )}
+
                 {/* Enhanced gradient overlays */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10"></div>
@@ -239,14 +276,14 @@ export default function HeroSection() {
                     <div className="p-2 bg-blue-500/30 backdrop-blur-sm rounded-lg mr-2">
                       <Users className="w-5 h-5 text-blue-300" />
                     </div>
-                    <span className="text-white text-sm font-semibold tracking-wide">Live Mediation Sessions</span>
+                    <Editable id="home.hero.carousel-eyebrow" as="span" label="Carousel eyebrow" className="text-white text-sm font-semibold tracking-wide">Live Mediation Sessions</Editable>
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight">
-                    India's first institutional Mediation Forum
-                  </h3>
-                  <p className="text-gray-200 text-sm lg:text-base leading-relaxed">
+                  <Editable id="home.hero.carousel-title" as="h3" multiline label="Carousel title" className="text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight">
+                    India&apos;s first institutional Mediation Forum
+                  </Editable>
+                  <Editable id="home.hero.carousel-caption" as="p" multiline label="Carousel caption" className="text-gray-200 text-sm lg:text-base leading-relaxed">
                     Transforming conflict resolution through innovative practices
-                  </p>
+                  </Editable>
                 </div>
 
                 {/* Enhanced image indicators */}
@@ -289,6 +326,37 @@ export default function HeroSection() {
           }
         }
       `}</style>
-    </section>
+          <ImagePicker
+        open={slidePickerOpen}
+        currentSrc={edit ? edit.resolve(`home.hero.slide-${currentImageIndex + 1}`, images[currentImageIndex]) : images[currentImageIndex]}
+        currentAlt={`Event ${currentImageIndex + 1}`}
+        originalSrc={images[currentImageIndex]}
+        label={`Hero carousel slide ${currentImageIndex + 1}`}
+        onClose={() => setSlidePickerOpen(false)}
+        onApply={(src, alt) => {
+          edit?.stage({
+            key: `home.hero.slide-${currentImageIndex + 1}`,
+            type: 'image',
+            value: src,
+            alt,
+            original: images[currentImageIndex],
+            page: '/',
+          })
+          setSlidePickerOpen(false)
+        }}
+        onReset={() => {
+          edit?.unstage(`home.hero.slide-${currentImageIndex + 1}`)
+          edit?.stage({
+            key: `home.hero.slide-${currentImageIndex + 1}`,
+            type: 'image',
+            value: images[currentImageIndex],
+            original: images[currentImageIndex],
+            page: '/',
+          })
+          setSlidePickerOpen(false)
+        }}
+      />
+
+</section>
   )
 }

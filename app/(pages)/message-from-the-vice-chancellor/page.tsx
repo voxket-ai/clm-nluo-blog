@@ -17,8 +17,7 @@ export default function MessageFromVCPage() {
               <Editable id="message-from-the-vice-chancell.message-from-the" as="span">Message from the</Editable> <span className="text-blue-600"><Editable id="message-from-the-vice-chancell.vice-chancellor" as="span">Vice-Chancellor</Editable></span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              A personal message from Prof. Ved Kumari, Vice-Chancellor of 
-              National Law University Odisha, on the vision and mission of the Centre for Mediation and Negotiation.
+              <Editable id="message-from-the-vice-chancell.a-personal-message-from-prof-ved-kumari-vice-cha" as="span">A personal message from Prof. Ved Kumari, Vice-Chancellor of National Law University Odisha, on the vision and mission of the Centre for Mediation and Negotiation.</Editable>
             </p>
           </div>
 
@@ -49,10 +48,10 @@ export default function MessageFromVCPage() {
                       <Editable id="message-from-the-vice-chancell.academic-excellence" as="span">Academic Excellence</Editable>
                     </h3>
                     <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Ph.D. in Juvenile Justice System</li>
-                      <li>• LL.M. (Delhi University)</li>
-                      <li>• Teaching since 1983</li>
-                      <li>• 40+ years in legal academia</li>
+                      <li><Editable id="message-from-the-vice-chancell.ph-d-in-juvenile-justice-system" as="span">• Ph.D. in Juvenile Justice System</Editable></li>
+                      <li><Editable id="message-from-the-vice-chancell.ll-m-delhi-university" as="span">• LL.M. (Delhi University)</Editable></li>
+                      <li><Editable id="message-from-the-vice-chancell.teaching-since-1983" as="span">• Teaching since 1983</Editable></li>
+                      <li><Editable id="message-from-the-vice-chancell.40-years-in-legal-academia" as="span">• 40+ years in legal academia</Editable></li>
                     </ul>
                   </div>
                   
@@ -62,10 +61,10 @@ export default function MessageFromVCPage() {
                       <Editable id="message-from-the-vice-chancell.key-specializations" as="span">Key Specializations</Editable>
                     </h3>
                     <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Juvenile Justice</li>
-                      <li>• Criminal Law & Gender Issues</li>
-                      <li>• Judicial Training & Clinical Education</li>
-                      <li>• Restorative Justice</li>
+                      <li><Editable id="message-from-the-vice-chancell.juvenile-justice" as="span">• Juvenile Justice</Editable></li>
+                      <li><Editable id="message-from-the-vice-chancell.criminal-law-gender-issues" as="span">• Criminal Law & Gender Issues</Editable></li>
+                      <li><Editable id="message-from-the-vice-chancell.judicial-training-clinical-education" as="span">• Judicial Training & Clinical Education</Editable></li>
+                      <li><Editable id="message-from-the-vice-chancell.restorative-justice" as="span">• Restorative Justice</Editable></li>
                     </ul>
                   </div>
                 </div>
@@ -175,9 +174,7 @@ export default function MessageFromVCPage() {
                 <h3 className="text-xl font-bold text-gray-900"><Editable id="message-from-the-vice-chancell.our-vision" as="span">Our Vision</Editable></h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                To establish the Centre as a leading center for mediation and negotiation scholarship that influences policy, 
-                shapes practice, and educates the next generation of legal professionals with the knowledge 
-                and skills needed to navigate an increasingly complex corporate environment.
+                <Editable id="message-from-the-vice-chancell.to-establish-the-centre-as-a-leading-center-for" as="span">To establish the Centre as a leading center for mediation and negotiation scholarship that influences policy, shapes practice, and educates the next generation of legal professionals with the knowledge and skills needed to navigate an increasingly complex corporate environment.</Editable>
               </p>
             </div>
             
@@ -187,9 +184,7 @@ export default function MessageFromVCPage() {
                 <h3 className="text-xl font-bold text-gray-900"><Editable id="message-from-the-vice-chancell.our-mission" as="span">Our Mission</Editable></h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                To advance corporate law through rigorous research, innovative teaching, and meaningful 
-                engagement with practitioners and policymakers, while maintaining our commitment to 
-                accessibility, excellence, and social responsibility.
+                <Editable id="message-from-the-vice-chancell.to-advance-corporate-law-through-rigorous-resear" as="span">To advance corporate law through rigorous research, innovative teaching, and meaningful engagement with practitioners and policymakers, while maintaining our commitment to accessibility, excellence, and social responsibility.</Editable>
               </p>
             </div>
           </div>

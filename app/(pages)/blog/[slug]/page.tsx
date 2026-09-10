@@ -129,9 +129,9 @@ export default async function ArticlePage({ params }: PageProps) {
                     </span>
                     <span className="inline-flex items-center gap-1">
                       <Clock className="h-3.5 w-3.5" />
-                      {article.readTime} min read
+                      {article.readTime} <Editable id="blog.slug.min-read" as="span">min read</Editable>
                     </span>
-                    <span>{article.wordCount.toLocaleString()} words</span>
+                    <span>{article.wordCount.toLocaleString()} <Editable id="blog.slug.words" as="span">words</Editable></span>
                   </div>
                 </div>
               </div>

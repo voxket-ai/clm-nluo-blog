@@ -16,8 +16,7 @@ export default function CMNPage() {
               <Editable id="cmn.centre-for-mediation-and" as="span">Centre for Mediation and</Editable> <span className="text-blue-600"><Editable id="cmn.negotiation" as="span">Negotiation</Editable></span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Promoting dialogue-based, non-adversarial dispute resolution mechanisms and nurturing 
-              a generation of skilled mediators and negotiators at NLUO.
+              <Editable id="cmn.promoting-dialogue-based-non-adversarial-dispute" as="span">Promoting dialogue-based, non-adversarial dispute resolution mechanisms and nurturing a generation of skilled mediators and negotiators at NLUO.</Editable>
             </p>
           </div>
 
@@ -29,8 +28,7 @@ export default function CMNPage() {
                 <h2 className="text-2xl font-bold text-gray-900"><Editable id="cmn.our-vision" as="span">Our Vision</Editable></h2>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                To establish NLUO as a leading center for excellence in mediation and negotiation, 
-                contributing to a more peaceful and harmonious society through innovative dispute resolution mechanisms.
+                <Editable id="cmn.to-establish-nluo-as-a-leading-center-for-excell" as="span">To establish NLUO as a leading center for excellence in mediation and negotiation, contributing to a more peaceful and harmonious society through innovative dispute resolution mechanisms.</Editable>
               </p>
             </div>
             
@@ -40,8 +38,7 @@ export default function CMNPage() {
                 <h2 className="text-2xl font-bold text-gray-900"><Editable id="cmn.our-mission" as="span">Our Mission</Editable></h2>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                To promote research, training, and awareness in mediation and negotiation, 
-                providing accessible dispute resolution services and building capacity in alternative dispute resolution.
+                <Editable id="cmn.to-promote-research-training-and-awareness-in-me" as="span">To promote research, training, and awareness in mediation and negotiation, providing accessible dispute resolution services and building capacity in alternative dispute resolution.</Editable>
               </p>
             </div>
           </div>
@@ -57,8 +54,7 @@ export default function CMNPage() {
                 <BookOpen className="h-12 w-12 text-blue-600 mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-3"><Editable id="cmn.training-programs" as="span">Training Programs</Editable></h3>
                 <p className="text-gray-600">
-                  Comprehensive courses in mediation and negotiation techniques, 
-                  from basic skills to advanced practice.
+                  <Editable id="cmn.comprehensive-courses-in-mediation-and-negotiati" as="span">Comprehensive courses in mediation and negotiation techniques, from basic skills to advanced practice.</Editable>
                 </p>
               </div>
               
@@ -66,8 +62,7 @@ export default function CMNPage() {
                 <Users className="h-12 w-12 text-blue-600 mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-3"><Editable id="cmn.mediation-services" as="span">Mediation Services</Editable></h3>
                 <p className="text-gray-600">
-                  Professional mediation services for various disputes including family, 
-                  property, and commercial matters.
+                  <Editable id="cmn.professional-mediation-services-for-various-disp" as="span">Professional mediation services for various disputes including family, property, and commercial matters.</Editable>
                 </p>
               </div>
               
@@ -75,8 +70,7 @@ export default function CMNPage() {
                 <Calendar className="h-12 w-12 text-blue-600 mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-3"><Editable id="cmn.events-workshops" as="span">Events & Workshops</Editable></h3>
                 <p className="text-gray-600">
-                  Regular seminars, conferences, and workshops featuring leading experts 
-                  in alternative dispute resolution.
+                  <Editable id="cmn.regular-seminars-conferences-and-workshops-featu" as="span">Regular seminars, conferences, and workshops featuring leading experts in alternative dispute resolution.</Editable>
                 </p>
               </div>
             </div>

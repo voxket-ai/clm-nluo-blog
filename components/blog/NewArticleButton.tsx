@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { Plus } from 'lucide-react'
 import { useEdit } from '@/components/editable/EditProvider'
+import Editable from '@/components/editable/Editable'
+import { slotId } from '@/lib/contentKeys'
 
 /** "New article" call to action — only rendered for a signed-in administrator. */
 export default function NewArticleButton({ label = 'New article' }: { label?: string }) {
@@ -15,7 +17,9 @@ export default function NewArticleButton({ label = 'New article' }: { label?: st
       className="group inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 font-semibold text-white shadow-sm transition-all hover:scale-105 hover:brightness-110"
     >
       <Plus className="h-4 w-4 transition-transform group-hover:rotate-90" />
-      {label}
+      <Editable id={slotId('button.new-article', label)} as="span" label="Button label">
+        {label}
+      </Editable>
     </Link>
   )
 }

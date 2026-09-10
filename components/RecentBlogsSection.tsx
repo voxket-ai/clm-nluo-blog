@@ -37,14 +37,13 @@ export default async function RecentBlogsSection() {
             <Editable id="cmp.recentblogssection.latest-articles" as="span">Latest Articles</Editable>
           </div>
           <h2 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl">
-            Recent{' '}
+            <Editable id="cmp.recentblogssection.recent" as="span">Recent</Editable>{' '}
             <span className="bg-blue-600 bg-clip-text text-transparent">
               <Editable id="cmp.recentblogssection.insights" as="span">Insights</Editable>
             </span>
           </h2>
           <p className="mx-auto max-w-3xl text-xl text-gray-600">
-            Explore cutting-edge research, expert analysis, and practical insights in mediation and alternative dispute
-            resolution.
+            <Editable id="cmp.recentblogssection.explore-cutting-edge-research-expert-analysis-an" as="span">Explore cutting-edge research, expert analysis, and practical insights in mediation and alternative dispute resolution.</Editable>
           </p>
         </div>
 
@@ -63,12 +62,26 @@ export default async function RecentBlogsSection() {
                 <PenLine className="h-7 w-7" />
               </span>
               <p className="mb-2 text-2xl font-semibold text-gray-800">
-                {unavailable ? 'Articles are momentarily unavailable' : 'No articles published yet'}
+                {unavailable ? (
+                  <Editable id="home.recent.empty-title-error" as="span" label="Recent Insights: database error title">
+                    Articles are momentarily unavailable
+                  </Editable>
+                ) : (
+                  <Editable id="home.recent.empty-title" as="span" label="Recent Insights: empty title">
+                    No articles published yet
+                  </Editable>
+                )}
               </p>
               <p className="max-w-md text-gray-500">
-                {unavailable
-                  ? 'We could not reach the article database. Please refresh in a moment.'
-                  : 'Published pieces appear here as soon as they go live. Yours could be the first.'}
+                {unavailable ? (
+                  <Editable id="home.recent.empty-body-error" as="span" multiline label="Recent Insights: database error text">
+                    We could not reach the article database. Please refresh in a moment.
+                  </Editable>
+                ) : (
+                  <Editable id="home.recent.empty-body" as="span" multiline label="Recent Insights: empty text">
+                    Published pieces appear here as soon as they go live. Yours could be the first.
+                  </Editable>
+                )}
               </p>
               {!unavailable && (
                 <div className="mt-7">

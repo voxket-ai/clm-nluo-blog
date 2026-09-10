@@ -59,7 +59,7 @@ export default function RestorativeJusticeCourse() {
             <h2 className="text-2xl font-bold text-gray-900 mb-6"><Editable id="events.restorative-justice.introduction" as="span">Introduction</Editable></h2>
             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
               <p>
-                <Editable id="events.restorative-justice.recognizing-the-growing-relevance-of-restorative" as="span">Recognizing the growing relevance of restorative approaches in justice and community-building, the</Editable> <strong><Editable id="events.restorative-justice.nluo-centre-for-mediation-and-negotiation-nluo-c" as="span">NLUO Centre for Mediation and Negotiation (NLUO CMN)</Editable></strong>, in collaboration with <strong><Editable id="events.restorative-justice.accords-international-acin" as="span">Accords International (AcIn)</Editable></strong>, successfully conducted a Single Credit Course titled "Restorative Practice and Justice: Theory and Tools for Building Compassionate Communities". The course was delivered in a <strong><Editable id="events.restorative-justice.sixteen-hour-format" as="span">sixteen-hour format</Editable></strong> <Editable id="events.restorative-justice.over-multiple-sessions-from" as="span">over multiple sessions, from</Editable> <strong><Editable id="events.restorative-justice.15th-november-to-30th-november-2025" as="span">15th November to 30th November, 2025</Editable></strong>, and was designed with the goal of imparting both theoretical knowledge and practical skills relating to restorative processes, conflict transformation, trauma-informed care, and community-centred approaches to justice.
+                <Editable id="events.restorative-justice.recognizing-the-growing-relevance-of-restorative" as="span">Recognizing the growing relevance of restorative approaches in justice and community-building, the</Editable> <strong><Editable id="events.restorative-justice.nluo-centre-for-mediation-and-negotiation-nluo-c" as="span">NLUO Centre for Mediation and Negotiation (NLUO CMN)</Editable></strong><Editable id="events.restorative-justice.in-collaboration-with" as="span">, in collaboration with</Editable> <strong><Editable id="events.restorative-justice.accords-international-acin" as="span">Accords International (AcIn)</Editable></strong><Editable id="events.restorative-justice.successfully-conducted-a-single-credit-course-ti" as="span">, successfully conducted a Single Credit Course titled "Restorative Practice and Justice: Theory and Tools for Building Compassionate Communities". The course was delivered in a</Editable> <strong><Editable id="events.restorative-justice.sixteen-hour-format" as="span">sixteen-hour format</Editable></strong> <Editable id="events.restorative-justice.over-multiple-sessions-from" as="span">over multiple sessions, from</Editable> <strong><Editable id="events.restorative-justice.15th-november-to-30th-november-2025" as="span">15th November to 30th November, 2025</Editable></strong><Editable id="events.restorative-justice.and-was-designed-with-the-goal-of-imparting-both" as="span">, and was designed with the goal of imparting both theoretical knowledge and practical skills relating to restorative processes, conflict transformation, trauma-informed care, and community-centred approaches to justice.</Editable>
               </p>
               <p>
                 <Editable id="events.restorative-justice.participants-engaged-in-reflective-activities-fo" as="span">Participants engaged in reflective activities focused on self-care, empathy-building, and cultivating compassionate environments. Artistic and creative exercises further enriched the learning experience, offering alternative pathways for expression and insight. Led by experienced practitioners, the course provided a rigorous yet engaging platform for educators, community leaders, social workers, and others interested in transformative justice.</Editable>
@@ -182,7 +182,7 @@ export default function RestorativeJusticeCourse() {
                     <h3 className="text-lg font-semibold text-gray-900"><Editable id="events.restorative-justice.participant-profile" as="span">Participant Profile</Editable></h3>
                   </div>
                   <p className="text-gray-600 mb-4">
-                    <Editable id="events.restorative-justice.the-course-was-attended-by-a-total-of" as="span">The course was attended by a total of</Editable> <strong><Editable id="events.restorative-justice.54-participants-2" as="span">54 participants</Editable></strong>, including students and professionals, representing a wide diversity of universities and locations.
+                    <Editable id="events.restorative-justice.the-course-was-attended-by-a-total-of" as="span">The course was attended by a total of</Editable> <strong><Editable id="events.restorative-justice.54-participants-2" as="span">54 participants</Editable></strong><Editable id="events.restorative-justice.including-students-and-professionals-representin" as="span">, including students and professionals, representing a wide diversity of universities and locations.</Editable>
                   </p>
                 </div>
                 
@@ -265,10 +265,10 @@ export default function RestorativeJusticeCourse() {
                 </div>
                 <div className="space-y-3 text-gray-600">
                   <p>
-                    <Editable id="events.restorative-justice.the-first-day-commenced-with-an-introduction-and" as="span">The first day commenced with an introduction and ice-breaking session, led by</Editable> <strong><Editable id="events.restorative-justice.dr-akshay-verma" as="span">Dr. Akshay Verma</Editable></strong>, Assistant Professor of Law at NLUO. Dr. Verma began by orienting the participants to the structure and objectives of the course, providing an overview of the syllabus.
+                    <Editable id="events.restorative-justice.the-first-day-commenced-with-an-introduction-and" as="span">The first day commenced with an introduction and ice-breaking session, led by</Editable> <strong><Editable id="events.restorative-justice.dr-akshay-verma" as="span">Dr. Akshay Verma</Editable></strong><Editable id="events.restorative-justice.assistant-professor-of-law-at-nluo-dr-verma-bega" as="span">, Assistant Professor of Law at NLUO. Dr. Verma began by orienting the participants to the structure and objectives of the course, providing an overview of the syllabus.</Editable>
                   </p>
                   <p>
-                    <strong><Editable id="events.restorative-justice.dr-akanksha-marwah" as="span">Dr. Akanksha Marwah</Editable></strong>, an academician, restorative practitioner and expert in child restorative justice, introduced the foundational concepts of RJ and RP, elaborating on their historical development, core philosophy, and practical significance. The session delved into core concepts including harm, accountability, relationship-building, and community participation.
+                    <strong><Editable id="events.restorative-justice.dr-akanksha-marwah" as="span">Dr. Akanksha Marwah</Editable></strong><Editable id="events.restorative-justice.an-academician-restorative-practitioner-and-expe" as="span">, an academician, restorative practitioner and expert in child restorative justice, introduced the foundational concepts of RJ and RP, elaborating on their historical development, core philosophy, and practical significance. The session delved into core concepts including harm, accountability, relationship-building, and community participation.</Editable>
                   </p>
                   <p>
                     <Editable id="events.restorative-justice.dr-marwah-facilitated-an-interactive-exercise-us" as="span">Dr. Marwah facilitated an interactive exercise using the feelings and needs wheel, enabling participants to recognize emotions, identify unmet needs, and understand how these elements contribute to conflict and its resolution.</Editable>
@@ -284,10 +284,10 @@ export default function RestorativeJusticeCourse() {
                 </div>
                 <div className="space-y-3 text-gray-600">
                   <p>
-                    <Editable id="events.restorative-justice.the-second-day-continued-the-discussion-on-build" as="span">The second day continued the discussion on building restorative minds with</Editable> <strong><Editable id="events.restorative-justice.dr-akanksha-marwah-2" as="span">Dr. Akanksha Marwah</Editable></strong>, who guided participants through reflective exercises that deepened their understanding of restorative thinking, emotional awareness, and empathetic engagement.
+                    <Editable id="events.restorative-justice.the-second-day-continued-the-discussion-on-build" as="span">The second day continued the discussion on building restorative minds with</Editable> <strong><Editable id="events.restorative-justice.dr-akanksha-marwah-2" as="span">Dr. Akanksha Marwah</Editable></strong><Editable id="events.restorative-justice.who-guided-participants-through-reflective-exerc" as="span">, who guided participants through reflective exercises that deepened their understanding of restorative thinking, emotional awareness, and empathetic engagement.</Editable>
                   </p>
                   <p>
-                    <strong><Editable id="events.restorative-justice.dr-sal-corbin" as="span">Dr. Sal Corbin</Editable></strong>, bringing fifteen years of academic experience and extensive work in community-level conflict transformation, introduced nuanced learning on trauma-informed care, unarmed civilian protection, and active bystander intervention.
+                    <strong><Editable id="events.restorative-justice.dr-sal-corbin" as="span">Dr. Sal Corbin</Editable></strong><Editable id="events.restorative-justice.bringing-fifteen-years-of-academic-experience-an" as="span">, bringing fifteen years of academic experience and extensive work in community-level conflict transformation, introduced nuanced learning on trauma-informed care, unarmed civilian protection, and active bystander intervention.</Editable>
                   </p>
                   <p>
                     <Editable id="events.restorative-justice.the-discussions-covered-the-importance-of-self-c" as="span">The discussions covered the importance of self-care, particularly for circle keepers and facilitators, with a focus on grounding techniques and the art of facilitation. Participants engaged in self-care activities and community engagement exercises.</Editable>
@@ -303,10 +303,10 @@ export default function RestorativeJusticeCourse() {
                 </div>
                 <div className="space-y-3 text-gray-600">
                   <p>
-                    <Editable id="events.restorative-justice.the-third-day-featured-a-session-by" as="span">The third day featured a session by</Editable> <strong><Editable id="events.restorative-justice.jeri-fields" as="span">Jeri Fields</Editable></strong>, a restorative justice facilitator from the DC Peace Team, who drew upon her experience in community chaplaincy and circle work to offer compassionate and practical guidance on the art of facilitation.
+                    <Editable id="events.restorative-justice.the-third-day-featured-a-session-by" as="span">The third day featured a session by</Editable> <strong><Editable id="events.restorative-justice.jeri-fields" as="span">Jeri Fields</Editable></strong><Editable id="events.restorative-justice.a-restorative-justice-facilitator-from-the-dc-pe" as="span">, a restorative justice facilitator from the DC Peace Team, who drew upon her experience in community chaplaincy and circle work to offer compassionate and practical guidance on the art of facilitation.</Editable>
                   </p>
                   <p>
-                    <strong><Editable id="events.restorative-justice.upasana-singh" as="span">Upasana Singh</Editable></strong>, J.S.D. candidate at Cornell Law School, provided research-based insights into the institutionalization of restorative systems within criminal justice frameworks. She examined the distinctions between Restorative Justice and the adversarial criminal justice model.
+                    <strong><Editable id="events.restorative-justice.upasana-singh" as="span">Upasana Singh</Editable></strong><Editable id="events.restorative-justice.j-s-d-candidate-at-cornell-law-school-provided-r" as="span">, J.S.D. candidate at Cornell Law School, provided research-based insights into the institutionalization of restorative systems within criminal justice frameworks. She examined the distinctions between Restorative Justice and the adversarial criminal justice model.</Editable>
                   </p>
                 </div>
               </div>
@@ -319,7 +319,7 @@ export default function RestorativeJusticeCourse() {
                 </div>
                 <div className="space-y-3 text-gray-600">
                   <p>
-                    <strong><Editable id="events.restorative-justice.dr-akanksha-marwah-3" as="span">Dr. Akanksha Marwah</Editable></strong> <Editable id="events.restorative-justice.opened-the-session-and-set-the-tone-for-the-day" as="span">opened the session and set the tone for the day's discussions. The first half was led by</Editable> <strong><Editable id="events.restorative-justice.theresa-huggins" as="span">Theresa Huggins</Editable></strong>, who brings over twenty-five years of experience working within juvenile and adult detention settings. She shared valuable perspectives on harm, accountability, resilience, and healing, and elaborated on restorative questions and victim-offender dialogue.
+                    <strong><Editable id="events.restorative-justice.dr-akanksha-marwah-3" as="span">Dr. Akanksha Marwah</Editable></strong> <Editable id="events.restorative-justice.opened-the-session-and-set-the-tone-for-the-day" as="span">opened the session and set the tone for the day's discussions. The first half was led by</Editable> <strong><Editable id="events.restorative-justice.theresa-huggins" as="span">Theresa Huggins</Editable></strong><Editable id="events.restorative-justice.who-brings-over-twenty-five-years-of-experience" as="span">, who brings over twenty-five years of experience working within juvenile and adult detention settings. She shared valuable perspectives on harm, accountability, resilience, and healing, and elaborated on restorative questions and victim-offender dialogue.</Editable>
                   </p>
                   <p>
                     <Editable id="events.restorative-justice.dr-marwah-continued-with-a-focus-on-restorative" as="span">Dr. Marwah continued with a focus on restorative child justice, using a book written by a 9-10-year-old girl whose grandfather was incarcerated to illustrate the emotional impact of incarceration on children and families. She discussed the potential for integrating restorative justice principles into the existing criminal justice system in India.</Editable>
@@ -360,7 +360,7 @@ export default function RestorativeJusticeCourse() {
                     <Editable id="events.restorative-justice.participants-engaged-in-mental-exercises-aimed-a" as="span">Participants engaged in mental exercises aimed at converting judgments into observations, an essential skill for developing restorative communication. Templates for crafting compassionate sentences were introduced to help participants practice empathetic and non-violent expression.</Editable>
                   </p>
                   <p>
-                    <Editable id="events.restorative-justice.the-course-concluded-with-a" as="span">The course concluded with a</Editable> <strong><Editable id="events.restorative-justice.final-reflection-circle" as="span">Final Reflection Circle</Editable></strong>, where participants shared insights, personal learnings, and reflections on their restorative journey, marking a thoughtful end to the six-day programme.
+                    <Editable id="events.restorative-justice.the-course-concluded-with-a" as="span">The course concluded with a</Editable> <strong><Editable id="events.restorative-justice.final-reflection-circle" as="span">Final Reflection Circle</Editable></strong><Editable id="events.restorative-justice.where-participants-shared-insights-personal-lear" as="span">, where participants shared insights, personal learnings, and reflections on their restorative journey, marking a thoughtful end to the six-day programme.</Editable>
                   </p>
                 </div>
               </div>
@@ -453,11 +453,11 @@ export default function RestorativeJusticeCourse() {
                   <Editable id="events.restorative-justice.key-learnings" as="span">Key Learnings</Editable>
                 </h3>
                 <ul className="space-y-2 text-gray-600 text-sm">
-                  <li>• Clearer perspectives on conflict resolution</li>
-                  <li>• Value of transparent conversations</li>
-                  <li>• Improved emotional awareness</li>
-                  <li>• Calm problem-solving approaches</li>
-                  <li>• Deeper respect and accountability</li>
+                  <li><Editable id="events.restorative-justice.clearer-perspectives-on-conflict-resolution" as="span">• Clearer perspectives on conflict resolution</Editable></li>
+                  <li><Editable id="events.restorative-justice.value-of-transparent-conversations" as="span">• Value of transparent conversations</Editable></li>
+                  <li><Editable id="events.restorative-justice.improved-emotional-awareness" as="span">• Improved emotional awareness</Editable></li>
+                  <li><Editable id="events.restorative-justice.calm-problem-solving-approaches" as="span">• Calm problem-solving approaches</Editable></li>
+                  <li><Editable id="events.restorative-justice.deeper-respect-and-accountability" as="span">• Deeper respect and accountability</Editable></li>
                 </ul>
               </div>
               
@@ -467,11 +467,11 @@ export default function RestorativeJusticeCourse() {
                   <Editable id="events.restorative-justice.suggestions-for-improvement" as="span">Suggestions for Improvement</Editable>
                 </h3>
                 <ul className="space-y-2 text-gray-600 text-sm">
-                  <li>• More India-specific examples</li>
-                  <li>• Closer linkage to legal frameworks</li>
-                  <li>• Pre-session study materials</li>
-                  <li>• Additional assignments for practice</li>
-                  <li>• Longer discussion periods for reflection</li>
+                  <li><Editable id="events.restorative-justice.more-india-specific-examples" as="span">• More India-specific examples</Editable></li>
+                  <li><Editable id="events.restorative-justice.closer-linkage-to-legal-frameworks" as="span">• Closer linkage to legal frameworks</Editable></li>
+                  <li><Editable id="events.restorative-justice.pre-session-study-materials" as="span">• Pre-session study materials</Editable></li>
+                  <li><Editable id="events.restorative-justice.additional-assignments-for-practice" as="span">• Additional assignments for practice</Editable></li>
+                  <li><Editable id="events.restorative-justice.longer-discussion-periods-for-reflection" as="span">• Longer discussion periods for reflection</Editable></li>
                 </ul>
               </div>
             </div>

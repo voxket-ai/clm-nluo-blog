@@ -184,9 +184,7 @@ export default function AdvisoryBoardPage() {
               <Editable id="advisory-board-ccl.advisory" as="span">Advisory</Editable> <span className="text-blue-600"><Editable id="advisory-board-ccl.board" as="span">Board</Editable></span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Our Advisory Board comprises distinguished legal professionals, practitioners, and experts 
-              from across the globe who provide strategic guidance and ensure the highest standards 
-              of legal scholarship at the Centre for Corporate Law.
+              <Editable id="advisory-board-ccl.our-advisory-board-comprises-distinguished-legal" as="span">Our Advisory Board comprises distinguished legal professionals, practitioners, and experts from across the globe who provide strategic guidance and ensure the highest standards of legal scholarship at the Centre for Corporate Law.</Editable>
             </p>
           </div>
 

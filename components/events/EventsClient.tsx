@@ -108,7 +108,7 @@ export default function EventsClient({
           </h2>
           <div className="flex items-center gap-3">
             <span className="text-sm text-gray-500">
-              {upcoming.length} {upcoming.length === 1 ? 'event' : 'events'} scheduled
+              {upcoming.length} {upcoming.length === 1 ? 'event' : 'events'} <Editable id="cmp.events.eventsclient.scheduled" as="span">scheduled</Editable>
             </span>
             {canManage && <AddButton onClick={openNew} />}
           </div>
@@ -148,7 +148,7 @@ export default function EventsClient({
             </span>
           </h2>
           <span className="text-sm text-gray-500">
-            {past.length} {past.length === 1 ? 'event' : 'events'} completed
+            {past.length} {past.length === 1 ? 'event' : 'events'} <Editable id="cmp.events.eventsclient.completed" as="span">completed</Editable>
           </span>
         </div>
 
@@ -203,7 +203,7 @@ function AddButton({ onClick }: { onClick: () => void }) {
       className="group inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:scale-105 hover:brightness-110"
     >
       <Plus className="h-4 w-4 transition-transform group-hover:rotate-90" />
-      Add event
+      <Editable id="cmp.events.eventsclient.add-event" as="span">Add event</Editable>
     </button>
   )
 }
@@ -227,7 +227,7 @@ function EmptyState({
           className="mt-5 inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:border-blue-300 hover:text-blue-600"
         >
           <Plus className="h-4 w-4" />
-          Add the first one
+          <Editable id="cmp.events.eventsclient.add-the-first-one" as="span">Add the first one</Editable>
         </button>
       )}
     </div>
@@ -321,7 +321,7 @@ function EventCard({
 
         {!isPast && event.speakers.length > 0 && (
           <div className="mb-4">
-            <p className="mb-2 text-sm font-medium text-gray-900">Featured Speakers:</p>
+            <p className="mb-2 text-sm font-medium text-gray-900"><Editable id="cmp.events.eventsclient.featured-speakers" as="span">Featured Speakers:</Editable></p>
             <div className="flex flex-wrap gap-1">
               {event.speakers.map((speaker) => (
                 <span key={speaker} className="rounded bg-blue-50 px-2 py-1 text-xs text-blue-700">
@@ -341,7 +341,7 @@ function EventCard({
                 rel="noopener noreferrer"
                 className="flex flex-1 items-center justify-center rounded-md bg-blue-600 px-4 py-2 font-medium text-white transition-colors hover:bg-blue-700"
               >
-                Register Now
+                <Editable id="cmp.events.eventsclient.register-now" as="span">Register Now</Editable>
                 <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             )}
@@ -350,7 +350,7 @@ function EventCard({
                 href={detailUrl}
                 className="rounded-md border border-blue-600 px-4 py-2 font-medium text-blue-600 transition-colors hover:bg-blue-50"
               >
-                Learn More
+                <Editable id="cmp.events.eventsclient.learn-more" as="span">Learn More</Editable>
               </Link>
             )}
           </div>

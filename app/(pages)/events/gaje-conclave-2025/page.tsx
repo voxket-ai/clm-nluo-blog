@@ -260,11 +260,11 @@ export default function GajeConclaveDetailPage() {
             <div className="bg-gray-50 rounded-lg p-6">
               <h4 className="font-semibold text-gray-900 mb-3"><Editable id="events.gaje-conclave-2025.competition-highlights" as="span">Competition Highlights</Editable></h4>
               <ul className="space-y-2 text-gray-600">
-                <li>• First-ever offline negotiation competition at NLUO</li>
-                <li>• Commercial disputes ranging from motion picture to maritime industry</li>
-                <li>• Rigorous preliminary and quarterfinal rounds</li>
-                <li>• Distinguished judges: Adv. Surya Prasad Mishra, Dr. Pallab Das, and Ms. Shweta Sahu</li>
-                <li>• Participation from leading law schools across the country</li>
+                <li><Editable id="events.gaje-conclave-2025.first-ever-offline-negotiation-competition-at-nl" as="span">• First-ever offline negotiation competition at NLUO</Editable></li>
+                <li><Editable id="events.gaje-conclave-2025.commercial-disputes-ranging-from-motion-picture" as="span">• Commercial disputes ranging from motion picture to maritime industry</Editable></li>
+                <li><Editable id="events.gaje-conclave-2025.rigorous-preliminary-and-quarterfinal-rounds" as="span">• Rigorous preliminary and quarterfinal rounds</Editable></li>
+                <li><Editable id="events.gaje-conclave-2025.distinguished-judges-adv-surya-prasad-mishra-dr" as="span">• Distinguished judges: Adv. Surya Prasad Mishra, Dr. Pallab Das, and Ms. Shweta Sahu</Editable></li>
+                <li><Editable id="events.gaje-conclave-2025.participation-from-leading-law-schools-across-th" as="span">• Participation from leading law schools across the country</Editable></li>
               </ul>
             </div>
           </section>

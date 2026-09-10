@@ -89,7 +89,7 @@ export default function ArticleCard({ article, featured = false }: ArticleCardPr
       <div className="p-6">
         <div className="flex items-center text-sm text-gray-500 mb-3">
           <Clock className="w-4 h-4 mr-2 text-blue-500" />
-          <span>{article.readTime} min read</span>
+          <span>{article.readTime} <Editable id="cmp.articlecard.min-read" as="span">min read</Editable></span>
           <span className="mx-2 text-gray-300">•</span>
           <span>{article.submissionType}</span>
         </div>

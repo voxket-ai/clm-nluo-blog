@@ -44,7 +44,7 @@ export default function AboutTheBlogPage() {
           {/* Purpose and Objectives */}
           <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-lg p-8 mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Purpose & <span className="text-blue-600"><Editable id="about-the-blog.objectives" as="span">Objectives</Editable></span>
+              <Editable id="about-the-blog.purpose" as="span">Purpose &</Editable> <span className="text-blue-600"><Editable id="about-the-blog.objectives" as="span">Objectives</Editable></span>
             </h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -58,11 +58,11 @@ export default function AboutTheBlogPage() {
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <h3 className="text-xl font-bold text-blue-600 mb-4"><Editable id="about-the-blog.key-objectives" as="span">Key Objectives</Editable></h3>
                 <ul className="text-gray-600 space-y-2 text-sm text-justify">
-                  <li>• Promote scholarly discourse on mediation and negotiation practices</li>
-                  <li>• Share Insights on Law of Mediation and its implementation</li>
-                  <li>• Analyze contemporary ADR trends and emerging technologies</li>
-                  <li>• Foster collaboration between academics and practitioners</li>
-                  <li>• Provide practical guidance for mediation professionals</li>
+                  <li><Editable id="about-the-blog.promote-scholarly-discourse-on-mediation-and-neg" as="span">• Promote scholarly discourse on mediation and negotiation practices</Editable></li>
+                  <li><Editable id="about-the-blog.share-insights-on-law-of-mediation-and-its-imple" as="span">• Share Insights on Law of Mediation and its implementation</Editable></li>
+                  <li><Editable id="about-the-blog.analyze-contemporary-adr-trends-and-emerging-tec" as="span">• Analyze contemporary ADR trends and emerging technologies</Editable></li>
+                  <li><Editable id="about-the-blog.foster-collaboration-between-academics-and-pract" as="span">• Foster collaboration between academics and practitioners</Editable></li>
+                  <li><Editable id="about-the-blog.provide-practical-guidance-for-mediation-profess" as="span">• Provide practical guidance for mediation professionals</Editable></li>
                 </ul>
               </div>
             </div>

@@ -82,8 +82,7 @@ export default function NewslettersPage() {
               <Editable id="newsletters.nluo-mediation-blogs" as="span">NLUO Mediation Blogs</Editable> <span className="text-blue-600"><Editable id="newsletters.insights" as="span">#Insights</Editable></span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              Our monthly newsletter provides comprehensive insights into the latest developments in corporate law, 
-              regulatory updates, and critical analysis of emerging legal trends.
+              <Editable id="newsletters.our-monthly-newsletter-provides-comprehensive-in" as="span">Our monthly newsletter provides comprehensive insights into the latest developments in corporate law, regulatory updates, and critical analysis of emerging legal trends.</Editable>
             </p>
             
             {/* Newsletter Signup */}
@@ -114,15 +113,10 @@ export default function NewslettersPage() {
                   <Editable id="newsletters.about" as="span">About</Editable> <span className="text-blue-600"><Editable id="newsletters.insights-2" as="span">#Insights</Editable></span>
                 </h2>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  NLUO Mediation Blogs has endeavoured to release a monthly newsletter on mediation and negotiation titled '#Insights', 
-                  to create an effective platform to foster discussion and discourse on the latest updates 
-                  in the corporate world.
+                  <Editable id="newsletters.nluo-mediation-blogs-has-endeavoured-to-release" as="span">NLUO Mediation Blogs has endeavoured to release a monthly newsletter on mediation and negotiation titled '#Insights', to create an effective platform to foster discussion and discourse on the latest updates in the corporate world.</Editable>
                 </p>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  This covers major updates of critical subject matters like Insolvency Law, Securities Law, 
-                  Company Law etc. Through '#Insights' we try to delve deeper into each development, analyzing 
-                  the reasons and consequences of such developments, thus providing comprehensive understanding 
-                  of a particular issue to our readers.
+                  <Editable id="newsletters.this-covers-major-updates-of-critical-subject-ma" as="span">This covers major updates of critical subject matters like Insolvency Law, Securities Law, Company Law etc. Through '#Insights' we try to delve deeper into each development, analyzing the reasons and consequences of such developments, thus providing comprehensive understanding of a particular issue to our readers.</Editable>
                 </p>
                 <div className="flex items-center space-x-6 text-sm text-gray-500">
                   <div className="flex items-center">
@@ -192,7 +186,7 @@ export default function NewslettersPage() {
                         ))}
                         {newsletter.topics.length > 2 && (
                           <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
-                            +{newsletter.topics.length - 2} more
+                            +{newsletter.topics.length - 2} <Editable id="newsletters.more" as="span">more</Editable>
                           </span>
                         )}
                       </div>

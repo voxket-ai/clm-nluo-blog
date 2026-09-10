@@ -56,7 +56,7 @@ export default function SubmissionsPage() {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-blue-600 mb-4">Submission Themes{"(Non-Exhaustive)"}</h3>
+                <h3 className="text-lg font-semibold text-blue-600 mb-4"><Editable id="submissions.submission-themes" as="span">Submission Themes</Editable><Editable id="submissions.themes-note" as="span" label="Themes note">(Non-Exhaustive)</Editable></h3>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-start">
                     <FileText className="h-5 w-5 text-blue-500 mr-2 mt-0.5 shrink-0" />

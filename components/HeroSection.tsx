@@ -258,7 +258,7 @@ export default function HeroSection() {
                     className="absolute left-4 top-4 z-20 inline-flex items-center gap-2 rounded-full bg-slate-900/90 px-4 py-2 text-xs font-semibold text-white shadow-lg backdrop-blur-sm transition-transform hover:scale-105"
                   >
                     <ImageIcon className="h-4 w-4" />
-                    Replace slide {currentImageIndex + 1}
+                    <Editable id="cmp.herosection.replace-slide" as="span">Replace slide</Editable> {currentImageIndex + 1}
                   </button>
                 )}
 

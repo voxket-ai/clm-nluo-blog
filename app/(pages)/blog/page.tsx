@@ -7,6 +7,7 @@ import ArticleCard from '@/components/ArticleCard'
 import ArticleFilters from '@/components/ArticleFilters'
 import NewArticleButton from '@/components/blog/NewArticleButton'
 import Editable from '@/components/editable/Editable'
+import { slotId } from '@/lib/contentKeys'
 import { EMPTY_LIST, getCategoryCounts, listPublishedArticles } from '@/lib/articleService'
 import { ArrowLeft, ArrowRight, DatabaseZap, PenLine, SearchX } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -88,7 +89,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
               {result.articles.length > 0 ? (
                 <>
                   <p className="mb-6 text-sm text-slate-500">
-                    Showing {result.articles.length} of {result.total}{' '}
+                    <Editable id="blog.showing" as="span">Showing</Editable> {result.articles.length} of {result.total}{' '}
                     {result.total === 1 ? 'article' : 'articles'}
                     {category ? ` in ${category}` : ''}
                     {search ? ` matching “${search}”` : ''}
@@ -246,8 +247,12 @@ function EmptyState({
       <span className="mx-auto mb-5 grid h-16 w-16 place-items-center rounded-2xl bg-blue-600 text-white shadow-sm">
         <Icon className="h-7 w-7" />
       </span>
-      <h2 className="mb-2 text-2xl font-bold text-gray-900">{title}</h2>
-      <p className="text-slate-500">{body}</p>
+      <h2 className="mb-2 text-2xl font-bold text-gray-900">
+        <Editable id={slotId('blog.empty', title, 'title')} as="span" label="Empty-state heading">{title}</Editable>
+      </h2>
+      <p className="text-slate-500">
+        <Editable id={slotId('blog.empty', title, 'body')} as="span" multiline label="Empty-state text">{body}</Editable>
+      </p>
       {children}
       {action && (
         <Link

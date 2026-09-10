@@ -181,8 +181,7 @@ export default function FacultyAdvisorsPage() {
               <Editable id="faculty-advisors.about-the" as="span">About the</Editable> <span className="text-blue-600"><Editable id="faculty-advisors.centre" as="span">Centre</Editable></span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              The NLUO Centre for Mediation and Negotiation (NLUO CMN) was established in March 2014 and reconstituted in 2022 
-              under the leadership of Vice-Chancellor Prof. Ved Kumari. Learn about our mission, initiatives, and leadership.
+              <Editable id="faculty-advisors.the-nluo-centre-for-mediation-and-negotiation-nl" as="span">The NLUO Centre for Mediation and Negotiation (NLUO CMN) was established in March 2014 and reconstituted in 2022 under the leadership of Vice-Chancellor Prof. Ved Kumari. Learn about our mission, initiatives, and leadership.</Editable>
             </p>
           </div>
 
@@ -193,11 +192,7 @@ export default function FacultyAdvisorsPage() {
                 <Editable id="faculty-advisors.academic" as="span">Academic</Editable> <span className="text-blue-600"><Editable id="faculty-advisors.leadership" as="span">Leadership</Editable></span>
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                Our faculty advisors bring decades of combined experience in legal education, research, 
-                and practice. They provide strategic guidance to NLUO Mediation Blogs, ensuring that our content 
-                maintains the highest standards of academic rigor while remaining relevant to contemporary 
-                legal practice. Each advisor contributes their unique expertise in specialized areas of 
-                corporate law, creating a comprehensive knowledge base for our publications and research initiatives.
+                <Editable id="faculty-advisors.our-faculty-advisors-bring-decades-of-combined-e" as="span">Our faculty advisors bring decades of combined experience in legal education, research, and practice. They provide strategic guidance to NLUO Mediation Blogs, ensuring that our content maintains the highest standards of academic rigor while remaining relevant to contemporary legal practice. Each advisor contributes their unique expertise in specialized areas of corporate law, creating a comprehensive knowledge base for our publications and research initiatives.</Editable>
               </p>
             </div>
           </div>
@@ -211,13 +206,10 @@ export default function FacultyAdvisorsPage() {
                   <Editable id="faculty-advisors.about-the-2" as="span">About the</Editable> <span className="text-blue-600"><Editable id="faculty-advisors.centre-2" as="span">Centre</Editable></span>
                 </h2>
                 <p className="text-gray-600 mb-6 leading-relaxed text-justify">
-                  The NLUO Centre for Mediation and Negotiation (NLUO CMN) was established in March 2014 by Hon'ble Justices 
-                  Ananga Kumar Patnaik, V. Gopala Gowda, and Adarsh Kumar Goel. It is dedicated to promoting academic research 
-                  and practical training in Alternative Dispute Resolution (ADR).
+                  <Editable id="faculty-advisors.the-nluo-centre-for-mediation-and-negotiation-nl-2" as="span">The NLUO Centre for Mediation and Negotiation (NLUO CMN) was established in March 2014 by Hon'ble Justices Ananga Kumar Patnaik, V. Gopala Gowda, and Adarsh Kumar Goel. It is dedicated to promoting academic research and practical training in Alternative Dispute Resolution (ADR).</Editable>
                 </p>
                 <p className="text-gray-600 leading-relaxed text-justify">
-                  As India's first mediation cell operated by a higher-education institution, the Centre aspires to be a Centre of 
-                  Excellence in ADR, fostering peaceful dispute resolution, mutual understanding, and effective communication.
+                  <Editable id="faculty-advisors.as-india-s-first-mediation-cell-operated-by-a-hi" as="span">As India's first mediation cell operated by a higher-education institution, the Centre aspires to be a Centre of Excellence in ADR, fostering peaceful dispute resolution, mutual understanding, and effective communication.</Editable>
                 </p>
               </div>
               

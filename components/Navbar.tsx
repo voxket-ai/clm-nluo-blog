@@ -181,7 +181,7 @@ export default function Navbar() {
           <div className="hidden shrink-0 lg:block">
             {edit?.isAdmin ? (
               <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50/80 py-1 pl-3 pr-1">
-                <span className="text-[13px] font-medium text-slate-500">Signed in</span>
+                <span className="text-[13px] font-medium text-slate-500"><Editable id="cmp.navbar.signed-in" as="span">Signed in</Editable></span>
                 <button
                   type="button"
                   onClick={signOut}
@@ -198,7 +198,7 @@ export default function Navbar() {
                 className="inline-flex items-center gap-1.5 text-[13px] font-medium text-slate-400 transition-colors hover:text-slate-700"
               >
                 <LogIn className="h-3.5 w-3.5" />
-                Administrator
+                <Editable id="cmp.navbar.administrator" as="span">Administrator</Editable>
               </Link>
             )}
           </div>
@@ -293,7 +293,7 @@ export default function Navbar() {
                   className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-500 transition-colors hover:bg-slate-50"
                 >
                   <LogIn className="h-4 w-4" />
-                  Administrator
+                  <Editable id="cmp.navbar.administrator-2" as="span">Administrator</Editable>
                 </Link>
               )}
             </div>

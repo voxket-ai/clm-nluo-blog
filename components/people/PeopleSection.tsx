@@ -59,7 +59,8 @@ export default function PeopleSection({
 
   const grid =
     columns === 1
-      ? 'max-w-md mx-auto'
+      // space-y matters once a one-person section gains a second entry.
+      ? 'max-w-md mx-auto space-y-8'
       : columns === 2
         ? 'grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto'
         : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'

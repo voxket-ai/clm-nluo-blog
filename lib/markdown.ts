@@ -20,11 +20,10 @@ export function renderArticleHtml(markdown: string) {
   if (footnotes.length) {
     const items = footnotes
       .map((note) => {
-        const id = note.key.replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 60)
         const text = (marked.parseInline(note.markdown, { async: false }) as string) || ''
         return (
-          `<li id="fn-${id}">${text} ` +
-          `<a href="#fnref-${id}" class="footnote-back" aria-label="Back to citation ${note.number}">&#8617;</a></li>`
+          `<li id="fn-${note.number}">${text} ` +
+          `<a href="#fnref-${note.number}" class="footnote-back" aria-label="Back to citation ${note.number}">&#8617;</a></li>`
         )
       })
       .join('')

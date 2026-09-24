@@ -9,7 +9,7 @@
  *
  * The marker becomes a superscript link to a generated References list, and
  * each reference links back to where it was cited. Markers are numbered by
- * first appearance, so an author can name them anything.
+ * first appearance, so an author can label them anything.
  */
 
 export interface Footnote {
@@ -20,34 +20,57 @@ export interface Footnote {
   markdown: string
 }
 
-const DEFINITION = /^[ \t]*\[\^([^\]\s]+)\]:[ \t]*(.*)$/gm
-const REFERENCE = /\[\^([^\]\s]+)\](?!:)/g
-
 export interface FootnoteResult {
-  /** Body markdown with definitions removed and markers replaced. */
+  /** Body markdown with cited definitions removed and markers replaced. */
   body: string
   footnotes: Footnote[]
 }
 
-/** Escapes text destined for an HTML attribute. */
-function attr(value: string) {
-  return value.replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 60)
+/**
+ * A definition line plus any indented continuation lines, so a citation can
+ * run across several lines without leaving stray text in the body.
+ */
+const DEFINITION = /^[ \t]*\[\^([^\]\s]+)\]:[ \t]*([^\n]*(?:\n[ \t]+[^\n]*)*)/gm
+const REFERENCE = /\[\^([^\]\s]+)\](?!:)/g
+
+/** Fenced blocks and inline spans, so code is never mistaken for a citation. */
+const CODE = /(```[\s\S]*?```|~~~[\s\S]*?~~~|`[^`\n]*`)/g
+const PLACEHOLDER = '\u0000CODE'
+
+function maskCode(markdown: string) {
+  const blocks: string[] = []
+  const masked = markdown.replace(CODE, (match) => {
+    blocks.push(match)
+    return `${PLACEHOLDER}${blocks.length - 1}\u0000`
+  })
+  return { masked, blocks }
+}
+
+function unmaskCode(markdown: string, blocks: string[]) {
+  return markdown.replace(
+    new RegExp(`${PLACEHOLDER}(\\d+)\\u0000`, 'g'),
+    (_m, i: string) => blocks[Number(i)] ?? ''
+  )
 }
 
 export function extractFootnotes(markdown: string): FootnoteResult {
+  const { masked, blocks } = maskCode(markdown)
+
+  // 1. Collect definitions without removing them yet: a definition nobody
+  //    cites is left in place rather than silently deleted.
   const definitions = new Map<string, string>()
-
-  // Pull the definitions out of the body first.
-  const body = markdown.replace(DEFINITION, (_match, key: string, text: string) => {
+  for (const match of masked.matchAll(DEFINITION)) {
+    const key = match[1]
+    const text = (match[2] ?? '').replace(/\s*\n[ \t]+/g, ' ').trim()
     const existing = definitions.get(key)
-    definitions.set(key, existing ? `${existing} ${text}`.trim() : text.trim())
-    return '\u0000FOOTNOTE_DEF\u0000'
-  })
+    definitions.set(key, existing ? `${existing} ${text}`.trim() : text)
+  }
 
+  // 2. Replace the markers, numbering by first use.
   const ordered: Footnote[] = []
   const numbers = new Map<string, number>()
 
-  const withMarkers = body.replace(REFERENCE, (match, key: string) => {
+  const withMarkers = masked.replace(REFERENCE, (match, key: string) => {
     if (!definitions.has(key)) return match // an undefined marker stays literal
 
     let number = numbers.get(key)
@@ -57,16 +80,22 @@ export function extractFootnotes(markdown: string): FootnoteResult {
       ordered.push({ key, number, markdown: definitions.get(key) ?? '' })
     }
 
-    const id = attr(key)
+    // Ids come from the assigned number, never the author's label: two labels
+    // could otherwise sanitise to the same id and cross-link.
     return (
-      `<sup class="footnote-ref" id="fnref-${id}">` +
-      `<a href="#fn-${id}" aria-label="Go to reference ${number}">${number}</a>` +
+      `<sup class="footnote-ref" id="fnref-${number}">` +
+      `<a href="#fn-${number}" aria-label="Go to reference ${number}">${number}</a>` +
       `</sup>`
     )
   })
 
+  // 3. Remove only the definitions that were actually cited.
+  const body = withMarkers.replace(DEFINITION, (match, key: string) =>
+    numbers.has(key) ? '' : match
+  )
+
   return {
-    body: withMarkers.replace(/[ \t]*\u0000FOOTNOTE_DEF\u0000[ \t]*\n?/g, ''),
+    body: unmaskCode(body, blocks).replace(/\n{3,}/g, '\n\n'),
     footnotes: ordered,
   }
 }

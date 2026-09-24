@@ -1,5 +1,6 @@
 import 'server-only'
 import { connectToDatabase } from '@/lib/mongodb'
+import { runOnce } from '@/lib/seedMarker'
 import Event from '@/models/Event'
 import { SEED_DETAIL_PATHS, SEED_PAST, SEED_UPCOMING, type SeedEvent } from '@/lib/eventSeed'
 import { slugify } from '@/lib/articles'
@@ -111,10 +112,7 @@ let seedPromise: Promise<void> | null = null
  * Guarded by a module-level promise and a unique slug index, so concurrent
  * requests during a cold start cannot produce duplicates.
  */
-async function seedIfEmpty() {
-  const count = await Event.estimatedDocumentCount()
-  if (count > 0) return
-
+async function seedEvents() {
   const toDoc = (seed: SeedEvent, upcoming: boolean, order: number) => ({
     title: seed.title,
     slug: slugify(seed.title) || `event-${seed.id}`,
@@ -151,7 +149,11 @@ async function seedIfEmpty() {
 async function ensureSeeded() {
   await connectToDatabase()
   if (!seedPromise) {
-    seedPromise = seedIfEmpty().catch((error) => {
+    seedPromise = runOnce(
+      'events',
+      async () => (await Event.estimatedDocumentCount()) > 0,
+      seedEvents
+    ).catch((error) => {
       seedPromise = null // allow a retry on the next request
       throw error
     })

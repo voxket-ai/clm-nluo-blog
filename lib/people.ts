@@ -1,5 +1,6 @@
 import 'server-only'
 import { connectToDatabase } from '@/lib/mongodb'
+import { runOnce } from '@/lib/seedMarker'
 import Person from '@/models/Person'
 import {
   PERSON_GROUPS,
@@ -53,6 +54,9 @@ export interface PersonInput {
   group?: string
 }
 
+/** base64 inflates by about a third, so compare against the encoded length. */
+const IMAGE_DATA_LIMIT = Math.round(3 * 1024 * 1024 * 1.4)
+
 export class PersonValidationError extends Error {
   fields: Record<string, string>
   constructor(fields: Record<string, string>) {
@@ -81,8 +85,14 @@ export function validatePerson(input: PersonInput) {
     errors.email = 'That email address is not valid.'
 
   const image = (input.image || '').trim()
-  if (image && !/^(https?:\/\/|\/)/i.test(image) && !image.startsWith('data:image/'))
+  if (image && !/^(https?:\/\/|\/)/i.test(image) && !image.startsWith('data:image/')) {
     errors.image = 'Photo must be an upload or an https link.'
+  } else if (image.startsWith('data:')) {
+    // An inline photo would otherwise be stored unbounded in the document.
+    if (image.length > IMAGE_DATA_LIMIT) errors.image = 'That photo is too large. Keep it under 3 MB.'
+    else if (!/^data:image\/(jpeg|png|webp|gif);base64,/i.test(image))
+      errors.image = 'That photo is not a supported image type.'
+  }
 
   return errors
 }
@@ -90,9 +100,7 @@ export function validatePerson(input: PersonInput) {
 let seedPromise: Promise<void> | null = null
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-async function seedIfEmpty() {
-  if ((await Person.estimatedDocumentCount()) > 0) return
-
+async function seedPeople() {
   const rows: any[] = []
   const push = (p: any, group: PersonGroup, order: number) =>
     rows.push({
@@ -132,7 +140,11 @@ async function seedIfEmpty() {
 async function ensureSeeded() {
   await connectToDatabase()
   if (!seedPromise) {
-    seedPromise = seedIfEmpty().catch((error) => {
+    seedPromise = runOnce(
+      'people',
+      async () => (await Person.estimatedDocumentCount()) > 0,
+      seedPeople
+    ).catch((error) => {
       seedPromise = null // let the next request retry
       throw error
     })

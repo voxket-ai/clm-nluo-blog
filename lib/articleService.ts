@@ -265,7 +265,7 @@ export async function createArticle(payload: Partial<ArticleFormValues>): Promis
     tags: (payload.tags || []).map((t) => t.trim()).filter(Boolean).slice(0, 6),
     author: {
       name: payload.author!.name.trim(),
-      email: payload.author!.email.trim().toLowerCase(),
+      email: (payload.author?.email || '').trim().toLowerCase(),
       affiliation: payload.author?.affiliation?.trim() || '',
       linkedin: payload.author?.linkedin?.trim() || '',
       bio: payload.author?.bio?.trim() || '',
@@ -364,7 +364,7 @@ export async function updateArticle(
   existing.tags = (payload.tags || []).map((t) => t.trim()).filter(Boolean).slice(0, 6)
   existing.author = {
     name: payload.author!.name.trim(),
-    email: payload.author!.email.trim().toLowerCase(),
+    email: (payload.author?.email || '').trim().toLowerCase(),
     affiliation: payload.author?.affiliation?.trim() || '',
     linkedin: payload.author?.linkedin?.trim() || '',
     bio: payload.author?.bio?.trim() || '',

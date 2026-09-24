@@ -7,7 +7,17 @@ import { Loader2, Pencil, Star, Trash2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import ConfirmDialog from '@/components/ui/ConfirmDialog'
 import { useEdit } from '@/components/editable/EditProvider'
-import type { Article } from '@/lib/articles'
+
+/**
+ * Only the fields the controls actually use. Passing the whole article would
+ * serialise its full body into the page payload for every card on screen.
+ */
+export interface ArticleRef {
+  id: string
+  slug: string
+  title: string
+  featured: boolean
+}
 
 /**
  * Edit / feature / delete controls attached to an article, shown only to a
@@ -18,7 +28,7 @@ export default function ArticleAdminControls({
   article,
   variant = 'card',
 }: {
-  article: Article
+  article: ArticleRef
   variant?: 'card' | 'bar'
 }) {
   const edit = useEdit()

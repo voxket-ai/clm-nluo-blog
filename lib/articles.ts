@@ -197,7 +197,9 @@ export function validateArticle(values: Partial<ArticleFormValues>) {
   const authorName = (values.author?.name || '').trim()
   const authorEmail = (values.author?.email || '').trim()
   if (authorName.length < 2) errors['author.name'] = 'Author name is required.'
-  if (!EMAIL_PATTERN.test(authorEmail)) errors['author.email'] = 'A valid email address is required.'
+  // Email is optional - it is only for the editorial record, never shown.
+  if (authorEmail && !EMAIL_PATTERN.test(authorEmail))
+    errors['author.email'] = 'That email address is not valid.'
 
   if (values.coAuthor) {
     const coName = (values.coAuthor.name || '').trim()

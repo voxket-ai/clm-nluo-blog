@@ -14,6 +14,7 @@ import {
   PenLine,
   Quote,
   Loader2,
+  Superscript,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { countWords, estimateReadTime } from '@/lib/articles'
@@ -39,6 +40,16 @@ const TOOLS: { id: string; label: string; icon: typeof Bold; wrap: Wrap }[] = [
   { id: 'link', label: 'Link / citation', icon: Link2, wrap: { before: '[', after: '](https://)', placeholder: 'link text' } },
   { id: 'hr', label: 'Divider', icon: Minus, wrap: { before: '\n---\n', placeholder: '', block: true } },
 ]
+
+/**
+ * Citations are two pieces of text in different places, so they get their own
+ * handler rather than a simple wrap: a marker at the caret and a definition
+ * appended at the end of the document.
+ */
+function nextCitationNumber(value: string) {
+  const used = [...value.matchAll(/\[\^(\d+)\]/g)].map((m) => Number(m[1]))
+  return used.length ? Math.max(...used) + 1 : 1
+}
 
 export default function MarkdownEditor({ value, onChange, error, minWords, maxWords }: MarkdownEditorProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -120,6 +131,30 @@ export default function MarkdownEditor({ value, onChange, error, minWords, maxWo
     }
   }, [mode, value])
 
+  const insertCitation = useCallback(() => {
+    const el = textareaRef.current
+    if (!el) return
+
+    const n = nextCitationNumber(value)
+    const marker = `[^${n}]`
+    const start = el.selectionStart
+    const end = el.selectionEnd
+
+    // Marker at the caret, definition appended at the foot of the document.
+    const withMarker = value.slice(0, start) + marker + value.slice(end)
+    const separator = withMarker.endsWith('\n') ? '' : '\n'
+    const next = `${withMarker}${separator}\n[^${n}]: `
+
+    onChange(next)
+
+    requestAnimationFrame(() => {
+      el.focus()
+      // Land the caret where the source is typed.
+      el.setSelectionRange(next.length, next.length)
+      el.scrollTop = el.scrollHeight
+    })
+  }, [onChange, value])
+
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (!(event.metaKey || event.ctrlKey)) return
     const key = event.key.toLowerCase()
@@ -153,6 +188,17 @@ export default function MarkdownEditor({ value, onChange, error, minWords, maxWo
           </button>
         ))}
 
+        <button
+          type="button"
+          title="Add citation"
+          aria-label="Add citation"
+          onClick={insertCitation}
+          disabled={mode === 'preview'}
+          className="h-9 w-9 grid place-items-center rounded-lg text-slate-600 hover:bg-white hover:text-blue-600 hover:shadow-sm disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:shadow-none transition-all"
+        >
+          <Superscript className="h-4 w-4" />
+        </button>
+
         <div className="ml-auto flex rounded-lg bg-slate-200/70 p-1">
           {(['write', 'preview'] as const).map((tab) => (
             <button
@@ -180,7 +226,7 @@ export default function MarkdownEditor({ value, onChange, error, minWords, maxWo
           onKeyDown={handleKeyDown}
           spellCheck
           placeholder={
-            'Write or paste your manuscript here.\n\n## Introduction\n\nMediation under the Mediation Act, 2023 …\n\n> Use "> " for quoted passages.\n\n1. Numbered points work too.\n\nAdd citations as links: [Salem Advocate Bar Assn. v Union of India](https://example.com)'
+            'Write or paste your manuscript here.\n\n## Introduction\n\nMediation under the Mediation Act, 2023 …\n\n> Use "> " for quoted passages.\n\n1. Numbered points work too.\n\nCite a source with the citation button, or type it by hand:\n\nMediated settlements are enforceable.[^1]\n\n[^1]: Salem Advocate Bar Assn. v Union of India, (2005) 6 SCC 344.'
           }
           className="block h-[520px] w-full resize-y border-0 bg-white px-5 py-5 font-mono text-[15px] leading-7 text-slate-800 outline-none placeholder:text-slate-300"
         />
@@ -235,7 +281,7 @@ export default function MarkdownEditor({ value, onChange, error, minWords, maxWo
           </span>
         </div>
 
-        <span className="hidden text-slate-400 sm:inline">Markdown supported · ⌘B ⌘I ⌘K</span>
+        <span className="hidden text-slate-400 sm:inline">Markdown supported · ⌘B ⌘I ⌘K · [^1] adds a citation</span>
       </div>
 
       {error && <p className="border-t border-red-100 bg-red-50 px-4 py-2 text-xs font-medium text-red-600">{error}</p>}

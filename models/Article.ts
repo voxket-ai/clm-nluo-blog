@@ -4,7 +4,7 @@ import { ARTICLE_CATEGORIES, SUBMISSION_TYPES } from '@/lib/articles'
 const AuthorSchema = new Schema(
   {
     name: { type: String, required: true, trim: true, maxlength: 90 },
-    email: { type: String, required: true, trim: true, lowercase: true, maxlength: 160 },
+    email: { type: String, trim: true, lowercase: true, maxlength: 160, default: '' },
     affiliation: { type: String, trim: true, maxlength: 140, default: '' },
     linkedin: { type: String, trim: true, maxlength: 250, default: '' },
     bio: { type: String, trim: true, maxlength: 400, default: '' },

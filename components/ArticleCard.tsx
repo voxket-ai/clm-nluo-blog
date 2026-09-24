@@ -24,7 +24,9 @@ export default function ArticleCard({ article, featured = false }: ArticleCardPr
         featured && 'md:col-span-2 lg:col-span-2'
       )}
     >
-      <ArticleAdminControls article={article} />
+      <ArticleAdminControls
+        article={{ id: article.id, slug: article.slug, title: article.title, featured: article.featured }}
+      />
 
       {/* Image Section */}
       <div className={cn('relative overflow-hidden', featured ? 'h-64 md:h-80' : 'h-56')}>

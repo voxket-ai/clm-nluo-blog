@@ -1,174 +1,25 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { Mail, Phone, Linkedin, Award, BookOpen, GraduationCap, Users } from 'lucide-react'
+import { Mail, Phone, Award, BookOpen, GraduationCap, Users } from 'lucide-react'
 import Editable from '@/components/editable/Editable'
+import PeopleSection from '@/components/people/PeopleSection'
+import { listGroup } from '@/lib/people'
+import type { PersonView } from '@/lib/personGroups'
 import EditableImage from '@/components/editable/EditableImage'
-import { slotId } from '@/lib/contentKeys'
 
 // Sample faculty advisors data
-const facultyAdvisors = [
-  {
-    name: "Prof. (Dr.) Ved Kumari",
-    position: "Vice-Chancellor",
-    organization: "National Law University Odisha",
-    specialization: ["Juvenile Justice", "Criminal Law", "Gender Discrimination", "Clinical Education"],
-    qualifications: ["Ph.D. (Juvenile Justice System)", "LL.M.", "Teaching since 1983"],
-    experience: "40+ years in legal academia and judicial training",
-    email: "vc@nluo.ac.in",
-    phone: "+91-671-2866850",
-    linkedin: "#",
-    image: "/persons/Prof. (Dr.) Ved Kumari.jpg",
-    bio: "Prof. Ved Kumari is former Dean and Head, Faculty of Law, University of Delhi. She is a pioneer in juvenile justice research and has been instrumental in judicial training reforms, including heading the Delhi Judicial Academy as its first woman Chairperson."
-  },
-  {
-    name: "Prof. (Dr.) Sunanda Bharti",
-    position: "Professor of Law",
-    organization: "Law Centre - I, University of Delhi",
-    specialization: ["Constitutional Law", "Administrative Law", "Human Rights"],
-    qualifications: ["Ph.D. (Law)", "LL.M.", "B.A. LL.B."],
-    experience: "25+ years in legal academia and research",
-    email: "sunanda.bharti@du.ac.in",
-    phone: "+91-11-27666156",
-    linkedin: "#",
-    image: "/persons/Prof. (Dr.) Sunanda Bharti.jpg",
-    bio: "Prof. Dr. Sunanda Bharti is a distinguished legal academic with extensive experience in constitutional and human rights law. She has contributed significantly to legal education and policy research."
-  },
-  {
-    name: "Dr. Akshay Verma",
-    position: "Co-Director",
-    organization: "NLUO Centre for Mediation and Negotiation",
-    specialization: ["Alternative Dispute Resolution", "Mediation", "Negotiation"],
-    qualifications: ["Ph.D. (ADR)", "LL.M.", "B.A. LL.B."],
-    experience: "15+ years in ADR practice and teaching",
-    email: "akshay.verma@nluo.ac.in",
-    phone: "+91-671-2866854",
-    linkedin: "#",
-    image: "/persons/Dr. Akshay Verma.jpg",
-    bio: "Dr. Akshay Verma is a specialist in alternative dispute resolution and leads the NLUO Centre for Mediation and Negotiation's academic and practical initiatives."
-  },
-  {
-    name: "Mr. Abhay Kumar",
-    position: "Centre Head",
-    organization: "NLUO Centre for Mediation and Negotiation",
-    specialization: ["Mediation Practice", "ADR Administration", "Community Mediation"],
-    qualifications: ["LL.M.", "B.A. LL.B.", "Certified Mediator"],
-    experience: "12+ years in mediation practice",
-    email: "abhay.kumar@nluo.ac.in",
-    phone: "+91-671-2866855",
-    linkedin: "#",
-    image: "/persons/Abhay-Kumar.png",
-    bio: "Mr. Abhay Kumar heads the operational aspects of the NLUO Mediation Centre and brings extensive practical experience in mediation services and community outreach."
+
+
+export const dynamic = 'force-dynamic'
+
+export default async function FacultyAdvisorsPage() {
+  let people: PersonView[] = []
+  try {
+    people = await listGroup('faculty')
+  } catch (error) {
+    console.error('[faculty-advisors]', error)
   }
-]
 
-function FacultyCard({ faculty }: { faculty: typeof facultyAdvisors[0] }) {
-  return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-      <div className="p-8">
-        <div className="flex flex-col items-center text-center mb-6">
-          <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-blue-200 mb-4">
-            {faculty.image.includes('placeholder') ? (
-              <div className="w-full h-full bg-linear-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">
-                  {faculty.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
-                </span>
-              </div>
-            ) : (
-              <EditableImage
-                id={slotId('faculty', faculty.name, 'photo')}
-                src={faculty.image}
-                alt={faculty.name}
-                label={`Photo of ${faculty.name}`}
-                className="w-full h-full object-cover"
-              />
-            )}
-          </div>
-          <h3 className="text-xl font-bold text-gray-900 mb-2">
-            <Editable id={slotId('faculty', faculty.name, 'name')} as="span" label="Faculty name">{faculty.name}</Editable>
-          </h3>
-          <p className="text-blue-600 font-medium mb-1">
-            <Editable id={slotId('faculty', faculty.name, 'position')} as="span" label="Faculty role">{faculty.position}</Editable>
-          </p>
-          <p className="text-gray-600 text-sm">
-            <Editable id={slotId('faculty', faculty.name, 'organization')} as="span" label="Faculty organisation">{faculty.organization}</Editable>
-          </p>
-        </div>
-        
-        <div className="space-y-4 mb-6">
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-              <BookOpen className="h-4 w-4 mr-2 text-blue-500" />
-              <Editable id="faculty-advisors.specialization" as="span">Specialization</Editable>
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {faculty.specialization.map((spec, index) => (
-                <span key={index} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
-                  <Editable id={slotId('faculty', faculty.name, 'spec', index)} as="span" label="Specialisation">{spec}</Editable>
-                </span>
-              ))}
-            </div>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-              <GraduationCap className="h-4 w-4 mr-2 text-green-500" />
-              <Editable id="faculty-advisors.qualifications" as="span">Qualifications</Editable>
-            </h4>
-            <ul className="text-sm text-gray-600 space-y-1">
-              {faculty.qualifications.map((qual, index) => (
-                <li key={index} className="flex items-center">
-                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                  <Editable id={slotId('faculty', faculty.name, 'qual', index)} as="span" label="Qualification">{qual}</Editable>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-              <Award className="h-4 w-4 mr-2 text-purple-500" />
-              <Editable id="faculty-advisors.experience" as="span">Experience</Editable>
-            </h4>
-            <p className="text-sm text-gray-600">
-              <Editable id={slotId('faculty', faculty.name, 'experience')} as="span" multiline label="Experience">{faculty.experience}</Editable>
-            </p>
-          </div>
-        </div>
-        
-        <div className="border-t pt-4 mb-4 border-slate-200">
-          <p className="text-sm text-gray-600 leading-relaxed">
-            <Editable id={slotId('faculty', faculty.name, 'bio')} as="span" multiline label="Faculty biography">{faculty.bio}</Editable>
-          </p>
-        </div>
-        
-        <div className="flex flex-col space-y-2">
-          <div className="flex items-center text-sm text-gray-600">
-            <Mail className="h-4 w-4 mr-2 text-blue-500" />
-            <a href={`mailto:${faculty.email}`} className="hover:text-blue-600 transition-colors">
-              <Editable id={slotId('faculty', faculty.name, 'email')} as="span" label="Faculty email">{faculty.email}</Editable>
-            </a>
-          </div>
-          
-          <div className="flex items-center text-sm text-gray-600">
-            <Phone className="h-4 w-4 mr-2 text-green-500" />
-            <span>
-              <Editable id={slotId('faculty', faculty.name, 'phone')} as="span" label="Faculty phone">{faculty.phone}</Editable>
-            </span>
-          </div>
-          
-          <div className="flex items-center text-sm text-gray-600">
-            <Linkedin className="h-4 w-4 mr-2 text-blue-700" />
-            <a href={faculty.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
-              <Editable id="faculty-advisors.linkedin-profile" as="span">LinkedIn Profile</Editable>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default function FacultyAdvisorsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -238,49 +89,7 @@ export default function FacultyAdvisorsPage() {
               <Editable id="faculty-advisors.current" as="span">Current</Editable> <span className="text-blue-600"><Editable id="faculty-advisors.leadership-2" as="span">Leadership</Editable></span>
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-blue-200">
-                  <EditableImage
-                  id="faculty-advisors.image.abhay-kumar"
-                  src="/persons/Abhay-Kumar.png"
-                  alt="Mr. Abhay Kumar"
-                  label="Mr. Abhay Kumar"
-                  className="w-full h-full object-cover"
-                />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2"><Editable id="faculty-advisors.mr-abhay-kumar" as="span">Mr. Abhay Kumar</Editable></h3>
-                <p className="text-blue-600 font-medium text-sm"><Editable id="faculty-advisors.director-nluo-cmn" as="span">Director, NLUO CMN</Editable></p>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-blue-200">
-                  <EditableImage
-                  id="faculty-advisors.image.dr-akshay-verma"
-                  src="/persons/Dr. Akshay Verma.jpg"
-                  alt="Dr. Akshay Verma"
-                  label="Dr. Akshay Verma"
-                  className="w-full h-full object-cover"
-                />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2"><Editable id="faculty-advisors.dr-akshay-verma" as="span">Dr. Akshay Verma</Editable></h3>
-                <p className="text-blue-600 font-medium text-sm"><Editable id="faculty-advisors.co-director-nluo-cmn" as="span">Co-Director, NLUO CMN</Editable></p>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-blue-200">
-                  <EditableImage
-                  id="faculty-advisors.image.suryasmita-parida"
-                  src="/persons/Suryasmita-Parida.png"
-                  alt="Ms. Suryasmita Parida"
-                  label="Ms. Suryasmita Parida"
-                  className="w-full h-full object-cover"
-                />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2"><Editable id="faculty-advisors.ms-suryasmita-parida" as="span">Ms. Suryasmita Parida</Editable></h3>
-                <p className="text-blue-600 font-medium text-sm"><Editable id="faculty-advisors.co-director-nluo-cmn-2" as="span">Co-Director, NLUO CMN</Editable></p>
-              </div>
-            </div>
+            <PeopleSection group="faculty" people={people} variant="circle" addLabel="Add leadership member" />
           </section>
 
           {/* NLUO Mediation Cell */}

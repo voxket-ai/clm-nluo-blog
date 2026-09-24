@@ -424,3 +424,95 @@ body {
     outline-offset: 2px;
   }
 }
+
+/* ------------------------------------------------------------------
+   Citations / footnotes
+   A marker jumps to the reference and the reference jumps back, so both
+   ends need clearance from the sticky header when they land.
+------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.article-prose .footnote-ref {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.7em;
+  font-weight: 600;
+  line-height: 0;
+  vertical-align: super;
+  margin-left: 1px;
+  scroll-margin-top: 7rem;
+}
+
+.article-prose .footnote-ref a {
+  color: #2563eb;
+  text-decoration: none;
+  padding: 0 2px;
+  border-radius: 3px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.article-prose .footnote-ref a:hover {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.article-prose .footnotes {
+  margin-top: 3.5em;
+  padding-top: 1.75em;
+  border-top: 1px solid #e2e8f0;
+}
+
+.article-prose .footnotes h2 {
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-top: 0;
+  margin-bottom: 1em;
+  scroll-margin-top: 7rem;
+}
+
+.article-prose .footnotes ol {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #475569;
+  padding-left: 1.35em;
+}
+
+.article-prose .footnotes li {
+  margin-top: 0.55em;
+  padding-left: 0.2em;
+  scroll-margin-top: 7rem;
+}
+
+/* Briefly highlight whichever end of the jump the reader landed on. */
+.article-prose .footnotes li:target,
+.article-prose .footnote-ref:target {
+  background: #fef3c7;
+  border-radius: 4px;
+  animation: footnote-flash 1.6s ease-out;
+}
+
+@keyframes footnote-flash {
+  0% { background: #fde68a; }
+  100% { background: transparent; }
+}
+
+.article-prose .footnote-back {
+  margin-left: 4px;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95em;
+}
+
+.article-prose .footnote-back:hover {
+  color: #2563eb;
+}

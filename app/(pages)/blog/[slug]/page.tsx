@@ -143,7 +143,10 @@ export default async function ArticlePage({ params }: PageProps) {
 
         {/* Admin controls */}
         <div className="mx-auto max-w-4xl px-4 pt-6 sm:px-6 lg:px-8">
-          <ArticleAdminControls article={article} variant="bar" />
+          <ArticleAdminControls
+            article={{ id: article.id, slug: article.slug, title: article.title, featured: article.featured }}
+            variant="bar"
+          />
         </div>
 
         {/* Cover */}

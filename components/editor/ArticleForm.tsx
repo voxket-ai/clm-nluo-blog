@@ -245,7 +245,7 @@ export default function ArticleForm({ article }: { article?: Article }) {
     { label: 'Title and category', done: !errors.title && !errors.category },
     { label: 'Summary written', done: !errors.excerpt },
     { label: `Body of ${LIMITS.contentMinWords}+ words`, done: !errors.content },
-    { label: 'Author named', done: !errors['author.name'] && !errors['author.email'] },
+    { label: 'Author named', done: !errors['author.name'] },
   ]
   const ready = checklist.every((c) => c.done)
 
@@ -360,12 +360,11 @@ export default function ArticleForm({ article }: { article?: Article }) {
               label="Email"
               name="author.email"
               type="email"
-              required
               value={values.author.email}
               onChange={(v) => setAuthor('author', 'email', v)}
               placeholder="author@university.edu"
               error={errorFor('author.email')}
-              hint="Never shown publicly."
+              hint="Optional. Never shown publicly."
             />
             <TextField
               label="Affiliation"
